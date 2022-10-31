@@ -409,6 +409,110 @@ if (spoilersArray.length > 0) {
   }
 }
 
+var select = document.querySelectorAll('.select');
+var activeSelect;
+
+var _loop2 = function _loop2(_index2) {
+  var item = select[_index2];
+  var selectOption = item.querySelectorAll('option');
+  var selectOptionLength = selectOption.length;
+  var selectedOption = item.querySelector('option[selected]');
+  var disabledOption = item.querySelector('option[disabled]');
+  var duration = 300;
+  item.querySelector('select').hidden = true;
+  var head = document.createElement('div');
+  var text = document.createElement('span');
+  head.classList.add('select__head');
+  text.textContent = disabledOption ? disabledOption.textContent : selectedOption.textContent;
+  head.append(text);
+  item.append(head);
+  var icon = item.querySelector('.select__icon');
+
+  if (icon) {
+    head.append(icon);
+  }
+
+  var selectList = document.createElement('ul');
+  selectList.classList.add('select__list');
+  item.append(selectList);
+
+  if (!disabledOption) {
+    var newOption = document.createElement('li');
+    newOption.textContent = selectedOption ? selectedOption.textContent : selectOption[0].textContent;
+    newOption.classList.add('select__item');
+    newOption.dataset.value = selectedOption ? selectedOption.value : selectOption[0].textContent;
+    selectList.append(newOption);
+  }
+
+  for (var _index4 = 1; _index4 < selectOptionLength; _index4++) {
+    var _newOption = document.createElement('li');
+
+    _newOption.textContent = selectOption[_index4].textContent;
+
+    _newOption.classList.add('select__item');
+
+    _newOption.dataset.value = selectOption[_index4].value;
+    selectList.append(_newOption);
+  }
+
+  selectList.hidden = true;
+  head.addEventListener('click', function (e) {
+    if (!document.querySelector('.select__list.slide') && e.target.closest('.select__head')) {
+      if (activeSelect && !e.target.closest('.select__head').nextElementSibling.isEqualNode(activeSelect)) {
+        slideUp(activeSelect);
+        activeSelect.closest('.select').querySelector('.select__head').classList.remove('active');
+      }
+
+      activeSelect = e.target.closest('.select__head').nextElementSibling;
+      e.currentTarget.classList.toggle('active');
+      slideToggle(selectList);
+    }
+  });
+  selectList.addEventListener('click', function (e) {
+    if (e.target.closest('.select__item')) {
+      var target = e.target.closest('.select__item');
+      var value = target.dataset.value;
+      var newSelectedEl = item.querySelector("option[value=\"".concat(value, "\"]"));
+      var oldSelectedEl = item.querySelector('option[selected]');
+
+      if (!newSelectedEl) {
+        for (var _index5 = 1; _index5 < selectOptionLength; _index5++) {
+          var option = selectOption[_index5];
+
+          if (option.textContent == value) {
+            newSelectedEl = option;
+          }
+        }
+      }
+
+      if (oldSelectedEl) {
+        oldSelectedEl.removeAttribute('selected');
+      }
+
+      if (newSelectedEl) {
+        newSelectedEl.setAttribute('selected', 'selected');
+        text.textContent = newSelectedEl.textContent;
+      }
+
+      head.classList.remove('active');
+      activeSelect = null;
+      e.target.closest('.select').querySelector('select').dispatchEvent(new Event('change'));
+      slideUp(selectList);
+    }
+  });
+};
+
+for (var _index2 = 0; _index2 < select.length; ++_index2) {
+  _loop2(_index2);
+}
+
+window.addEventListener('click', function (e) {
+  if (document.querySelector('.select__head.active') && !e.target.closest('.select') && !document.querySelector('.select__list.slide')) {
+    activeSelect.closest('.select').querySelector('.select__head').classList.remove('active');
+    slideUp(activeSelect);
+    activeSelect = null;
+  }
+});
 var mainSlider = new Swiper('.main-slider__body', {
   speed: 1000,
   loop: true,
@@ -501,8 +605,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var submenu = document.querySelectorAll('.menu__item');
 
   if (submenu.length > 0) {
-    var _loop2 = function _loop2(_index2) {
-      var item = submenu[_index2];
+    var _loop3 = function _loop3(_index3) {
+      var item = submenu[_index3];
       item.addEventListener('mouseenter', function () {
         var submenuBody = item.querySelector('.submenu');
         if (!submenuBody) return;
@@ -511,8 +615,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     };
 
-    for (var _index2 = 0; _index2 < submenu.length; _index2++) {
-      _loop2(_index2);
+    for (var _index3 = 0; _index3 < submenu.length; _index3++) {
+      _loop3(_index3);
     }
   }
 
