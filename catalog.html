@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221101001102">
-    <title>Главная</title>
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221101235439">
+    <title>Каталог</title>
 </head>
 
 <body>
@@ -203,16 +203,28 @@
                                 <span class="breadcrumbs__item">Джемперы</span>
                             </li>
                         </ul>
+                        <a href="" class="breadcrumbs__prev">
+                            <div class="breadcrumbs__icon">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                </svg>
+                            </div>
+                            <span>Женщинам</span>
+                        </a>
                     </div>
                     <h1 class="catalog__title title">Джемперы</h1>
                     <div class="catalog__body">
                         <aside class="catalog__side side">
-                            <form action="#" class="side__body" data-spoilers="">
-                                <button data-spoiler="" tabindex="-1" class="side__title active">
+                            <form action="#" class="side__body" data-da=".filter-catalog__body,1024.98,last" data-spoilers="1024.98,min">
+                                <button type="reset" class="side__reset">Сбросить</button>
+                                <button data-categories data-spoiler="" tabindex="-1" class="side__title active">
                                     Категория
                                     <span></span>
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                    </svg>
                                 </button>
-                                <div class="side__content">
+                                <div class="side__content container">
                                     <div class="side__categories categories-side">
                                         <div class="categories-side__items">
                                             <label class="categories-side__item">
@@ -302,8 +314,11 @@
                                 <button data-spoiler="" tabindex="-1" class="side__title active">
                                     Цена
                                     <span></span>
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                    </svg>
                                 </button>
-                                <div class="side__content">
+                                <div class="side__content container">
                                     <div class="side__price price-side">
                                         <label class="price-side__item">
                                             От
@@ -318,78 +333,129 @@
                                 <button data-spoiler="" tabindex="-1" class="side__title active">
                                     Цвет
                                     <span></span>
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                    </svg>
                                 </button>
-                                <div class="side__content">
+                                <div class="side__content container">
                                     <div class="side__colors colors-side">
                                         <label class="colors-side__item colors-side__item_tan">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Бежевый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_white">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Белый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_burgundy">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Бордовый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_aqua">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Голубой</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_lemon">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Жёлтый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_lime">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Зелёный</span>
+                                            </span>
                                         </label>
 
                                         <label class="colors-side__item colors-side__item_brown">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Коричневый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_red">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Красный</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_orange">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Оранжевый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_colorful">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Разноцветный</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_pink">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Розовый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_gray">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Серый</span>
+                                            </span>
                                         </label>
 
                                         <label class="colors-side__item colors-side__item_blue">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Синий</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_purple">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Фиолетовый</span>
+                                            </span>
                                         </label>
                                         <label class="colors-side__item colors-side__item_black">
                                             <input type="checkbox">
-                                            <span></span>
+                                            <span class="colors-side__circle"></span>
+                                            <span class="colors-side__text">
+                                                <span>Чёрный</span>
+                                            </span>
                                         </label>
                                     </div>
                                 </div>
                                 <button data-spoiler="" tabindex="-1" class="side__title active">
                                     Размер
                                     <span></span>
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                    </svg>
                                 </button>
-                                <div class="side__content">
+                                <div class="side__content container">
                                     <div class="side__size size-side">
                                         <label class="size-side__item">
                                             <input type="checkbox">
@@ -436,8 +502,11 @@
                                 <button data-spoiler="" tabindex="-1" class="side__title active">
                                     Коллекция
                                     <span></span>
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                    </svg>
                                 </button>
-                                <div class="side__content">
+                                <div class="side__content container">
                                     <div class="side__collection collection-side">
                                         <label class="collection-side__checkbox checkbox">
                                             <input class="checkbox__input" disabled type="checkbox">
@@ -487,18 +556,62 @@
                             </form>
                         </aside>
                         <div class="catalog__content">
-                            <div class="catalog__select select">
-                                <div class="select__icon">
-                                    <svg>
-                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
-                                    </svg>
+                            <div class="catalog__actions">
+                                <div class="catalog__filter filter-catalog">
+                                    <a href="" class="filter-catalog__button active">
+                                        <div class="filter-catalog__icon">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#filter"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Категории и фильтры</span>
+                                    </a>
+                                    <div class="filter-catalog__content">
+                                        <div class="filter-catalog__container container">
+                                            <div class="filter-catalog__header header-filter-catalog">
+                                                <div class="header-filter-catalog__container container">
+                                                    <div class="header-filter-catalog__body">
+                                                        <div class="header-filter-catalog__back">
+                                                            <svg>
+                                                                <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="header-filter-catalog__title">
+                                                            <span>Категории и фильтры</span>
+                                                        </div>
+                                                        <div class="header-filter-catalog__close">
+                                                            <svg>
+                                                                <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                                                            </svg>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter-catalog__body"></div>
+                                            <div class="filter-catalog__footer footer-filter-catalog">
+                                                <div class="footer-filter-catalog__container container">
+                                                    <button class="footer-filter-catalog__button button">Смотреть товары</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <select>
-                                    <option value="by-popularity" selected>Сначала недорогие</option>
-                                    <option value="by-price">Популярные</option>
-                                    <option value="by-title">Дорогие</option>
-                                </select>
+                                <div class="catalog__select select">
+                                    <div class="select__icon">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                        </svg>
+                                    </div>
+                                    <select>
+                                        <option value="by-popularity" selected>Сначала недорогие</option>
+                                        <option value="by-price">Популярные</option>
+                                        <option value="by-title">Дорогие</option>
+                                    </select>
+                                </div>
                             </div>
+
                             <div class="catalog__tags tags-catalog">
                                 <div class="tags-catalog__item item-tags-catalog">
                                     <div class="item-tags-catalog__body">
@@ -613,7 +726,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -639,7 +753,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -665,7 +780,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -691,7 +807,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -717,7 +834,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -743,7 +861,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -769,7 +888,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -795,7 +915,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -821,7 +942,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -847,7 +969,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -873,7 +996,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -899,7 +1023,8 @@
                                                 <img src="assets/images/products/product.png" alt="">
                                             </a>
                                             <div class="item-product__price">999 руб.</div>
-                                            <a class="item-product__title" href="">Джемпер однотонный с круглой горловиной</a>
+                                            <a class="item-product__title" href="">Джемпер однотонный с круглой
+                                                горловиной</a>
                                             <div class="item-product__colors">
                                                 <div class="item-product__color item-product__color_black"></div>
                                                 <div class="item-product__color item-product__color_white"></div>
@@ -1088,8 +1213,8 @@
         </div>
 
     </div>
-    <script src="assets/js/swiper-bundle.min.js?_v=20221101001102"></script>
-    <script src="assets/js/script.js?_v=20221101001102"></script>
+    <script src="assets/js/swiper-bundle.min.js?_v=20221101235439"></script>
+    <script src="assets/js/script.js?_v=20221101235439"></script>
 </body>
 
 </html>
