@@ -411,6 +411,7 @@ if (spoilersArray.length > 0) {
 
 var select = document.querySelectorAll('.select');
 var activeSelect;
+var timeout = 300;
 
 var _loop2 = function _loop2(_index2) {
   var item = select[_index2];
@@ -591,6 +592,20 @@ var bestsellersSlider = new Swiper('.bestsellers .product-slider__body', {
     prevEl: '.bestsellers .slider-buttons__item_prev'
   }
 });
+var imagesProductSlider = new Swiper('.images-product__slider', {
+  speed: 1000,
+  loop: true,
+  slidesPerView: 1,
+  pagination: {
+    el: '.images-product__dots',
+    clickable: true
+  },
+  breakpoints: {
+    576.98: {
+      slidesPerView: 2
+    }
+  }
+});
 document.addEventListener('DOMContentLoaded', function () {
   var iconMenu = document.querySelector(".icon-menu");
   var header = document.querySelector('.header');
@@ -631,7 +646,27 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.menu__item.active').classList.remove('active');
     }
   });
-}); // const modalButtons = document.querySelectorAll('.open-modal'),
+});
+
+if (document.querySelector('.product__link')) {
+  var productLink = document.querySelector('.product__link');
+  productLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    var scrollWidth = window.innerWidth - document.body.clientWidth;
+    document.querySelector('.size-table').classList.add('active');
+    document.body.classList.add('lock');
+    document.body.style.paddingRight = scrollWidth + 'px';
+  });
+  var closeButton = document.querySelector('.size-table__close');
+  closeButton.addEventListener('click', function (e) {
+    document.querySelector('.size-table').classList.remove('active');
+    var scrollWidth = window.innerWidth - document.body.clientWidth;
+    setTimeout(function () {
+      document.body.classList.remove('lock');
+      document.body.style.paddingRight = 0;
+    }, timeout);
+  });
+} // const modalButtons = document.querySelectorAll('.open-modal'),
 //     overlay      = document.querySelector('.overlay'),
 //     closeButtons = document.querySelectorAll('.modal-close');
 // modalButtons.forEach(function(item){
@@ -705,6 +740,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         })
 //     }
 // }
+
 
 window.addEventListener('scroll', function () {
   var header = document.querySelector('.header');
