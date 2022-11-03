@@ -446,14 +446,14 @@ var _loop2 = function _loop2(_index2) {
     selectList.append(newOption);
   }
 
-  for (var _index4 = 1; _index4 < selectOptionLength; _index4++) {
+  for (var _index5 = 1; _index5 < selectOptionLength; _index5++) {
     var _newOption = document.createElement('li');
 
-    _newOption.textContent = selectOption[_index4].textContent;
+    _newOption.textContent = selectOption[_index5].textContent;
 
     _newOption.classList.add('select__item');
 
-    _newOption.dataset.value = selectOption[_index4].value;
+    _newOption.dataset.value = selectOption[_index5].value;
     selectList.append(_newOption);
   }
 
@@ -478,8 +478,8 @@ var _loop2 = function _loop2(_index2) {
       var oldSelectedEl = item.querySelector('option[selected]');
 
       if (!newSelectedEl) {
-        for (var _index5 = 1; _index5 < selectOptionLength; _index5++) {
-          var option = selectOption[_index5];
+        for (var _index6 = 1; _index6 < selectOptionLength; _index6++) {
+          var option = selectOption[_index6];
 
           if (option.textContent == value) {
             newSelectedEl = option;
@@ -613,10 +613,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (iconMenu) {
     var menuContent = document.querySelector(".menu");
     iconMenu.addEventListener('click', function () {
-      document.body.classList.toggle("lock");
-      iconMenu.classList.toggle("active");
-      header.classList.toggle('active');
-      menuContent.classList.toggle("active");
+      document.body.classList.add("lock");
+      header.classList.add('active');
+      menuContent.classList.add("active");
+    });
+    var closeButton = document.querySelector('.header-menu__close');
+    closeButton.addEventListener('click', function () {
+      document.body.classList.remove("lock");
+      header.classList.remove('active');
+      menuContent.classList.remove("active");
     });
   }
 
@@ -638,12 +643,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  var cartButton = document.querySelector('.actions-main-header__item_cart');
+  cartButton.addEventListener('mouseenter', function () {
+    var cart = document.querySelector('.cart');
+
+    if (!cart.classList.contains('active')) {
+      cart.classList.add('active');
+    }
+  });
   window.addEventListener('mousemove', function (e) {
     if (!window.matchMedia("(min-width: 1024.98px)").matches) return;
 
     if (document.querySelector('.submenu.active') && !e.target.closest('.header')) {
       document.querySelector('.submenu.active').classList.remove('active');
       document.querySelector('.menu__item.active').classList.remove('active');
+    }
+
+    if (document.querySelector('.cart.active') && !e.target.closest('.header')) {
+      document.querySelector('.cart.active').classList.remove('active');
     }
   });
 });
@@ -791,5 +808,38 @@ function toggleFilterModal(e) {
     document.querySelector('.filter-catalog__content').classList.add('active');
     document.body.classList.add('lock');
     e.preventDefault();
+  }
+}
+
+var quantityButtons = document.querySelectorAll(".quantity__button");
+
+if (quantityButtons.length > 0) {
+  var _loop4 = function _loop4(_index4) {
+    var quantityButton = quantityButtons[_index4];
+    quantityButton.addEventListener("click", function (e) {
+      var value = parseInt(quantityButton.closest('.quantity').querySelector('input').value);
+
+      if (!value) {
+        value = 1;
+        quantityButton.closest('.quantity').querySelector('input').value = value;
+        return;
+      }
+
+      if (quantityButton.classList.contains('quantity__button_plus')) {
+        value++;
+      } else {
+        value = value - 1;
+
+        if (value < 1) {
+          value = 1;
+        }
+      }
+
+      quantityButton.closest('.quantity').querySelector('input').value = value;
+    });
+  };
+
+  for (var _index4 = 0; _index4 < quantityButtons.length; _index4++) {
+    _loop4(_index4);
   }
 }
