@@ -601,11 +601,49 @@ var imagesProductSlider = new Swiper('.images-product__slider', {
     clickable: true
   },
   breakpoints: {
+    1024.98: {
+      slidesPerView: 1
+    },
     576.98: {
       slidesPerView: 2
     }
+  },
+  on: {
+    click: function click(swiper, event) {
+      var clickedSlide = event.target.closest('.images-product__item');
+      var clickedIndex = +clickedSlide.dataset.swiperSlideIndex;
+
+      if (!document.querySelector('.product__images').classList.contains('active')) {
+        document.querySelector('.product__gallery').classList.add('active');
+        document.body.classList.add('lock');
+        var imagesGallerySubslider = new Swiper('.gallery-product__subslider', {
+          slidesPerView: 1
+        });
+        var imagesGallerySlider = new Swiper('.gallery-product__mainslider', {
+          speed: 1000,
+          loop: true,
+          slidesPerView: 1,
+          initialSlide: clickedIndex,
+          pagination: {
+            el: '.gallery-product__dots',
+            clickable: true
+          },
+          thumbs: {
+            swiper: imagesGallerySubslider
+          }
+        });
+      }
+    }
   }
 });
+
+if (document.querySelector('.gallery-product__close')) {
+  document.querySelector('.gallery-product__close').addEventListener('click', function () {
+    document.querySelector('.product__gallery').classList.remove('active');
+    document.body.classList.remove('lock');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   var iconMenu = document.querySelector(".icon-menu");
   var header = document.querySelector('.header');
