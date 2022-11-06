@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221104215737">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221106175714">
     <title>Страница продукта</title>
 </head>
 
@@ -505,7 +505,7 @@
                                     <span>60</span>
                                 </label>
                             </div>
-                            <a href="" class="product__link">Таблица размеров</a>
+                            <a href="" data-modal-link="size-table" class="product__link">Таблица размеров</a>
                             <div class="product__actions actions-product">
                                 <div class="actions-product__body">
                                     <button type="button" class="actions-product__button button">
@@ -581,7 +581,7 @@
                                         <span></span>
                                     </button>
                                     <div class="spoilers-product__content">
-                                        <table class="spoilers-product__table main-size-table">
+                                        <table class="spoilers-product__table size-table">
                                             <tbody>
                                                 <tr>
                                                     <th>INT</th>
@@ -693,110 +693,112 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product__size-table size-table">
-                        <div class="size-table__modal">
-                            <div class="size-table__header">
-                                <div class="size-table__title">Таблица размеров женской одежды</div>
-                                <div class="size-table__close">
+                    <div id="size-table" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__header">
+                                <div class="modal__title">Таблица размеров женской одежды</div>
+                                <div class="modal__close">
                                     <svg>
                                         <use xlink:href="assets/images/icons/icons.svg#close"></use>
                                     </svg>
                                 </div>
                             </div>
-                            <div class="size-table__body">
-                                <table class="size-table__main main-size-table">
-                                    <tbody>
-                                        <tr>
-                                            <th>RU</th>
-                                            <th>INT</th>
-                                            <th>Рост</th>
-                                            <th>Обхват груди</th>
-                                            <th>Обхват талии</th>
-                                            <th>Обхват бедер</th>
-                                        </tr>
-                                        <tr>
-                                            <td>42</td>
-                                            <td>XS</td>
-                                            <td>170</td>
-                                            <td>84</td>
-                                            <td>64</td>
-                                            <td>92</td>
-                                        </tr>
-                                        <tr>
-                                            <td>44</td>
-                                            <td>S</td>
-                                            <td>170</td>
-                                            <td>88</td>
-                                            <td>68</td>
-                                            <td>96</td>
-                                        </tr>
-                                        <tr>
-                                            <td>46</td>
-                                            <td>M</td>
-                                            <td>170</td>
-                                            <td>92</td>
-                                            <td>72</td>
-                                            <td>100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>48</td>
-                                            <td>L</td>
-                                            <td>170</td>
-                                            <td>96</td>
-                                            <td>76</td>
-                                            <td>104</td>
-                                        </tr>
-                                        <tr>
-                                            <td>50</td>
-                                            <td>XL</td>
-                                            <td>170</td>
-                                            <td>100</td>
-                                            <td>80</td>
-                                            <td>108</td>
-                                        </tr>
-                                        <tr>
-                                            <td>52</td>
-                                            <td>XXL</td>
-                                            <td>170</td>
-                                            <td>104</td>
-                                            <td>84</td>
-                                            <td>112</td>
-                                        </tr>
-                                        <tr>
-                                            <td>54</td>
-                                            <td>3XL</td>
-                                            <td>170</td>
-                                            <td>108</td>
-                                            <td>88</td>
-                                            <td>116</td>
-                                        </tr>
-                                        <tr>
-                                            <td>56</td>
-                                            <td>4XL</td>
-                                            <td>170</td>
-                                            <td>112</td>
-                                            <td>92</td>
-                                            <td>120</td>
-                                        </tr>
-                                        <tr>
-                                            <td>58</td>
-                                            <td>5XL</td>
-                                            <td>170</td>
-                                            <td>116</td>
-                                            <td>96</td>
-                                            <td>124</td>
-                                        </tr>
-                                        <tr>
-                                            <td>60</td>
-                                            <td>6XL</td>
-                                            <td>170</td>
-                                            <td>120</td>
-                                            <td>100</td>
-                                            <td>128</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <p class="size-table__text">Все размеры указаны в сантиметрах</p>
+                            <div class="modal__body">
+                                <div class="modal__table">
+                                    <table class="size-table">
+                                        <tbody>
+                                            <tr>
+                                                <th>RU</th>
+                                                <th>INT</th>
+                                                <th>Рост</th>
+                                                <th>Обхват груди</th>
+                                                <th>Обхват талии</th>
+                                                <th>Обхват бедер</th>
+                                            </tr>
+                                            <tr>
+                                                <td>42</td>
+                                                <td>XS</td>
+                                                <td>170</td>
+                                                <td>84</td>
+                                                <td>64</td>
+                                                <td>92</td>
+                                            </tr>
+                                            <tr>
+                                                <td>44</td>
+                                                <td>S</td>
+                                                <td>170</td>
+                                                <td>88</td>
+                                                <td>68</td>
+                                                <td>96</td>
+                                            </tr>
+                                            <tr>
+                                                <td>46</td>
+                                                <td>M</td>
+                                                <td>170</td>
+                                                <td>92</td>
+                                                <td>72</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>48</td>
+                                                <td>L</td>
+                                                <td>170</td>
+                                                <td>96</td>
+                                                <td>76</td>
+                                                <td>104</td>
+                                            </tr>
+                                            <tr>
+                                                <td>50</td>
+                                                <td>XL</td>
+                                                <td>170</td>
+                                                <td>100</td>
+                                                <td>80</td>
+                                                <td>108</td>
+                                            </tr>
+                                            <tr>
+                                                <td>52</td>
+                                                <td>XXL</td>
+                                                <td>170</td>
+                                                <td>104</td>
+                                                <td>84</td>
+                                                <td>112</td>
+                                            </tr>
+                                            <tr>
+                                                <td>54</td>
+                                                <td>3XL</td>
+                                                <td>170</td>
+                                                <td>108</td>
+                                                <td>88</td>
+                                                <td>116</td>
+                                            </tr>
+                                            <tr>
+                                                <td>56</td>
+                                                <td>4XL</td>
+                                                <td>170</td>
+                                                <td>112</td>
+                                                <td>92</td>
+                                                <td>120</td>
+                                            </tr>
+                                            <tr>
+                                                <td>58</td>
+                                                <td>5XL</td>
+                                                <td>170</td>
+                                                <td>116</td>
+                                                <td>96</td>
+                                                <td>124</td>
+                                            </tr>
+                                            <tr>
+                                                <td>60</td>
+                                                <td>6XL</td>
+                                                <td>170</td>
+                                                <td>120</td>
+                                                <td>100</td>
+                                                <td>128</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="modal__label">Все размеры указаны в сантиметрах</p>
                             </div>
                         </div>
                     </div>
@@ -944,8 +946,8 @@
         </div>
 
     </div>
-    <script src="assets/js/swiper-bundle.min.js?_v=20221104215737"></script>
-    <script src="assets/js/script.js?_v=20221104215737"></script>
+    <script src="assets/js/swiper-bundle.min.js?_v=20221106175714"></script>
+    <script src="assets/js/script.js?_v=20221106175714"></script>
 </body>
 
 </html>

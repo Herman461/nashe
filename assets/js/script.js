@@ -446,14 +446,14 @@ var _loop2 = function _loop2(_index2) {
     selectList.append(newOption);
   }
 
-  for (var _index5 = 1; _index5 < selectOptionLength; _index5++) {
+  for (var _index7 = 1; _index7 < selectOptionLength; _index7++) {
     var _newOption = document.createElement('li');
 
-    _newOption.textContent = selectOption[_index5].textContent;
+    _newOption.textContent = selectOption[_index7].textContent;
 
     _newOption.classList.add('select__item');
 
-    _newOption.dataset.value = selectOption[_index5].value;
+    _newOption.dataset.value = selectOption[_index7].value;
     selectList.append(_newOption);
   }
 
@@ -478,8 +478,8 @@ var _loop2 = function _loop2(_index2) {
       var oldSelectedEl = item.querySelector('option[selected]');
 
       if (!newSelectedEl) {
-        for (var _index6 = 1; _index6 < selectOptionLength; _index6++) {
-          var option = selectOption[_index6];
+        for (var _index8 = 1; _index8 < selectOptionLength; _index8++) {
+          var option = selectOption[_index8];
 
           if (option.textContent == value) {
             newSelectedEl = option;
@@ -702,26 +702,89 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+var modalLinks = document.querySelectorAll('[data-modal-link]');
 
-if (document.querySelector('.product__link')) {
-  var productLink = document.querySelector('.product__link');
-  productLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    var scrollWidth = window.innerWidth - document.body.clientWidth;
-    document.querySelector('.size-table').classList.add('active');
-    document.body.classList.add('lock');
-    document.body.style.paddingRight = scrollWidth + 'px';
-  });
-  var closeButton = document.querySelector('.size-table__close');
-  closeButton.addEventListener('click', function (e) {
-    document.querySelector('.size-table').classList.remove('active');
-    var scrollWidth = window.innerWidth - document.body.clientWidth;
-    setTimeout(function () {
-      document.body.classList.remove('lock');
-      document.body.style.paddingRight = 0;
-    }, timeout);
-  });
-} // const modalButtons = document.querySelectorAll('.open-modal'),
+if (modalLinks.length > 0) {
+  for (var _index4 = 0; _index4 < modalLinks.length; _index4++) {
+    var link = modalLinks[_index4];
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var scrollWidth = window.innerWidth - document.body.clientWidth;
+      var modalTitle = '#' + e.currentTarget.dataset.modalLink;
+      document.querySelector(modalTitle).classList.add('active');
+      document.body.classList.add('lock');
+      document.body.style.paddingRight = scrollWidth + 'px';
+    });
+  }
+}
+
+var modalCloseButtons = document.querySelectorAll('.modal__close');
+
+if (modalCloseButtons.length > 0) {
+  for (var _index5 = 0; _index5 < modalCloseButtons.length; _index5++) {
+    var closeButton = modalCloseButtons[_index5];
+    closeButton.addEventListener('click', function (e) {
+      e.target.closest('.modal').classList.remove('active');
+      setTimeout(function () {
+        document.body.classList.remove('lock');
+        document.body.style.paddingRight = 0;
+      }, timeout);
+    });
+  }
+} // if (document.querySelector('.product__link')) {
+//     const productLink = document.querySelector('.product__link')
+//     productLink.addEventListener('click', function(e) {
+//         e.preventDefault()
+//         const scrollWidth = window.innerWidth - document.body.clientWidth
+//         document.querySelector('.size-table').classList.add('active')
+//
+//         document.body.classList.add('lock')
+//
+//         document.body.style.paddingRight = scrollWidth + 'px'
+//
+//     })
+//
+//     const closeButton = document.querySelector('.size-table__close');
+//     closeButton.addEventListener('click', function(e) {
+//         document.querySelector('.size-table').classList.remove('active')
+//
+//
+//         const scrollWidth = window.innerWidth - document.body.clientWidth
+//
+//
+//         setTimeout(() => {
+//
+//             document.body.classList.remove('lock')
+//             document.body.style.paddingRight = 0
+//         }, timeout)
+//     })
+// }
+// const tabLinks = document.querySelectorAll("[data-tab-title]");
+// const tabContent = document.querySelectorAll("[data-tab-content]");
+//
+//
+// tabLinks.forEach(function(el) {
+//     el.addEventListener("click", openTabs);
+// });
+// function openTabs(el) {
+//     el.preventDefault()
+//     const btnTarget = el.currentTarget;
+//     const title = btnTarget.dataset.tabTitle;
+//
+//     tabContent.forEach(function(el) {
+//         el.classList.remove("active");
+//     });
+//
+//     tabLinks.forEach(function(el) {
+//         el.classList.remove("active");
+//     });
+//
+//     document.querySelector("#" + title).classList.add("active");
+//
+//     btnTarget.classList.add("active");
+//
+// }
+// const modalButtons = document.querySelectorAll('.open-modal'),
 //     overlay      = document.querySelector('.overlay'),
 //     closeButtons = document.querySelectorAll('.modal-close');
 // modalButtons.forEach(function(item){
@@ -852,8 +915,8 @@ function toggleFilterModal(e) {
 var quantityButtons = document.querySelectorAll(".quantity__button");
 
 if (quantityButtons.length > 0) {
-  var _loop4 = function _loop4(_index4) {
-    var quantityButton = quantityButtons[_index4];
+  var _loop4 = function _loop4(_index6) {
+    var quantityButton = quantityButtons[_index6];
     quantityButton.addEventListener("click", function (e) {
       var value = parseInt(quantityButton.closest('.quantity').querySelector('input').value);
 
@@ -877,7 +940,7 @@ if (quantityButtons.length > 0) {
     });
   };
 
-  for (var _index4 = 0; _index4 < quantityButtons.length; _index4++) {
-    _loop4(_index4);
+  for (var _index6 = 0; _index6 < quantityButtons.length; _index6++) {
+    _loop4(_index6);
   }
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css?_v=20221106175714">
-    <title>Регистрация</title>
+    <title>Личные данные</title>
 </head>
 
 <body>
@@ -344,13 +344,158 @@
         </div>
 
         <main class="page">
-            <div class="user-data-info">
-                <div class="user-data-info__container">
-                    <div class="user-data-info__title main-title">Новый пароль</div>
-                    <p class="user-data-info__text">Поздравляем, вы успешно установили новый пароль</p>
-                    <a href="" class="user-data-info__button button button_white">Перейти на главную страницу</a>
+            <div class="page__container container">
+                <div class="breadcrumbs">
+                    <ul class="breadcrumbs__list">
+                        <li>
+                            <a href="" class="breadcrumbs__link">Главная</a>
+                        </li>
+                        <li>
+                            <span class="breadcrumbs__item">Личный кабинет</span>
+                        </li>
+                    </ul>
+                    <a href="" class="breadcrumbs__prev">
+                        <div class="breadcrumbs__icon">
+                            <svg>
+                                <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                            </svg>
+                        </div>
+                        <span>Главная</span>
+                    </a>
+                </div>
+                <div class="user">
+                    <h1 class="user__title main-title">Личный кабинет</h1>
+                    <div class="user__content">
+                        <div class="user__buttons">
+                            <a href="/orders.html" class="user__button">Мои заказы</a>
+                            <a href="/personal-data.html" class="user__button active">Личные данные</a>
+                            <a href="" class="user__button user__button_red">Выйти</a>
+                        </div>
+                        <div class="user__body">
+                            <h2 class="user__subtitle title">Личные данные</h2>
+                            <form action="#" class="user__personal-data personal-data">
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="company">Название организации</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="ООО «Организация»" class="input" id="company" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="inn">ИНН</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="7727563778" class="input" id="inn" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="last-name">Фамилия</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="Иванов" class="input" id="last-name" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="first-name">Имя</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="Иван" class="input" id="first-name" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="middle-name">Отчество</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="Иванович" class="input" id="middle-name" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="phone">Телефон</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="+7 (999) 999-99-99" class="input phone" id="phone" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="city">Город</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="Смоленск" class="input" id="city" type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="email">Электронная почта</label>
+                                    </div>
+                                    <div class="personal-data__input">
+                                        <input value="example@gmail.ru" class="input" id="email" disabled type="text">
+                                    </div>
+                                </div>
+                                <div class="personal-data__line">
+                                    <div class="personal-data__label">
+                                        <label for="password">Пароль</label>
+                                    </div>
+                                    <div class="personal-data__input personal-data__input_password">
+                                        <input value="supersecretpassword" class="input" id="password" disabled type="password">
+                                        <a data-modal-link="change-password" href="" class="personal-data__link">Изменить</a>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <form action="#" id="change-password" class="modal">
+                        <div class="modal__content">
+                            <div class="modal__header">
+                                <div class="modal__title">Изменение пароля</div>
+                                <div class="modal__close">
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="modal__body">
+                                <div class="change-password">
+                                    <div class="change-password__item">
+                                        <label for="current-password" class="change-password__label">Текущий пароль</label>
+                                        <div class="change-password__input">
+                                            <input id="current-password" class="input" type="password">
+                                            <button type="button" class="change-password__eye">
+                                                <svg>
+                                                    <use xlink:href="assets/images/icons/icons.svg#eye"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="change-password__item">
+                                        <label for="new-password" class="change-password__label">Новый пароль</label>
+                                        <div class="change-password__input">
+                                            <input id="new-password" class="input" type="password">
+                                            <button type="button" class="change-password__eye">
+                                                <svg>
+                                                    <use xlink:href="assets/images/icons/icons.svg#eye"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal__footer">
+                                <a href="" class="modal__button button">Изменить</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
+
         </main>
         <div class="footer">
             <div class="footer__container container">
@@ -493,6 +638,7 @@
         </div>
 
     </div>
+    <script src="assets/js/phone-mask.js?_v=20221106175714"></script>
     <script src="assets/js/swiper-bundle.min.js?_v=20221106175714"></script>
     <script src="assets/js/script.js?_v=20221106175714"></script>
 </body>
