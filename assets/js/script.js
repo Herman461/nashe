@@ -682,13 +682,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var cartButton = document.querySelector('.actions-main-header__item_cart');
-  cartButton.addEventListener('mouseenter', function () {
-    var cart = document.querySelector('.cart');
 
-    if (!cart.classList.contains('active')) {
-      cart.classList.add('active');
-    }
-  });
+  if (cartButton) {
+    cartButton.addEventListener('mouseenter', function () {
+      var cart = document.querySelector('.cart');
+
+      if (!cart.classList.contains('active')) {
+        cart.classList.add('active');
+      }
+    });
+  }
+
   window.addEventListener('mousemove', function (e) {
     if (!window.matchMedia("(min-width: 1024.98px)").matches) return;
 
@@ -759,32 +763,30 @@ if (modalCloseButtons.length > 0) {
 //         }, timeout)
 //     })
 // }
-// const tabLinks = document.querySelectorAll("[data-tab-title]");
-// const tabContent = document.querySelectorAll("[data-tab-content]");
-//
-//
-// tabLinks.forEach(function(el) {
-//     el.addEventListener("click", openTabs);
-// });
-// function openTabs(el) {
-//     el.preventDefault()
-//     const btnTarget = el.currentTarget;
-//     const title = btnTarget.dataset.tabTitle;
-//
-//     tabContent.forEach(function(el) {
-//         el.classList.remove("active");
-//     });
-//
-//     tabLinks.forEach(function(el) {
-//         el.classList.remove("active");
-//     });
-//
-//     document.querySelector("#" + title).classList.add("active");
-//
-//     btnTarget.classList.add("active");
-//
-// }
-// const modalButtons = document.querySelectorAll('.open-modal'),
+
+
+var tabLinks = document.querySelectorAll("[data-tab-title]");
+var tabContent = document.querySelectorAll("[data-tab-content]");
+
+if (tabContent.length > 0) {
+  tabLinks.forEach(function (el) {
+    el.addEventListener("click", openTabs);
+  });
+}
+
+function openTabs(el) {
+  el.preventDefault();
+  var btnTarget = el.currentTarget;
+  var title = btnTarget.dataset.tabTitle;
+  tabContent.forEach(function (el) {
+    el.classList.remove("active");
+  });
+  tabLinks.forEach(function (el) {
+    el.classList.remove("active");
+  });
+  document.querySelector("#" + title).classList.add("active");
+  btnTarget.classList.add("active");
+} // const modalButtons = document.querySelectorAll('.open-modal'),
 //     overlay      = document.querySelector('.overlay'),
 //     closeButtons = document.querySelectorAll('.modal-close');
 // modalButtons.forEach(function(item){
