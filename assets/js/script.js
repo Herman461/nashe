@@ -996,20 +996,43 @@ searchModal.addEventListener('click', function (e) {
   }
 });
 var searchButton = document.querySelector('.actions-main-header__item_search');
-searchButton.addEventListener('click', search);
 var searchInput = document.querySelector('.search__input input');
+searchButton.addEventListener('click', /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            setTimeout(function () {
+              searchInput.focus();
+            }, timeout);
+            _context.next = 3;
+            return search(e);
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}());
 searchInput.addEventListener('input', debounce(search, 100));
 
-function search(_x) {
+function search(_x2) {
   return _search.apply(this, arguments);
 }
 
 function _search() {
-  _search = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
+  _search = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
     var value, input, loader, label, productsWrapper, categoriesWrapper, searchEmpty, resultsWrapper, categories, products, filteredProducts;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
             value = e.target.value;
 
@@ -1034,7 +1057,7 @@ function _search() {
             }, 900); // Если нет значения, то делаем запрос на актуальные категории
 
             if (!(value.length === 0)) {
-              _context.next = 18;
+              _context2.next = 18;
               break;
             }
 
@@ -1071,7 +1094,7 @@ function _search() {
               categoryDOM.setAttribute('href', category.link);
               categoriesWrapper.appendChild(categoryDOM);
             });
-            return _context.abrupt("return");
+            return _context2.abrupt("return");
 
           case 18:
             // Искусственно полученные данные
@@ -1132,10 +1155,10 @@ function _search() {
 
           case 21:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
       }
-    }, _callee);
+    }, _callee2);
   }));
   return _search.apply(this, arguments);
 }

@@ -2801,7 +2801,7 @@ textarea.input::placeholder {
   transition: all 0.3s ease 0s;
   opacity: 0;
   visibility: hidden;
-  background: #858585;
+  background: rgba(133, 133, 133, 0.8);
   position: fixed;
   overflow: auto;
   top: 0;
