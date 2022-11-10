@@ -4644,6 +4644,7 @@ textarea.input::placeholder {
   color: #416AA7;
   font-size: 20px;
   position: relative;
+  line-height: 1.2;
   padding-left: 25px;
 }
 
