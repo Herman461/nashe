@@ -1,1164 +1,651 @@
-"use strict";
-
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 function ibg() {
-  var ibg = document.querySelectorAll(".ibg");
 
-  for (var index = 0; index < ibg.length; index++) {
-    if (ibg[index].querySelector('img')) {
-      ibg[index].style.backgroundImage = 'url(' + ibg[index].querySelector('img').getAttribute('src') + ')';
-    }
-  }
+	let ibg = document.querySelectorAll(".ibg");
+
+	for (let index = 0; index < ibg.length; index++) {
+		if (ibg[index].querySelector('img')) {
+			ibg[index].style.backgroundImage = 'url(' + ibg[index].querySelector('img').getAttribute('src') + ')';
+		}
+	}
 }
 
-ibg(); //BuildSlider
+ibg();
 
-var sliders = document.querySelectorAll(".swiper");
+//BuildSlider
 
+
+let sliders = document.querySelectorAll(".swiper");
 if (sliders) {
-  for (var index = 0; index < sliders.length; index++) {
-    var slider = sliders[index];
-
-    if (!slider.classList.contains('swiper-build')) {
-      var slider_items = slider.children;
-
-      if (slider_items) {
-        for (var _index = 0; _index < slider_items.length; _index++) {
-          var el = slider_items[_index];
-          el.classList.add('swiper-slide');
-        }
-      }
-
-      var slider_content = slider.innerHTML;
-      var slider_wrapper = document.createElement("div");
-      slider_wrapper.classList.add('swiper-wrapper');
-      slider_wrapper.innerHTML = slider_content;
-      slider.innerHTML = "";
-      slider.appendChild(slider_wrapper);
-      slider.classList.add('swiper-build');
-    }
-
-    if (slider.classList.contains('_gallery')) {//slider.data('lightGallery').destroy(true);
-    }
-  }
-
-  sliders_build_callback();
+	for (let index = 0; index < sliders.length; index++) {
+		let slider = sliders[index];
+		if (!slider.classList.contains('swiper-build')) {
+			let slider_items = slider.children;
+			if (slider_items) {
+				for (let index = 0; index < slider_items.length; index++) {
+					let el = slider_items[index];
+					el.classList.add('swiper-slide');
+				}
+			}
+			let slider_content = slider.innerHTML;
+			let slider_wrapper = document.createElement("div");
+			slider_wrapper.classList.add('swiper-wrapper');
+			slider_wrapper.innerHTML = slider_content;
+			slider.innerHTML = "";
+			slider.appendChild(slider_wrapper);
+			slider.classList.add('swiper-build');
+		}
+		if (slider.classList.contains('_gallery')) {
+			//slider.data('lightGallery').destroy(true);
+		}
+	}
+	sliders_build_callback();
 }
 
-function sliders_build_callback() {}
+function sliders_build_callback() { }
+
+
+
 
 function DynamicAdapt(type) {
-  this.type = type;
+	this.type = type;
 }
 
 DynamicAdapt.prototype.init = function () {
-  var _this2 = this;
+	const _this = this;
+	// массив объектов
+	this.оbjects = [];
+	this.daClassname = "_dynamic_adapt_";
+	// массив DOM-элементов
+	this.nodes = document.querySelectorAll("[data-da]");
 
-  var _this = this; // массив объектов
+	// наполнение оbjects объктами
+	for (let i = 0; i < this.nodes.length; i++) {
+		const node = this.nodes[i];
+		const data = node.dataset.da.trim();
+		const dataArray = data.split(",");
+		const оbject = {};
+		оbject.element = node;
+		оbject.parent = node.parentNode;
+		оbject.destination = document.querySelector(dataArray[0].trim());
+		оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
+		оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
+		оbject.index = this.indexInParent(оbject.parent, оbject.element);
+		this.оbjects.push(оbject);
+	}
 
+	this.arraySort(this.оbjects);
 
-  this.оbjects = [];
-  this.daClassname = "_dynamic_adapt_"; // массив DOM-элементов
+	// массив уникальных медиа-запросов
+	this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
+		return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
+	}, this);
+	this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
+		return Array.prototype.indexOf.call(self, item) === index;
+	});
 
-  this.nodes = document.querySelectorAll("[data-da]"); // наполнение оbjects объктами
+	// навешивание слушателя на медиа-запрос
+	// и вызов обработчика при первом запуске
+	for (let i = 0; i < this.mediaQueries.length; i++) {
+		const media = this.mediaQueries[i];
+		const mediaSplit = String.prototype.split.call(media, ',');
+		const matchMedia = window.matchMedia(mediaSplit[0]);
+		const mediaBreakpoint = mediaSplit[1];
 
-  for (var i = 0; i < this.nodes.length; i++) {
-    var node = this.nodes[i];
-    var data = node.dataset.da.trim();
-    var dataArray = data.split(",");
-    var оbject = {};
-    оbject.element = node;
-    оbject.parent = node.parentNode;
-    оbject.destination = document.querySelector(dataArray[0].trim());
-    оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
-    оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
-    оbject.index = this.indexInParent(оbject.parent, оbject.element);
-    this.оbjects.push(оbject);
-  }
-
-  this.arraySort(this.оbjects); // массив уникальных медиа-запросов
-
-  this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
-    return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
-  }, this);
-  this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
-    return Array.prototype.indexOf.call(self, item) === index;
-  }); // навешивание слушателя на медиа-запрос
-  // и вызов обработчика при первом запуске
-
-  var _loop = function _loop(_i) {
-    var media = _this2.mediaQueries[_i];
-    var mediaSplit = String.prototype.split.call(media, ',');
-    var matchMedia = window.matchMedia(mediaSplit[0]);
-    var mediaBreakpoint = mediaSplit[1]; // массив объектов с подходящим брейкпоинтом
-
-    var оbjectsFilter = Array.prototype.filter.call(_this2.оbjects, function (item) {
-      return item.breakpoint === mediaBreakpoint;
-    });
-    matchMedia.addListener(function () {
-      _this.mediaHandler(matchMedia, оbjectsFilter);
-    });
-
-    _this2.mediaHandler(matchMedia, оbjectsFilter);
-  };
-
-  for (var _i = 0; _i < this.mediaQueries.length; _i++) {
-    _loop(_i);
-  }
+		// массив объектов с подходящим брейкпоинтом
+		const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
+			return item.breakpoint === mediaBreakpoint;
+		});
+		matchMedia.addListener(function () {
+			_this.mediaHandler(matchMedia, оbjectsFilter);
+		});
+		this.mediaHandler(matchMedia, оbjectsFilter);
+	}
 };
 
 DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
-  if (matchMedia.matches) {
-    for (var i = 0; i < оbjects.length; i++) {
-      var оbject = оbjects[i];
-      оbject.index = this.indexInParent(оbject.parent, оbject.element);
-      this.moveTo(оbject.place, оbject.element, оbject.destination);
-    }
-  } else {
-    for (var _i2 = 0; _i2 < оbjects.length; _i2++) {
-      var _оbject = оbjects[_i2];
+	if (matchMedia.matches) {
+		for (let i = 0; i < оbjects.length; i++) {
+			const оbject = оbjects[i];
+			оbject.index = this.indexInParent(оbject.parent, оbject.element);
+			this.moveTo(оbject.place, оbject.element, оbject.destination);
+		}
+	} else {
+		for (let i = 0; i < оbjects.length; i++) {
+			const оbject = оbjects[i];
+			if (оbject.element.classList.contains(this.daClassname)) {
+				this.moveBack(оbject.parent, оbject.element, оbject.index);
+			}
+		}
+	}
+};
 
-      if (_оbject.element.classList.contains(this.daClassname)) {
-        this.moveBack(_оbject.parent, _оbject.element, _оbject.index);
-      }
-    }
-  }
-}; // Функция перемещения
-
-
+// Функция перемещения
 DynamicAdapt.prototype.moveTo = function (place, element, destination) {
-  element.classList.add(this.daClassname);
+	element.classList.add(this.daClassname);
+	if (place === 'last' || place >= destination.children.length) {
+		destination.insertAdjacentElement('beforeend', element);
+		return;
+	}
+	if (place === 'first') {
+		destination.insertAdjacentElement('afterbegin', element);
+		return;
+	}
+	destination.children[place].insertAdjacentElement('beforebegin', element);
+}
 
-  if (place === 'last' || place >= destination.children.length) {
-    destination.insertAdjacentElement('beforeend', element);
-    return;
-  }
-
-  if (place === 'first') {
-    destination.insertAdjacentElement('afterbegin', element);
-    return;
-  }
-
-  destination.children[place].insertAdjacentElement('beforebegin', element);
-}; // Функция возврата
-
-
+// Функция возврата
 DynamicAdapt.prototype.moveBack = function (parent, element, index) {
-  element.classList.remove(this.daClassname);
+	element.classList.remove(this.daClassname);
+	if (parent.children[index] !== undefined) {
+		parent.children[index].insertAdjacentElement('beforebegin', element);
+	} else {
+		parent.insertAdjacentElement('beforeend', element);
+	}
+}
 
-  if (parent.children[index] !== undefined) {
-    parent.children[index].insertAdjacentElement('beforebegin', element);
-  } else {
-    parent.insertAdjacentElement('beforeend', element);
-  }
-}; // Функция получения индекса внутри родителя
-
-
+// Функция получения индекса внутри родителя
 DynamicAdapt.prototype.indexInParent = function (parent, element) {
-  var array = Array.prototype.slice.call(parent.children);
-  return Array.prototype.indexOf.call(array, element);
-}; // Функция сортировки массива по breakpoint и place
+	const array = Array.prototype.slice.call(parent.children);
+	return Array.prototype.indexOf.call(array, element);
+};
+
+// Функция сортировки массива по breakpoint и place
 // по возрастанию для this.type = min
 // по убыванию для this.type = max
-
-
 DynamicAdapt.prototype.arraySort = function (arr) {
-  if (this.type === "min") {
-    Array.prototype.sort.call(arr, function (a, b) {
-      if (a.breakpoint === b.breakpoint) {
-        if (a.place === b.place) {
-          return 0;
-        }
+	if (this.type === "min") {
+		Array.prototype.sort.call(arr, function (a, b) {
+			if (a.breakpoint === b.breakpoint) {
+				if (a.place === b.place) {
+					return 0;
+				}
 
-        if (a.place === "first" || b.place === "last") {
-          return -1;
-        }
+				if (a.place === "first" || b.place === "last") {
+					return -1;
+				}
 
-        if (a.place === "last" || b.place === "first") {
-          return 1;
-        }
+				if (a.place === "last" || b.place === "first") {
+					return 1;
+				}
 
-        return a.place - b.place;
-      }
+				return a.place - b.place;
+			}
 
-      return a.breakpoint - b.breakpoint;
-    });
-  } else {
-    Array.prototype.sort.call(arr, function (a, b) {
-      if (a.breakpoint === b.breakpoint) {
-        if (a.place === b.place) {
-          return 0;
-        }
+			return a.breakpoint - b.breakpoint;
+		});
+	} else {
+		Array.prototype.sort.call(arr, function (a, b) {
+			if (a.breakpoint === b.breakpoint) {
+				if (a.place === b.place) {
+					return 0;
+				}
 
-        if (a.place === "first" || b.place === "last") {
-          return 1;
-        }
+				if (a.place === "first" || b.place === "last") {
+					return 1;
+				}
 
-        if (a.place === "last" || b.place === "first") {
-          return -1;
-        }
+				if (a.place === "last" || b.place === "first") {
+					return -1;
+				}
 
-        return b.place - a.place;
-      }
+				return b.place - a.place;
+			}
 
-      return b.breakpoint - a.breakpoint;
-    });
-    return;
-  }
+			return b.breakpoint - a.breakpoint;
+		});
+		return;
+	}
 };
 
-var da = new DynamicAdapt("max");
+const da = new DynamicAdapt("max");
 da.init();
 
-var slideUp = function slideUp(target) {
-  var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
 
-  if (!target.classList.contains('slide')) {
-    target.classList.add('slide');
-    target.style.transitionProperty = 'height, margin, padding';
-    target.style.transitionDuration = duration + 'ms';
-    target.style.height = target.offsetHeight + 'px';
-    target.offsetHeight;
-    target.style.overflow = 'hidden';
-    target.style.height = 0;
-    target.style.paddingTop = 0;
-    target.style.paddingBottom = 0;
-    target.style.marginTop = 0;
-    target.style.marginBottom = 0;
-    window.setTimeout(function () {
-      target.hidden = true;
-      target.style.removeProperty('height');
-      target.style.removeProperty('padding-top');
-      target.style.removeProperty('padding-bottom');
-      target.style.removeProperty('margin-top');
-      target.style.removeProperty('margin-bottom');
-      target.style.removeProperty('overflow');
-      target.style.removeProperty('transition-duration');
-      target.style.removeProperty('transition-property');
-      target.classList.remove('slide');
-    }, duration);
-  }
-};
+let slideUp = (target, duration = 500) => {
+	if (!target.classList.contains('slide')) {
+		target.classList.add('slide');
+		target.style.transitionProperty = 'height, margin, padding';
+		target.style.transitionDuration = duration + 'ms';
+		target.style.height = target.offsetHeight + 'px';
+		target.offsetHeight;
+		target.style.overflow = 'hidden';
+		target.style.height = 0;
+		target.style.paddingTop = 0;
+		target.style.paddingBottom = 0;
+		target.style.marginTop = 0;
+		target.style.marginBottom = 0;
+		window.setTimeout(() => {
+			target.hidden = true;
+			target.style.removeProperty('height');
+			target.style.removeProperty('padding-top');
+			target.style.removeProperty('padding-bottom');
+			target.style.removeProperty('margin-top');
+			target.style.removeProperty('margin-bottom');
+			target.style.removeProperty('overflow');
+			target.style.removeProperty('transition-duration');
+			target.style.removeProperty('transition-property');
+			target.classList.remove('slide');
+		}, duration);
+	}
+}
 
-var slideDown = function slideDown(target) {
-  var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+let slideDown = (target, duration = 500) => {
+	if (!target.classList.contains('slide')) {
+		target.classList.add('slide');
+		if (target.hidden) {
+			target.hidden = false;
+		}
+		let height = target.offsetHeight;
+		target.style.overflow = 'hidden';
+		target.style.height = 0;
+		target.style.paddingTop = 0;
+		target.style.paddingBottom = 0;
+		target.style.marginTop = 0;
+		target.style.marginBottom = 0;
+		target.offsetHeight;
+		target.style.transitionProperty = 'height, margin, padding';
+		target.style.transitionDuration = duration + 'ms';
+		target.style.height = target.offsetHeight + 'px';
+		target.style.height = height + 'px';
+		target.style.removeProperty('padding-top');
+		target.style.removeProperty('padding-bottom');
+		target.style.removeProperty('margin-top');
+		target.style.removeProperty('margin-bottom');
+		window.setTimeout(() => {
+			target.style.removeProperty('height');
+			target.style.removeProperty('overflow');
+			target.style.removeProperty('transition-duration');
+			target.style.removeProperty('transition-property');
+			target.classList.remove('slide');
+		}, duration);
+	}
+}
 
-  if (!target.classList.contains('slide')) {
-    target.classList.add('slide');
+let slideToggle = (target, duration = 500) => {
+	if (target.hidden) {
+		return slideDown(target, duration);
+	} else {
+		return slideUp(target, duration);
+	}
+}
 
-    if (target.hidden) {
-      target.hidden = false;
-    }
-
-    var height = target.offsetHeight;
-    target.style.overflow = 'hidden';
-    target.style.height = 0;
-    target.style.paddingTop = 0;
-    target.style.paddingBottom = 0;
-    target.style.marginTop = 0;
-    target.style.marginBottom = 0;
-    target.offsetHeight;
-    target.style.transitionProperty = 'height, margin, padding';
-    target.style.transitionDuration = duration + 'ms';
-    target.style.height = target.offsetHeight + 'px';
-    target.style.height = height + 'px';
-    target.style.removeProperty('padding-top');
-    target.style.removeProperty('padding-bottom');
-    target.style.removeProperty('margin-top');
-    target.style.removeProperty('margin-bottom');
-    window.setTimeout(function () {
-      target.style.removeProperty('height');
-      target.style.removeProperty('overflow');
-      target.style.removeProperty('transition-duration');
-      target.style.removeProperty('transition-property');
-      target.classList.remove('slide');
-    }, duration);
-  }
-};
-
-var slideToggle = function slideToggle(target) {
-  var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
-
-  if (target.hidden) {
-    return slideDown(target, duration);
-  } else {
-    return slideUp(target, duration);
-  }
-};
-
-var spoilersArray = document.querySelectorAll("[data-spoilers]");
+let spoilersArray = document.querySelectorAll("[data-spoilers]");
 
 if (spoilersArray.length > 0) {
-  // Инициализация
-  var initSpoilers = function initSpoilers(spoilersArray) {
-    var matchMedia = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-    spoilersArray.forEach(function (spoilersBlock) {
-      spoilersBlock = matchMedia ? spoilersBlock.item : spoilersBlock;
+	// Получение обычный спойлеров
+	const spoilersRegular = Array.from(spoilersArray).filter(function (item, index, self) {
+		return !item.dataset.spoilers.split(",")[0];
+	})
+	// Инициализация обычных спойлеров
+	if (spoilersRegular.length > 0) {
+		initSpoilers(spoilersRegular);
+	}
 
-      if (matchMedia.matches || !matchMedia) {
-        spoilersBlock.classList.add("init");
-        initSpoilerBody(spoilersBlock);
-        spoilersBlock.addEventListener("click", setSpoilerAction);
-      } else {
-        spoilersBlock.classList.remove("init");
-        initSpoilerBody(spoilersBlock, false);
-        spoilersBlock.removeEventListener("click", setSpoilerAction);
-      }
-    });
-  }; // Работа с контентом
+	// Получение спойлеров с медиа запросами
+	const spoilersMedia = Array.from(spoilersArray).filter(function (item, index, self) {
+		return item.dataset.spoilers.split(",")[0];
+	})
 
+	// Инициализация спойлеров с медиа запросами
+	if (spoilersMedia.length > 0) {
+		const breakpointsArray = [];
 
-  var initSpoilerBody = function initSpoilerBody(spoilersBlock) {
-    var hideSpoilerBody = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-    var spoilerTitles = spoilersBlock.querySelectorAll("[data-spoiler]");
+		spoilersMedia.forEach(item => {
+			const params = item.dataset.spoilers;
+			const breakpoint = {};
+			const paramsArray = params.split(",");
+			breakpoint.value = paramsArray[0];
+			breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max";
+			breakpoint.item = item;
+			breakpointsArray.push(breakpoint);
+		})
 
-    if (spoilerTitles.length > 0) {
-      spoilerTitles.forEach(function (spoilerTitle) {
-        if (hideSpoilerBody) {
-          spoilerTitle.removeAttribute("tabindex");
+		// Получаем уникальные брейкпоинты
+		let mediaQueries = breakpointsArray.map(item => {
+			return "(" + item.type + "-width: " + item.value + "px)," + item.value + "," + item.type;
+		});
 
-          if (!spoilerTitle.classList.contains("active")) {
-            spoilerTitle.nextElementSibling.hidden = true;
-          }
-        } else {
-          spoilerTitle.setAttribute("tabindex", "-1");
-          spoilerTitle.nextElementSibling.hidden = false;
-        }
-      });
-    }
-  };
+		mediaQueries = mediaQueries.filter(function (item, index, self) {
+			return self.indexOf(item) === index;
+		})
 
-  var setSpoilerAction = function setSpoilerAction(e) {
-    var el = e.target;
+		// Работаем с каждым брейкпоинтом
+		mediaQueries.forEach(breakpoint => {
+			const paramsArray = breakpoint.split(",");
+			const mediaBreakpoint = paramsArray[1];
+			const mediaType = paramsArray[2];
+			const matchMedia = window.matchMedia(paramsArray[0]);
 
-    if (el.hasAttribute('data-spoiler') || el.closest('[data-spoiler]')) {
-      var spoilerTitle = el.hasAttribute('data-spoiler') ? el : el.closest('[data-spoiler]');
-      var spoilersBlock = spoilerTitle.closest('[data-spoilers]');
-      var oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler') ? true : false;
+			// Объекты с нужными условиями
+			const spoilersArray = breakpointsArray.filter(function (item) {
+				if (item.value === mediaBreakpoint && item.type === mediaType) {
+					return true;
+				}
+			})
+			matchMedia.addEventListener("change", function () {
+				initSpoilers(spoilersArray, matchMedia)
+			})
+			initSpoilers(spoilersArray, matchMedia);
+		})
+	}
 
-      if (!spoilersBlock.querySelectorAll(".slide").length) {
-        if (oneSpoiler && !spoilerTitle.classList.contains("active")) {
-          hideSpoilerBody(spoilersBlock);
-        }
+	// Инициализация
+	function initSpoilers(spoilersArray, matchMedia = false) {
+		spoilersArray.forEach(spoilersBlock => {
+			spoilersBlock = matchMedia ? spoilersBlock.item : spoilersBlock;
+			if (matchMedia.matches || !matchMedia) {
+				spoilersBlock.classList.add("init");
+				initSpoilerBody(spoilersBlock);
+				spoilersBlock.addEventListener("click", setSpoilerAction);
+			} else {
+				spoilersBlock.classList.remove("init");
+				initSpoilerBody(spoilersBlock, false);
+				spoilersBlock.removeEventListener("click", setSpoilerAction);
+			}
+		})
+	}
 
-        spoilerTitle.classList.toggle("active");
-        slideToggle(spoilerTitle.nextElementSibling, 500);
-      }
-
-      e.preventDefault();
-    }
-  };
-
-  var hideSpoilerBody = function hideSpoilerBody(spoilersBlock) {
-    var spoilerActiveTitle = spoilersBlock.querySelector('[data-spoiler].active');
-
-    if (spoilerActiveTitle) {
-      spoilerActiveTitle.classList.remove("active");
-      slideUp(spoilerActiveTitle.nextElementSibling, 500);
-    }
-  };
-
-  // Получение обычный спойлеров
-  var spoilersRegular = Array.from(spoilersArray).filter(function (item, index, self) {
-    return !item.dataset.spoilers.split(",")[0];
-  }); // Инициализация обычных спойлеров
-
-  if (spoilersRegular.length > 0) {
-    initSpoilers(spoilersRegular);
-  } // Получение спойлеров с медиа запросами
-
-
-  var spoilersMedia = Array.from(spoilersArray).filter(function (item, index, self) {
-    return item.dataset.spoilers.split(",")[0];
-  }); // Инициализация спойлеров с медиа запросами
-
-  if (spoilersMedia.length > 0) {
-    var breakpointsArray = [];
-    spoilersMedia.forEach(function (item) {
-      var params = item.dataset.spoilers;
-      var breakpoint = {};
-      var paramsArray = params.split(",");
-      breakpoint.value = paramsArray[0];
-      breakpoint.type = paramsArray[1] ? paramsArray[1].trim() : "max";
-      breakpoint.item = item;
-      breakpointsArray.push(breakpoint);
-    }); // Получаем уникальные брейкпоинты
-
-    var mediaQueries = breakpointsArray.map(function (item) {
-      return "(" + item.type + "-width: " + item.value + "px)," + item.value + "," + item.type;
-    });
-    mediaQueries = mediaQueries.filter(function (item, index, self) {
-      return self.indexOf(item) === index;
-    }); // Работаем с каждым брейкпоинтом
-
-    mediaQueries.forEach(function (breakpoint) {
-      var paramsArray = breakpoint.split(",");
-      var mediaBreakpoint = paramsArray[1];
-      var mediaType = paramsArray[2];
-      var matchMedia = window.matchMedia(paramsArray[0]); // Объекты с нужными условиями
-
-      var spoilersArray = breakpointsArray.filter(function (item) {
-        if (item.value === mediaBreakpoint && item.type === mediaType) {
-          return true;
-        }
-      });
-      matchMedia.addEventListener("change", function () {
-        initSpoilers(spoilersArray, matchMedia);
-      });
-      initSpoilers(spoilersArray, matchMedia);
-    });
-  }
+	// Работа с контентом
+	function initSpoilerBody(spoilersBlock, hideSpoilerBody = true) {
+		const spoilerTitles = spoilersBlock.querySelectorAll("[data-spoiler]");
+		if (spoilerTitles.length > 0) {
+			spoilerTitles.forEach(spoilerTitle => {
+				if (hideSpoilerBody) {
+					spoilerTitle.removeAttribute("tabindex");
+					if (!spoilerTitle.classList.contains("active")) {
+						spoilerTitle.nextElementSibling.hidden = true;
+					}
+				} else {
+					spoilerTitle.setAttribute("tabindex", "-1");
+					spoilerTitle.nextElementSibling.hidden = false;
+				}
+			})
+		}
+	}
+	function setSpoilerAction(e) {
+		const el = e.target;
+		if (el.hasAttribute('data-spoiler') || el.closest('[data-spoiler]')) {
+			const spoilerTitle = el.hasAttribute('data-spoiler') ? el : el.closest('[data-spoiler]');
+			const spoilersBlock = spoilerTitle.closest('[data-spoilers]');
+			const oneSpoiler = spoilersBlock.hasAttribute('data-one-spoiler') ? true : false;
+			if (!spoilersBlock.querySelectorAll(".slide").length) {
+				if (oneSpoiler && !spoilerTitle.classList.contains("active")) {
+					hideSpoilerBody(spoilersBlock);
+				}
+				spoilerTitle.classList.toggle("active");
+				slideToggle(spoilerTitle.nextElementSibling, 500)
+			}
+			e.preventDefault();
+		}
+	}
+	function hideSpoilerBody(spoilersBlock) {
+		const spoilerActiveTitle = spoilersBlock.querySelector('[data-spoiler].active');
+		if (spoilerActiveTitle) {
+			spoilerActiveTitle.classList.remove("active");
+			slideUp(spoilerActiveTitle.nextElementSibling, 500)
+		}
+	}
 }
 
-var select = document.querySelectorAll('.select');
-var activeSelect;
-var timeout = 300;
 
-var _loop2 = function _loop2(_index2) {
-  var item = select[_index2];
-  var selectOption = item.querySelectorAll('option');
-  var selectOptionLength = selectOption.length;
-  var selectedOption = item.querySelector('option[selected]');
-  var disabledOption = item.querySelector('option[disabled]');
-  var duration = 300;
-  item.querySelector('select').hidden = true;
-  var head = document.createElement('div');
-  var text = document.createElement('span');
-  head.classList.add('select__head');
-  text.textContent = disabledOption ? disabledOption.textContent : selectedOption.textContent;
-  head.append(text);
-  item.append(head);
-  var icon = item.querySelector('.select__icon');
 
-  if (icon) {
-    head.append(icon);
-  }
+let activeSelect
+let timeout = 300
 
-  var selectList = document.createElement('ul');
-  selectList.classList.add('select__list');
-  item.append(selectList);
 
-  if (!disabledOption) {
-    var newOption = document.createElement('li');
-    newOption.textContent = selectedOption ? selectedOption.textContent : selectOption[0].textContent;
-    newOption.classList.add('select__item');
-    newOption.classList.add('active');
-    newOption.dataset.value = selectedOption ? selectedOption.value : selectOption[0].textContent;
-    selectList.append(newOption);
-  }
+const select = document.querySelectorAll('.select')
 
-  for (var _index7 = 1; _index7 < selectOptionLength; _index7++) {
-    var _newOption = document.createElement('li');
+for (let index = 0; index < select.length; ++index) {
+    const item = select[index]
+    const selectOption = item.querySelectorAll('option')
+    const selectOptionLength = selectOption.length
+    const selectedOption = item.querySelector('option[selected]')
+    const disabledOption = item.querySelector('option[disabled]')
+    const duration = 300
 
-    _newOption.textContent = selectOption[_index7].textContent;
+    item.querySelector('select').hidden = true
 
-    _newOption.classList.add('select__item');
+    const head = document.createElement('div')
+    const text = document.createElement('span')
 
-    _newOption.dataset.value = selectOption[_index7].value;
-    selectList.append(_newOption);
-  }
+    head.classList.add('select__head')
 
-  selectList.hidden = true;
-  head.addEventListener('click', function (e) {
-    if (!document.querySelector('.select__list.slide') && e.target.closest('.select__head')) {
-      if (activeSelect && !e.target.closest('.select__head').nextElementSibling.isEqualNode(activeSelect)) {
-        slideUp(activeSelect);
-        activeSelect.closest('.select').querySelector('.select__head').classList.remove('active');
-      }
+    text.textContent = disabledOption ? disabledOption.textContent : selectedOption.textContent
+    head.append(text)
+    item.append(head)
 
-      activeSelect = e.target.closest('.select__head').nextElementSibling;
-      e.currentTarget.classList.toggle('active');
-      slideToggle(selectList);
+    const icon = item.querySelector('.select__icon')
+
+    if (icon) {
+        head.append(icon)
     }
-  });
-  selectList.addEventListener('click', function (e) {
-    if (e.target.closest('.select__item')) {
-      var target = e.target.closest('.select__item');
-      var value = target.dataset.value;
-      var newSelectedEl = item.querySelector("option[value=\"".concat(value, "\"]"));
-      var oldSelectedEl = item.querySelector('option[selected]');
 
-      if (!newSelectedEl) {
-        for (var _index8 = 1; _index8 < selectOptionLength; _index8++) {
-          var option = selectOption[_index8];
+    const selectList = document.createElement('ul')
+    selectList.classList.add('select__list')
+    item.append(selectList)
 
-          if (option.textContent == value) {
-            newSelectedEl = option;
-          }
+    if (!disabledOption) {
+        const newOption = document.createElement('li')
+        newOption.textContent = selectedOption ? selectedOption.textContent : selectOption[0].textContent
+        newOption.classList.add('select__item')
+        newOption.classList.add('active')
+        newOption.dataset.value = selectedOption ? selectedOption.value : selectOption[0].textContent
+        selectList.append(newOption)
+    }
+    for (let index = 1; index < selectOptionLength; index++) {
+        const newOption = document.createElement('li')
+        newOption.textContent = selectOption[index].textContent
+        newOption.classList.add('select__item')
+        newOption.dataset.value = selectOption[index].value
+        selectList.append(newOption)
+    }
+
+    selectList.hidden = true
+    head.addEventListener('click', function(e) {
+        if (!document.querySelector('.select__list.slide') && e.target.closest('.select__head')) {
+            if (activeSelect && !e.target.closest('.select__head').nextElementSibling.isEqualNode(activeSelect)) {
+                slideUp(activeSelect)
+                activeSelect.closest('.select').querySelector('.select__head').classList.remove('active')
+            }
+            activeSelect = e.target.closest('.select__head').nextElementSibling
+            e.currentTarget.classList.toggle('active')
+            slideToggle(selectList)
         }
-      }
+    })
+    selectList.addEventListener('click', function(e) {
+        if (e.target.closest('.select__item')) {
+            const target = e.target.closest('.select__item')
+            const value = target.dataset.value
+            let newSelectedEl = item.querySelector(`option[value="${value}"]`)
+            const oldSelectedEl = item.querySelector('option[selected]')
+            if (!newSelectedEl) {
+                for (let index = 1; index < selectOptionLength; index++) {
+                    const option = selectOption[index]
+                    if (option.textContent == value) {
+                        newSelectedEl = option
+                    }
+                }
+            }
 
-      if (oldSelectedEl) {
-        oldSelectedEl.removeAttribute('selected');
-      }
-
-      if (newSelectedEl) {
-        newSelectedEl.setAttribute('selected', 'selected');
-        text.textContent = newSelectedEl.textContent;
-      }
-
-      head.classList.remove('active');
-      activeSelect = null;
-      document.querySelector('.select__item.active').classList.remove('active');
-      target.classList.add('active');
-      e.target.closest('.select').querySelector('select').dispatchEvent(new Event('change'));
-      slideUp(selectList);
-    }
-  });
-};
-
-for (var _index2 = 0; _index2 < select.length; ++_index2) {
-  _loop2(_index2);
+            if (oldSelectedEl) {
+                oldSelectedEl.removeAttribute('selected')
+            }
+            if (newSelectedEl) {
+                newSelectedEl.setAttribute('selected', 'selected')
+                text.textContent = newSelectedEl.textContent
+            }
+            head.classList.remove('active')
+            activeSelect = null
+            document.querySelector('.select__item.active').classList.remove('active')
+            target.classList.add('active')
+            e.target.closest('.select').querySelector('select').dispatchEvent(new Event('change'))
+            slideUp(selectList)
+        }
+    })
 }
 
-window.addEventListener('click', function (e) {
-  if (document.querySelector('.select__head.active') && !e.target.closest('.select') && !document.querySelector('.select__list.slide')) {
-    activeSelect.closest('.select').querySelector('.select__head').classList.remove('active');
-    slideUp(activeSelect);
-    activeSelect = null;
-  }
-});
-var mainSlider = new Swiper('.main-slider__body', {
-  speed: 1000,
-  loop: true,
-  spaceBetween: 30,
-  navigation: {
-    nextEl: '.main-slider .slider-buttons__item_next',
-    prevEl: '.main-slider .slider-buttons__item_prev'
-  },
-  pagination: {
-    el: '.main-slider__dots',
-    clickable: true
-  }
-});
-var categoriesPageSlider = new Swiper('.categories-page__body', {
-  speed: 1000,
-  loop: true,
-  spaceBetween: 16,
-  slidesPerView: 2.15,
-  breakpoints: {
-    1024.98: {
-      slidesPerView: 6,
-      spaceBetween: 24
-    },
-    767.98: {
-      slidesPerView: 4.2
-    },
-    575.98: {
-      slidesPerView: 3.2
-    }
-  }
-});
-var newProductsSlider = new Swiper('.new-products-page .product-slider__body', {
-  speed: 1000,
-  loop: true,
-  spaceBetween: 16,
-  slidesPerView: 1.05,
-  breakpoints: {
-    1280.98: {
-      slidesPerView: 4,
-      spaceBetween: 24
-    },
-    1024.98: {
-      slidesPerView: 3
-    },
-    767.98: {
-      slidesPerView: 2.05
-    }
-  },
-  navigation: {
-    nextEl: '.new-products-page .slider-buttons__item_next',
-    prevEl: '.new-products-page .slider-buttons__item_prev'
-  }
-});
-var bestsellersSlider = new Swiper('.bestsellers .product-slider__body', {
-  speed: 1000,
-  loop: true,
-  spaceBetween: 16,
-  slidesPerView: 1.05,
-  breakpoints: {
-    1280.98: {
-      slidesPerView: 4,
-      spaceBetween: 24
-    },
-    1024.98: {
-      slidesPerView: 3
-    },
-    767.98: {
-      slidesPerView: 2.05
-    }
-  },
-  navigation: {
-    nextEl: '.bestsellers .slider-buttons__item_next',
-    prevEl: '.bestsellers .slider-buttons__item_prev'
-  }
-});
-var imagesProductSlider = new Swiper('.images-product__slider', {
-  speed: 1000,
-  loop: true,
-  slidesPerView: 1,
-  pagination: {
-    el: '.images-product__dots',
-    clickable: true
-  },
-  breakpoints: {
-    1024.98: {
-      slidesPerView: 1
-    },
-    576.98: {
-      slidesPerView: 2
-    }
-  },
-  on: {
-    click: function click(swiper, event) {
-      var clickedSlide = event.target.closest('.images-product__item');
-      var clickedIndex = +clickedSlide.dataset.swiperSlideIndex;
+window.addEventListener('click', function(e) {
 
-      if (!document.querySelector('.product__images').classList.contains('active')) {
-        document.querySelector('.product__gallery').classList.add('active');
-        document.body.classList.add('lock');
-        var imagesGallerySubslider = new Swiper('.gallery-product__subslider', {
-          slidesPerView: 1
-        });
-        var imagesGallerySlider = new Swiper('.gallery-product__mainslider', {
-          speed: 1000,
-          loop: true,
-          slidesPerView: 1,
-          initialSlide: clickedIndex,
-          pagination: {
-            el: '.gallery-product__dots',
-            clickable: true
-          },
-          thumbs: {
-            swiper: imagesGallerySubslider
-          }
-        });
-      }
+    if (
+        document.querySelector('.select__head.active')
+        && !e.target.closest('.select')
+        && !document.querySelector('.select__list.slide')
+    ) {
+        activeSelect.closest('.select').querySelector('.select__head').classList.remove('active')
+        slideUp(activeSelect)
+        activeSelect = null
     }
-  }
-});
+})
 
+
+const mainSlider = new Swiper('.main-slider__body', {
+    speed: 1000,
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: '.main-slider .slider-buttons__item_next',
+        prevEl: '.main-slider .slider-buttons__item_prev'
+    },
+    pagination: {
+        el: '.main-slider__dots',
+        clickable: true,
+    },
+})
+const categoriesPageSlider = new Swiper('.categories-page__body', {
+    speed: 1000,
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 2.15,
+    breakpoints: {
+      1024.98: {
+          slidesPerView: 6,
+          spaceBetween: 24,
+      },
+        767.98: {
+          slidesPerView: 4.2,
+        },
+        575.98: {
+          slidesPerView: 3.2,
+        }
+    },
+})
+
+const newProductsSlider = new Swiper('.new-products-page .product-slider__body', {
+    speed: 1000,
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 1.05,
+    breakpoints: {
+        1280.98: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+        },
+        1024.98: {
+            slidesPerView: 3,
+        },
+        767.98: {
+            slidesPerView: 2.05,
+        }
+    },
+    navigation: {
+        nextEl: '.new-products-page .slider-buttons__item_next',
+        prevEl: '.new-products-page .slider-buttons__item_prev'
+    },
+})
+
+const bestsellersSlider = new Swiper('.bestsellers .product-slider__body', {
+    speed: 1000,
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 1.05,
+    breakpoints: {
+        1280.98: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+        },
+        1024.98: {
+            slidesPerView: 3,
+        },
+        767.98: {
+            slidesPerView: 2.05,
+        }
+    },
+    navigation: {
+        nextEl: '.bestsellers .slider-buttons__item_next',
+        prevEl: '.bestsellers .slider-buttons__item_prev'
+    },
+})
+
+
+
+const imagesProductSlider = new Swiper('.images-product__slider', {
+    speed: 1000,
+    loop: true,
+    slidesPerView: 1,
+    pagination: {
+        el: '.images-product__dots',
+        clickable: true,
+    },
+    breakpoints: {
+        1024.98: {
+            slidesPerView: 1
+        },
+        576.98: {
+            slidesPerView: 2
+        }
+    },
+    on: {
+        click(swiper, event) {
+            const clickedSlide = event.target.closest('.images-product__item')
+            const clickedIndex = +clickedSlide.dataset.swiperSlideIndex
+
+            if (!document.querySelector('.product__images').classList.contains('active')) {
+
+                document.querySelector('.product__gallery').classList.add('active')
+                document.body.classList.add('lock')
+
+                const imagesGallerySubslider = new Swiper('.gallery-product__subslider', {
+                    slidesPerView: 1,
+                })
+
+                const imagesGallerySlider = new Swiper('.gallery-product__mainslider', {
+                    speed: 1000,
+                    loop: true,
+                    slidesPerView: 1,
+                    initialSlide: clickedIndex,
+                    pagination: {
+                        el: '.gallery-product__dots',
+                        clickable: true,
+                    },
+                    thumbs: {
+                        swiper: imagesGallerySubslider,
+                    },
+                })
+            }
+        }
+    },
+
+})
 if (document.querySelector('.gallery-product__close')) {
-  document.querySelector('.gallery-product__close').addEventListener('click', function () {
-    document.querySelector('.product__gallery').classList.remove('active');
-    document.body.classList.remove('lock');
-  });
+    document.querySelector('.gallery-product__close').addEventListener('click', function() {
+        document.querySelector('.product__gallery').classList.remove('active')
+        document.body.classList.remove('lock')
+    })
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  var iconMenu = document.querySelector(".icon-menu");
-  var header = document.querySelector('.header');
-
-  if (iconMenu) {
-    var menuContent = document.querySelector(".menu");
-    iconMenu.addEventListener('click', function () {
-      document.body.classList.add("lock");
-      header.classList.add('active');
-      menuContent.classList.add("active");
-    });
-    var closeButton = document.querySelector('.header-menu__close');
-    closeButton.addEventListener('click', function () {
-      document.body.classList.remove("lock");
-      header.classList.remove('active');
-      menuContent.classList.remove("active");
-    });
-  }
-
-  var submenu = document.querySelectorAll('.menu__item');
-
-  if (submenu.length > 0) {
-    var _loop3 = function _loop3(_index3) {
-      var item = submenu[_index3];
-      item.addEventListener('mouseenter', function () {
-        var submenuBody = item.querySelector('.submenu');
-        if (!submenuBody) return;
-        submenuBody.classList.add('active');
-        item.classList.add('active');
-      });
-    };
-
-    for (var _index3 = 0; _index3 < submenu.length; _index3++) {
-      _loop3(_index3);
-    }
-  }
-
-  var cartButton = document.querySelector('.actions-main-header__item_cart');
-
-  if (cartButton) {
-    cartButton.addEventListener('mouseenter', function () {
-      var cart = document.querySelector('.cart');
-
-      if (!cart.classList.contains('active')) {
-        cart.classList.add('active');
-      }
-    });
-  }
-
-  window.addEventListener('mousemove', function (e) {
-    if (!window.matchMedia("(min-width: 1024.98px)").matches) return;
-
-    if (document.querySelector('.submenu.active') && !e.target.closest('.header')) {
-      document.querySelector('.submenu.active').classList.remove('active');
-      document.querySelector('.menu__item.active').classList.remove('active');
-    }
-
-    if (document.querySelector('.cart.active') && !e.target.closest('.header')) {
-      document.querySelector('.cart.active').classList.remove('active');
-    }
-  });
-});
-var modalLinks = document.querySelectorAll('[data-modal-link]');
-
-if (modalLinks.length > 0) {
-  for (var _index4 = 0; _index4 < modalLinks.length; _index4++) {
-    var link = modalLinks[_index4];
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var scrollWidth = window.innerWidth - document.body.clientWidth;
-      var modalTitle = '#' + e.currentTarget.dataset.modalLink;
-      document.querySelector(modalTitle).classList.add('active');
-      document.body.classList.add('lock');
-      document.body.style.paddingRight = scrollWidth + 'px';
-    });
-  }
-}
-
-var modalCloseButtons = document.querySelectorAll('.modal__close');
-
-if (modalCloseButtons.length > 0) {
-  for (var _index5 = 0; _index5 < modalCloseButtons.length; _index5++) {
-    var closeButton = modalCloseButtons[_index5];
-    closeButton.addEventListener('click', function (e) {
-      e.target.closest('.modal').classList.remove('active');
-      setTimeout(function () {
-        document.body.classList.remove('lock');
-        document.body.style.paddingRight = 0;
-      }, timeout);
-    });
-  }
-} // if (document.querySelector('.product__link')) {
-//     const productLink = document.querySelector('.product__link')
-//     productLink.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         const scrollWidth = window.innerWidth - document.body.clientWidth
-//         document.querySelector('.size-table').classList.add('active')
-//
-//         document.body.classList.add('lock')
-//
-//         document.body.style.paddingRight = scrollWidth + 'px'
-//
-//     })
-//
-//     const closeButton = document.querySelector('.size-table__close');
-//     closeButton.addEventListener('click', function(e) {
-//         document.querySelector('.size-table').classList.remove('active')
-//
-//
-//         const scrollWidth = window.innerWidth - document.body.clientWidth
-//
-//
-//         setTimeout(() => {
-//
-//             document.body.classList.remove('lock')
-//             document.body.style.paddingRight = 0
-//         }, timeout)
-//     })
-// }
 
 
-var tabLinks = document.querySelectorAll("[data-tab-title]");
-var tabContent = document.querySelectorAll("[data-tab-content]");
-
-if (tabContent.length > 0) {
-  tabLinks.forEach(function (el) {
-    el.addEventListener("click", openTabs);
-  });
-}
-
-function openTabs(el) {
-  el.preventDefault();
-  var btnTarget = el.currentTarget;
-  var title = btnTarget.dataset.tabTitle;
-  var category = btnTarget.dataset.tabCategory;
-  var tabContent = document.querySelectorAll("[data-tab-content][data-tab-category=\"".concat(category, "\"]"));
-  var tabLinks = document.querySelectorAll("[data-tab-title][data-tab-category=\"".concat(category, "\"]"));
-  tabContent.forEach(function (el) {
-    el.classList.remove("active");
-  });
-  tabLinks.forEach(function (el) {
-    el.classList.remove("active");
-  });
-  var activeContent = document.querySelectorAll("[data-tab-content=\"".concat(title, "\"][data-tab-category=\"").concat(category, "\"]"));
-  activeContent.forEach(function (el) {
-    el.classList.add('active');
-  });
-  document.querySelector("[data-tab-content=\"".concat(title, "\"]")).classList.add("active");
-  btnTarget.classList.add("active");
-} // const modalButtons = document.querySelectorAll('.open-modal'),
-//     overlay      = document.querySelector('.overlay'),
-//     closeButtons = document.querySelectorAll('.modal-close');
-// modalButtons.forEach(function(item){
-//
-//     item.addEventListener('click', function(e) {
-//
-//         e.preventDefault();
-//         const scrollbarSize = window.innerWidth - document.body.offsetWidth
-//         const modalId = this.getAttribute('data-modal'),
-//             modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
-//
-//         modalElem.classList.add('active');
-//         overlay.classList.add('active');
-//         document.body.style.paddingRight =  scrollbarSize + 'px'
-//         document.body.classList.add('lock')
-//
-//     });
-//
-// });
-//
-//
-//     closeButtons.forEach(function(item){
-//
-//         item.addEventListener('click', function(e) {
-//             const parentModal = this.closest('.modal');
-//
-//             parentModal.classList.remove('active');
-//             overlay.classList.remove('active');
-//             document.body.classList.remove('lock')
-//             document.body.style.paddingRight = '0'
-//         });
-//
-//     });
-//
-//
-//     document.body.addEventListener('keyup', function (e) {
-//         const key = e.keyCode;
-//
-//         if (key == 27) {
-//
-//             document.querySelector('.modal.active').classList.remove('active');
-//             document.querySelector('.overlay').classList.remove('active');
-//             document.body.classList.remove('lock')
-//             document.body.style.paddingRight = '0'
-//         };
-//     }, false);
-//
-//
-//     overlay.addEventListener('click', function(e) {
-//         if (e.target.classList.contains('overlay')) {
-//             document.querySelector('.modal.active').classList.remove('active');
-//             this.classList.remove('active');
-//             document.body.classList.remove('lock')
-//             document.body.style.paddingRight = '0'
-//         }
-//
-//     });
-//
-//
-// const input = document.querySelectorAll('input')
-//
-// if (input.length > 0) {
-//     for (let index = 0; index < input.length; index++) {
-//         const item = input[index]
-//         item.addEventListener('focus', function(e) {
-//             console.log('log')
-//             e.target.closest('.input').classList.add('focus')
-//         })
-//         item.addEventListener('blur', function(e) {
-//             e.target.closest('.input').classList.remove('focus')
-//         })
-//     }
-// }
 
 
-window.addEventListener('scroll', function () {
-  var header = document.querySelector('.header');
 
-  if (document.documentElement.scrollTop > 10 && !header.classList.contains('scroll')) {
-    header.classList.add('scroll');
-    return;
-  }
 
-  if (document.documentElement.scrollTop <= 0 && header.classList.contains('scroll')) {
-    header.classList.remove('scroll');
-  }
-});
-window.addEventListener('click', toggleFilterModal);
 
-function toggleFilterModal(e) {
-  if (!window.matchMedia('(max-width: 1024.98px)').matches) return;
 
-  if (e.target.closest('.side__title')) {
-    var sideTitle = e.target.closest('.side__title');
-    var text = sideTitle.textContent;
-    sideTitle.nextElementSibling.classList.add('open');
-    document.querySelector('.header-filter-catalog__title').append(text);
-    document.querySelector('.header-filter-catalog').classList.add('open');
 
-    if (!sideTitle.hasAttribute('data-categories')) {
-      document.querySelector('.side__reset').classList.add('show');
-    }
-  }
 
-  if (e.target.closest('.header-filter-catalog__back')) {
-    document.querySelector('.side__content.open').classList.remove('open');
-    document.querySelector('.header-filter-catalog').classList.remove('open');
-    document.querySelector('.side__reset').classList.remove('show');
-    document.querySelector('.header-filter-catalog__title').lastChild.remove();
 
-    if (document.querySelector('.side__reset').classList.contains('show')) {
-      document.querySelector('.side__reset').classList.remove('show');
-    }
-  }
 
-  if (e.target.closest('.header-filter-catalog__close')) {
-    document.querySelector('.filter-catalog__content').classList.remove('active');
-    document.body.classList.remove('lock');
-  }
 
-  if (e.target.closest('.filter-catalog__button')) {
-    document.querySelector('.filter-catalog__content').classList.add('active');
-    document.body.classList.add('lock');
-    e.preventDefault();
-  }
-}
 
-var quantityButtons = document.querySelectorAll(".quantity__button");
 
-if (quantityButtons.length > 0) {
-  var _loop4 = function _loop4(_index6) {
-    var quantityButton = quantityButtons[_index6];
-    quantityButton.addEventListener("click", function (e) {
-      var value = parseInt(quantityButton.closest('.quantity').querySelector('input').value);
 
-      if (!value) {
-        value = 1;
-        quantityButton.closest('.quantity').querySelector('input').value = value;
-        return;
-      }
-
-      if (quantityButton.classList.contains('quantity__button_plus')) {
-        value++;
-      } else {
-        value = value - 1;
-
-        if (value < 1) {
-          value = 1;
-        }
-      }
-
-      quantityButton.closest('.quantity').querySelector('input').value = value;
-    });
-  };
-
-  for (var _index6 = 0; _index6 < quantityButtons.length; _index6++) {
-    _loop4(_index6);
-  }
-}
-
-function debounce(callback, ms) {
-  var timeout;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    clearTimeout(timeout);
-    timeout = setTimeout(function () {
-      callback.apply(void 0, args);
-    }, ms);
-  };
-}
-
-var searchCancel = document.querySelector('.search__cancel');
-
-if (searchCancel) {
-  searchCancel.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    if (searchCancel.closest('.modal').classList.contains('active')) {
-      searchCancel.closest('.modal').classList.remove('active');
-    }
-  });
-}
-
-var searchModal = document.querySelector('#modal-search');
-searchModal.addEventListener('click', function (e) {
-  if (searchModal.classList.contains('active') && !e.target.closest('.search')) {
-    searchModal.classList.remove('active');
-    document.body.classList.remove('lock');
-  }
-});
-var searchButton = document.querySelector('.actions-main-header__item_search');
-var searchInput = document.querySelector('.search__input input');
-searchButton.addEventListener('click', /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            setTimeout(function () {
-              searchInput.focus();
-            }, timeout);
-            _context.next = 3;
-            return search(e);
-
-          case 3:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-
-  return function (_x) {
-    return _ref.apply(this, arguments);
-  };
-}());
-searchInput.addEventListener('input', debounce(search, 100));
-
-function search(_x2) {
-  return _search.apply(this, arguments);
-}
-
-function _search() {
-  _search = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
-    var value, input, loader, label, productsWrapper, categoriesWrapper, searchEmpty, resultsWrapper, categories, products, filteredProducts;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            value = e.target.value;
-
-            if (typeof value !== 'string') {
-              input = document.querySelector('.search__input input');
-              value = input.value.toLowerCase();
-            }
-
-            value = value.toLowerCase();
-            loader = document.querySelector('.search__loader');
-            label = document.querySelector('.search__label');
-            loader.classList.add('active');
-            productsWrapper = document.querySelector('.search__products');
-            productsWrapper.innerHTML = '';
-            categoriesWrapper = document.querySelector('.search__categories');
-            categoriesWrapper.innerHTML = '';
-            searchEmpty = document.querySelector('.search__empty');
-            resultsWrapper = document.querySelector('.search__results'); // Искусственная задержка
-
-            setTimeout(function () {
-              loader.classList.remove('active');
-            }, 900); // Если нет значения, то делаем запрос на актуальные категории
-
-            if (!(value.length === 0)) {
-              _context2.next = 18;
-              break;
-            }
-
-            label.textContent = 'Актуальное';
-            categories = [{
-              id: '1',
-              text: 'Зимние носки',
-              link: ''
-            }, {
-              id: '1',
-              text: 'Джемпер чёрный',
-              link: ''
-            }, {
-              id: '1',
-              text: 'Джемпер',
-              link: ''
-            }, {
-              id: '1',
-              text: 'Носки с рисунком',
-              link: ''
-            }, {
-              id: '1',
-              text: 'Детские носки',
-              link: ''
-            }, {
-              id: '1',
-              text: 'Домашняя футболка',
-              link: ''
-            }];
-            categories.forEach(function (category) {
-              var categoryDOM = document.createElement('a');
-              categoryDOM.className = 'search__item item-search';
-              categoryDOM.innerHTML = "\n                <div class=\"item-search__icon\">\n                    <svg>\n                        <use xlink:href=\"assets/images/icons/icons.svg#search\"></use>\n                    </svg>\n                </div>\n                <p class=\"item-search__text\">".concat(category.text, "</p>\n            ");
-              categoryDOM.setAttribute('href', category.link);
-              categoriesWrapper.appendChild(categoryDOM);
-            });
-            return _context2.abrupt("return");
-
-          case 18:
-            // Искусственно полученные данные
-            products = [{
-              id: '1',
-              title: 'Джемпер однотонный с круглой горловиной',
-              imageSrc: 'assets/images/products/product.png',
-              link: '/product.html',
-              price: 999
-            }, {
-              id: '2',
-              title: 'Джемпер однотонный с круглой горловиной №1',
-              imageSrc: 'assets/images/products/product.png',
-              link: '/product.html',
-              price: 999
-            }, {
-              id: '3',
-              title: 'Джемпер однотонный с круглой горловиной №2',
-              imageSrc: 'assets/images/products/product.png',
-              link: '/product.html',
-              price: 999
-            }, {
-              id: '4',
-              title: 'Джемпер однотонный с круглой горловиной №3',
-              imageSrc: 'assets/images/products/product.png',
-              link: '/product.html',
-              price: 999
-            }, {
-              id: '5',
-              title: 'Джемпер однотонный с круглой горловиной №4',
-              imageSrc: 'assets/images/products/product.png',
-              link: '/product.html',
-              price: 999
-            }];
-            filteredProducts = products.filter(function (product) {
-              return product.title.toLowerCase().includes(value);
-            });
-
-            if (filteredProducts.length > 0) {
-              label.textContent = 'Найденные товары';
-
-              if (!searchEmpty.classList.contains('hidden')) {
-                searchEmpty.classList.add('hidden');
-              }
-
-              filteredProducts.forEach(function (product) {
-                var productDOM = document.createElement('a');
-                productDOM.className = "search__product product-search";
-                productDOM.innerHTML = "\n                <div class=\"product-search__image\">\n                    <img src=\"".concat(product.imageSrc, "\" alt=\"\">\n                </div>\n                <div class=\"product-search__content\">\n                    <div class=\"product-search__price\">").concat(product.price, " \u0440\u0443\u0431.</div>\n                    <div class=\"product-search__title\">").concat(product.title, "</div>\n                </div>\n            ");
-                productDOM.setAttribute('href', product.link);
-                productsWrapper.appendChild(productDOM);
-              });
-            } else {
-              if (searchEmpty.classList.contains('hidden')) {
-                searchEmpty.classList.remove('hidden');
-              }
-            }
-
-          case 21:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    }, _callee2);
-  }));
-  return _search.apply(this, arguments);
-}
