@@ -68,6 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 cart.classList.add('active')
             }
         })
+        cartButton.addEventListener('click', function(e) {
+            const cart = document.querySelector('.cart')
+            if (cart.classList.contains('active')) {
+                cart.classList.remove('active')
+            }
+            e.preventDefault()
+        })
+        window.addEventListener('click', function(e) {
+            if (!e.target.closest('.cart') && document.querySelector('.cart.active')) {
+                document.querySelector('.cart.active').classList.remove('active')
+            }
+        })
     }
 
     const additionalCategories = document.querySelectorAll('.additional-categories__link')

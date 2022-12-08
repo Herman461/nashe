@@ -47,3 +47,53 @@ if (document.querySelector('.catalog__select_visible')) {
         e.stopPropagation()
     }, true)
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const productsSliders = document.querySelectorAll('.item-product__slider');
+    if (productsSliders.length > 0) {
+        for (let index = 0; index < productsSliders.length; index++) {
+            const productsSlider = productsSliders[index]
+
+            const slider = new Swiper(productsSlider, {
+                speed: 800,
+                loop: true,
+                spaceBetween: 8,
+                slidesPerView: 1,
+                pagination: {
+                    el: productsSlider.nextElementSibling,
+                    clickable: true,
+                },
+            })
+        }
+    }
+
+})
+document.addEventListener('mousemove', function(e) {
+
+    if (e.target.closest('.item-product') && !e.target.closest('.item-product').classList.contains('active')) {
+        const itemProduct = e.target.closest('.item-product')
+        const itemProductActions = itemProduct.querySelector('.item-product__actions')
+        itemProduct.classList.add('active')
+        itemProduct.closest('.items-products__column').style.height = (itemProduct.offsetHeight - itemProductActions.offsetHeight) + 'px';
+    }
+})
+
+const sideSwitchers = document.querySelectorAll('.side__switch');
+
+if (sideSwitchers.length > 0) {
+    for (let index = 0; index < sideSwitchers.length; index++) {
+        const sideSwitcher = sideSwitchers[index]
+
+        sideSwitcher.addEventListener('mouseenter', function(e) {
+            const action = e.target.closest('.side__action')
+            action.querySelector('.side__tooltip').classList.add('active')
+        })
+
+        sideSwitcher.addEventListener('mouseleave', function(e) {
+            const action = e.target.closest('.side__action')
+            action.querySelector('.side__tooltip').classList.remove('active')
+        })
+    }
+}
+

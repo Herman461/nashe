@@ -5,22 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221124195754">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221208062846">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221208062846">
 
 
-    <link rel="stylesheet" href="assets/css/pages/layout.css?_v=20221124195754">
+    <link rel="stylesheet" href="assets/css/pages/layout.css?_v=20221208062846">
 
 
 
     <title>Навигация</title>
 </head>
 
-<body>
+<body data-simplebar="">
 
     <div class="wrapper">
         <header class="header">
             <div class="header__top top-header">
                 <div class="top-header__container container">
+                    <div class="top-header__location location-header">
+                        <a data-modal-link="modal-location" href="" class="top-header__link">
+                            <span>Санкт-Петербург</span>
+                            <span class="top-header__arrow">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="location-header__window window-location-header">
+                            <div class="window-location-header__title">Ваш город Санкт-Петербург?</div>
+                            <p class="window-location-header__text">От города зависит есть ли товар в наличии и его стоимость</p>
+                            <div class="window-location-header__actions">
+                                <a href="" class="window-location-header__button button button_white">Да</a>
+                                <a href="" class="window-location-header__button button button_outline">Выбрать другой</a>
+                            </div>
+                        </div>
+                    </div>
                     <nav data-da=".menu__content,1024.98,2" class="top-header__menu menu-top-header">
                         <ul class="menu-top-header__list">
                             <li class="menu-top-header__item">
@@ -1091,7 +1110,7 @@
                             <div class="cart__title">Корзина</div>
                             <div class="cart__count">20</div>
                         </div>
-                        <div class="cart__body">
+                        <div data-simplebar="" class="cart__body">
                             <a href="" class="cart__item item-cart">
                                 <div class="item-cart__image ibg">
                                     <img src="assets/images/products/product.png" alt="">
@@ -1172,34 +1191,7 @@
 
                 </div>
             </div>
-            <div id="modal-search" class="modal">
-                <div class="search">
-                    <form action="#" class="search__main">
-                        <div class="search__input">
-                            <button type="button" class="search__button">
-                                <svg>
-                                    <use xlink:href="assets/images/icons/icons.svg#search"></use>
-                                </svg>
-                            </button>
-                            <input placeholder="Поиск" class="input" type="text">
-                            <div class="search__loader">
-                                <img src="assets/images/preloader.gif" alt="">
-                            </div>
-                        </div>
-                        <a href="" class="search__cancel">Отменить</a>
-                    </form>
-                    <div class="search__results">
-                        <div class="search__label"></div>
-                        <div class="search__products"></div>
-                        <div class="search__categories"></div>
-                        <div class="search__empty hidden">
-                            По вашему запросу ничего не найдено.
-                            <br>
-                            Попробуйте изменить запрос или воспользуйтесь каталогом товаров
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
         </header>
 
@@ -1375,9 +1367,109 @@
         </div>
 
     </div>
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221124195754"></script>
-    <script src="assets/js/script.js?_v=20221124195754"></script>
-    <script src="assets/js/app.js?_v=20221124195754"></script>
+    <div id="modal-search" class="modal">
+        <div class="search">
+            <form action="#" class="search__main">
+                <div class="search__input">
+                    <button class="search__button">
+                        <svg>
+                            <use xlink:href="assets/images/icons/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                    <input placeholder="Поиск" class="input" type="text">
+                    <div class="search__loader">
+                        <img src="assets/images/preloader.gif" alt="">
+                    </div>
+                </div>
+                <a href="" class="search__cancel">Отменить</a>
+            </form>
+            <div class="search__results">
+                <div class="search__label"></div>
+                <div class="search__products"></div>
+                <div class="search__categories"></div>
+                <div class="search__empty hidden">
+                    По вашему запросу ничего не найдено.
+                    <br>
+                    Попробуйте изменить запрос или воспользуйтесь каталогом товаров
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-location" class="modal modal_top">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__title">Выберите город</div>
+                <div class="modal__close">
+                    <svg>
+                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__body">
+                <div class="modal-location">
+                    <form action="#" class="modal-location__search">
+                        <div class="modal-location__input">
+                            <button class="modal-location__button">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#search"></use>
+                                </svg>
+                            </button>
+                            <input placeholder="Найти по названию" class="input" type="text">
+                        </div>
+                    </form>
+                    <div class="modal-location__row">
+                        <div class="modal-location__column">
+                            <label class="modal-location__item">
+                                <input checked value="moscow" type="radio">
+                                <span>Москва</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Архангельск</span>
+                            </label>
+                        </div>
+                        <div class="modal-location__column">
+                            <label class="modal-location__item">
+                                <input value="moscow" type="radio">
+                                <span>Москва</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Архангельск</span>
+                            </label>
+                        </div>
+                        <div class="modal-location__column">
+                            <label class="modal-location__item">
+                                <input value="moscow" type="radio">
+                                <span>Москва</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Архангельск</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221208062846"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221208062846"></script>
+    <script src="assets/js/script.js?_v=20221208062846"></script>
+    <script src="assets/js/app.js?_v=20221208062846"></script>
 </body>
 
 </html>

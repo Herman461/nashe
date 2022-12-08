@@ -91,10 +91,6 @@
   line-height: 150%;
 }
 
-.content__container {
-  padding: 0 24px;
-}
-
 .content__notice {
   font-size: 16px;
   line-height: 150%;
@@ -201,8 +197,13 @@
   padding: 10px 16px 24px;
 }
 
+.content-container {
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
 @media (min-width: 768.98px) {
-  .content__container {
+  .content-container {
     max-width: 696px;
   }
 }
@@ -235,16 +236,16 @@
     display: none;
   }
 
-  .content__container {
-    padding: 0 16px;
-  }
-
   .content__image img {
     height: auto;
   }
 
   .content__image_big img {
     height: auto;
+  }
+
+  .content-container {
+    padding: 0 16px;
   }
 }
 

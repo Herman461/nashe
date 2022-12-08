@@ -359,6 +359,8 @@
     -webkit-box-flex: 0;
     -ms-flex: 0 0 312px;
     flex: 0 0 312px;
+    position: sticky;
+    top: 16px;
     background: #F2F5FA;
     border-radius: 12px;
     padding: 16px 0;

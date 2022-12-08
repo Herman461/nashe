@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221124195754">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221208062846">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221208062846">
 
 
-    <link rel="stylesheet" href="assets/css/pages/checkout.css?_v=20221124195754">
+    <link rel="stylesheet" href="assets/css/pages/checkout.css?_v=20221208062846">
 
 
 
     <title>Страница продукта</title>
 </head>
 
-<body>
+<body data-simplebar="">
 
     <div class="wrapper">
         <header class="header header_small">
@@ -384,10 +385,110 @@
             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
         </div>
     </form>
-    <script src="assets/js/phone-mask.js?_v=20221124195754"></script>
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221124195754"></script>
-    <script src="assets/js/script.js?_v=20221124195754"></script>
-    <script src="assets/js/app.js?_v=20221124195754"></script>
+    <script src="assets/js/phone-mask.js?_v=20221208062846"></script>
+    <div id="modal-search" class="modal">
+        <div class="search">
+            <form action="#" class="search__main">
+                <div class="search__input">
+                    <button class="search__button">
+                        <svg>
+                            <use xlink:href="assets/images/icons/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                    <input placeholder="Поиск" class="input" type="text">
+                    <div class="search__loader">
+                        <img src="assets/images/preloader.gif" alt="">
+                    </div>
+                </div>
+                <a href="" class="search__cancel">Отменить</a>
+            </form>
+            <div class="search__results">
+                <div class="search__label"></div>
+                <div class="search__products"></div>
+                <div class="search__categories"></div>
+                <div class="search__empty hidden">
+                    По вашему запросу ничего не найдено.
+                    <br>
+                    Попробуйте изменить запрос или воспользуйтесь каталогом товаров
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-location" class="modal modal_top">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__title">Выберите город</div>
+                <div class="modal__close">
+                    <svg>
+                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__body">
+                <div class="modal-location">
+                    <form action="#" class="modal-location__search">
+                        <div class="modal-location__input">
+                            <button class="modal-location__button">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#search"></use>
+                                </svg>
+                            </button>
+                            <input placeholder="Найти по названию" class="input" type="text">
+                        </div>
+                    </form>
+                    <div class="modal-location__row">
+                        <div class="modal-location__column">
+                            <label class="modal-location__item">
+                                <input checked value="moscow" type="radio">
+                                <span>Москва</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Архангельск</span>
+                            </label>
+                        </div>
+                        <div class="modal-location__column">
+                            <label class="modal-location__item">
+                                <input value="moscow" type="radio">
+                                <span>Москва</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Архангельск</span>
+                            </label>
+                        </div>
+                        <div class="modal-location__column">
+                            <label class="modal-location__item">
+                                <input value="moscow" type="radio">
+                                <span>Москва</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Санкт-Петербург</span>
+                            </label>
+                            <label class="modal-location__item">
+                                <input type="radio">
+                                <span>Архангельск</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221208062846"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221208062846"></script>
+    <script src="assets/js/script.js?_v=20221208062846"></script>
+    <script src="assets/js/app.js?_v=20221208062846"></script>
 </body>
 
 </html>

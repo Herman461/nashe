@@ -498,83 +498,7 @@ window.addEventListener('click', function(e) {
 })
 
 
-const mainSlider = new Swiper('.main-slider__body', {
-    speed: 1000,
-    loop: true,
-    spaceBetween: 30,
-    navigation: {
-        nextEl: '.main-slider .slider-buttons__item_next',
-        prevEl: '.main-slider .slider-buttons__item_prev'
-    },
-    pagination: {
-        el: '.main-slider__dots',
-        clickable: true,
-    },
-})
-const categoriesPageSlider = new Swiper('.categories-page__body', {
-    speed: 1000,
-    loop: true,
-    spaceBetween: 16,
-    slidesPerView: 2.15,
-    breakpoints: {
-      1024.98: {
-          slidesPerView: 6,
-          spaceBetween: 24,
-      },
-        767.98: {
-          slidesPerView: 4.2,
-        },
-        575.98: {
-          slidesPerView: 3.2,
-        }
-    },
-})
 
-const newProductsSlider = new Swiper('.new-products-page .product-slider__body', {
-    speed: 1000,
-    loop: true,
-    spaceBetween: 16,
-    slidesPerView: 1.05,
-    breakpoints: {
-        1280.98: {
-            slidesPerView: 4,
-            spaceBetween: 24,
-        },
-        1024.98: {
-            slidesPerView: 3,
-        },
-        767.98: {
-            slidesPerView: 2.05,
-        }
-    },
-    navigation: {
-        nextEl: '.new-products-page .slider-buttons__item_next',
-        prevEl: '.new-products-page .slider-buttons__item_prev'
-    },
-})
-
-const bestsellersSlider = new Swiper('.bestsellers .product-slider__body', {
-    speed: 1000,
-    loop: true,
-    spaceBetween: 16,
-    slidesPerView: 1.05,
-    breakpoints: {
-        1280.98: {
-            slidesPerView: 4,
-            spaceBetween: 24,
-        },
-        1024.98: {
-            slidesPerView: 3,
-        },
-        767.98: {
-            slidesPerView: 2.05,
-        }
-    },
-    navigation: {
-        nextEl: '.bestsellers .slider-buttons__item_next',
-        prevEl: '.bestsellers .slider-buttons__item_prev'
-    },
-})
 
 
 
@@ -632,8 +556,6 @@ if (document.querySelector('.gallery-product__close')) {
         document.body.classList.remove('lock')
     })
 }
-
-
 
 
 
