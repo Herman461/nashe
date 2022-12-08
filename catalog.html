@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221208062846">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221208062846">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221209004044">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221209004044">
 
 
-    <link rel="stylesheet" href="assets/css/pages/catalog.css?_v=20221208062846">
+    <link rel="stylesheet" href="assets/css/pages/catalog.css?_v=20221209004044">
 
 
 
@@ -1638,18 +1638,35 @@
                                         <use xlink:href="assets/images/icons/icons.svg#sort-button"></use>
                                     </svg>
                                 </button>
+                                <div class="catalog__show show-catalog">
+                                    <a data-tab-category="products" data-tab-title="grid" href="" class="show-catalog__button active">
+                                        <div class="show-catalog__icon">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#square"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Плиткой</span>
+                                    </a>
+                                    <a data-tab-category="products" data-tab-title="list" href="" class="show-catalog__button">
+                                        <div class="show-catalog__icon">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#list"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Списком</span>
+                                    </a>
+                                    <a href="" class="show-catalog__union">
+                                        <svg>
+                                            <use xlink:href="assets/images/icons/icons.svg#union"></use>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
 
-                            <div class="catalog__products items-products">
+                            <div data-tab-category="products" data-tab-content="grid" class="catalog__grid items-products active">
                                 <div class="items-products__row">
                                     <div class="items-products__column">
                                         <div class="item-product">
-                                            <div class="item-product__labels">
-
-
-                                            </div>
-
-
                                             <div class="item-product__favorite">
                                                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66529 2.59644C6.42803 2.27973 7.24578 2.1167 8.07166 2.1167C8.89754 2.1167 9.71529 2.27973 10.478 2.59644C11.2408 2.91315 11.9335 3.37732 12.5165 3.96231L12.5194 3.96524L12.6667 4.11446L12.814 3.96524L12.8169 3.96231C13.3998 3.37732 14.0926 2.91315 14.8553 2.59644C15.618 2.27973 16.4358 2.1167 17.2617 2.1167C18.0875 2.1167 18.9053 2.27973 19.668 2.59644C20.4305 2.91306 21.1231 3.37703 21.7059 3.96178C24.1978 6.45426 24.2636 10.5848 21.2911 13.6129L21.2854 13.6187L12.6667 22.2374L4.0422 13.6129C1.06972 10.5848 1.13551 6.45426 3.6274 3.96178C4.21026 3.37704 4.90279 2.91306 5.66529 2.59644ZM8.07166 3.8667C7.47611 3.8667 6.88641 3.98426 6.33639 4.21265C5.78637 4.44104 5.28684 4.77575 4.86645 5.1976L4.86538 5.19868C3.11848 6.94557 2.92394 9.97301 5.28833 12.3842L12.6667 19.7625L20.045 12.3842C22.4094 9.973 22.2148 6.94557 20.4679 5.19868L20.4669 5.1976C20.0465 4.77575 19.547 4.44104 18.9969 4.21265C18.4469 3.98426 17.8572 3.8667 17.2617 3.8667C16.6661 3.8667 16.0764 3.98426 15.5264 4.21265C14.977 4.44077 14.478 4.77498 14.0579 5.19615C14.0574 5.19664 14.0569 5.19712 14.0565 5.1976L12.6667 6.60546L11.2769 5.1976C11.2764 5.19712 11.2759 5.19664 11.2754 5.19615C10.8553 4.77498 10.3563 4.44077 9.80693 4.21265C9.25691 3.98426 8.66721 3.8667 8.07166 3.8667Z" fill="white" />
@@ -1672,17 +1689,14 @@
                                                 <div class="item-product__dots dots"></div>
                                             </div>
                                             <div class="item-product__content">
-                                                <div class="item-product__price">999 руб.</div>
+                                                <div class="item-product__price">
+                                                    999 ₽ / 10 шт
+                                                    <span>99 ₽ / 1 шт</span>
+                                                </div>
                                                 <a class="item-product__title" href="">Джемпер однотонный с круглой
                                                     горловиной</a>
-                                                <div class="item-product__colors">
-                                                    <div class="item-product__color item-product__color_black"></div>
-                                                    <div class="item-product__color item-product__color_white"></div>
-                                                    <div class="item-product__color item-product__color_cream"></div>
-                                                    <div class="item-product__color item-product__color_blue"></div>
-                                                    <div class="item-product__color item-product__color_light-blue"></div>
-                                                    <div class="item-product__color item-product__color_kelly"></div>
-                                                    <div class="item-product__number">+3</div>
+                                                <div class="item-product__char">
+                                                    <p>Размеры в наличии: 42 46 50 52</p>
                                                 </div>
                                                 <div class="item-product__actions">
                                                     <div class="item-product__select select">
@@ -1706,6 +1720,185 @@
 
                                 </div>
 
+                            </div>
+                            <div data-tab-category="products" data-tab-content="list" class="catalog__list list-catalog">
+                                <div class="list-catalog__product block-product">
+                                    <div class="block-product__image ibg">
+                                        <img src="assets/images/products/product.png" alt="">
+                                    </div>
+                                    <div class="block-product__content">
+
+                                        <div class="block-product__labels">
+                                            <div class="block-product__label">Новинка</div>
+                                            <div class="block-product__label block-product__label_discount">−30%</div>
+                                        </div>
+                                        <div class="block-product__title">Джемпер однотонный с круглой горловиной</div>
+                                        <div class="block-product__info">
+                                            <p>Размеры в наличии: 42 46 50 52</p>
+                                        </div>
+                                    </div>
+                                    <div class="block-product__actions actions-block-product">
+                                        <div class="actions-block-product__price">
+                                            <span>999 ₽ / 10 шт</span>
+                                            99 ₽ / 1 шт
+                                        </div>
+                                        <div class="actions-block-product__bottom">
+                                            <div class="actions-block-product__select select">
+                                                <div class="select__icon">
+                                                    <svg>
+                                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                                    </svg>
+                                                </div>
+                                                <select>
+                                                    <option value="1" selected>42</option>
+                                                    <option value="2">44</option>
+                                                    <option value="3">46</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" class="actions-block-product__button button">В корзину</button>
+                                            <button type="button" class="actions-block-product__favorite">
+                                                <svg>
+                                                    <use xlink:href="assets/images/icons/icons.svg#favorite"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="list-catalog__product block-product">
+                                    <div class="block-product__image ibg">
+                                        <img src="assets/images/products/product.png" alt="">
+                                    </div>
+                                    <div class="block-product__content">
+
+                                        <div class="block-product__labels">
+                                            <div class="block-product__label">Новинка</div>
+                                            <div class="block-product__label block-product__label_discount">−30%</div>
+                                        </div>
+                                        <div class="block-product__title">Джемпер однотонный с круглой горловиной</div>
+                                        <div class="block-product__info">
+                                            <p>Размеры в наличии: 42 46 50 52</p>
+                                        </div>
+                                    </div>
+                                    <div class="block-product__actions actions-block-product">
+                                        <div class="actions-block-product__price">
+                                            <span>999 ₽ / 10 шт</span>
+                                            99 ₽ / 1 шт
+                                        </div>
+                                        <div class="actions-block-product__bottom">
+                                            <div class="actions-block-product__select select">
+                                                <div class="select__icon">
+                                                    <svg>
+                                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                                    </svg>
+                                                </div>
+                                                <select>
+                                                    <option value="1" selected>42</option>
+                                                    <option value="2">44</option>
+                                                    <option value="3">46</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" class="actions-block-product__button button">В корзину</button>
+                                            <button type="button" class="actions-block-product__favorite">
+                                                <svg>
+                                                    <use xlink:href="assets/images/icons/icons.svg#favorite"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="list-catalog__banner single-banner">
+                                    <a href="" class="single-banner__image">
+                                        <img src="assets/images/home/single-banner.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="list-catalog__product block-product">
+                                    <div class="block-product__image ibg">
+                                        <img src="assets/images/products/product.png" alt="">
+                                    </div>
+                                    <div class="block-product__content">
+
+                                        <div class="block-product__labels">
+                                            <div class="block-product__label">Новинка</div>
+                                            <div class="block-product__label block-product__label_discount">−30%</div>
+                                        </div>
+                                        <div class="block-product__title">Джемпер однотонный с круглой горловиной</div>
+                                        <div class="block-product__info">
+                                            <p>Размеры в наличии: 42 46 50 52</p>
+                                        </div>
+                                    </div>
+                                    <div class="block-product__actions actions-block-product">
+                                        <div class="actions-block-product__price">
+                                            <span>999 ₽ / 10 шт</span>
+                                            99 ₽ / 1 шт
+                                        </div>
+                                        <div class="actions-block-product__bottom">
+                                            <div class="actions-block-product__select select">
+                                                <div class="select__icon">
+                                                    <svg>
+                                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                                    </svg>
+                                                </div>
+                                                <select>
+                                                    <option value="1" selected>42</option>
+                                                    <option value="2">44</option>
+                                                    <option value="3">46</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" class="actions-block-product__button button">В корзину</button>
+                                            <button type="button" class="actions-block-product__favorite">
+                                                <svg>
+                                                    <use xlink:href="assets/images/icons/icons.svg#favorite"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="list-catalog__product block-product">
+                                    <div class="block-product__image ibg">
+                                        <img src="assets/images/products/product.png" alt="">
+                                    </div>
+                                    <div class="block-product__content">
+
+                                        <div class="block-product__labels">
+                                            <div class="block-product__label">Новинка</div>
+                                            <div class="block-product__label block-product__label_discount">−30%</div>
+                                        </div>
+                                        <div class="block-product__title">Джемпер однотонный с круглой горловиной</div>
+                                        <div class="block-product__info">
+                                            <p>Размеры в наличии: 42 46 50 52</p>
+                                        </div>
+                                    </div>
+                                    <div class="block-product__actions actions-block-product">
+                                        <div class="actions-block-product__price">
+                                            <span>999 ₽ / 10 шт</span>
+                                            99 ₽ / 1 шт
+                                        </div>
+                                        <div class="actions-block-product__bottom">
+                                            <div class="actions-block-product__select select">
+                                                <div class="select__icon">
+                                                    <svg>
+                                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                                    </svg>
+                                                </div>
+                                                <select>
+                                                    <option value="1" selected>42</option>
+                                                    <option value="2">44</option>
+                                                    <option value="3">46</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" class="actions-block-product__button button">В корзину</button>
+                                            <button type="button" class="actions-block-product__favorite">
+                                                <svg>
+                                                    <use xlink:href="assets/images/icons/icons.svg#favorite"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                             <div class="catalog__paging paging">
                                 <ul class="paging__list">
@@ -1900,7 +2093,7 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/pages/catalog.js?_v=20221208062846"></script>
+    <script src="assets/js/pages/catalog.js?_v=20221209004044"></script>
     <div id="modal-search" class="modal">
         <div class="search">
             <form action="#" class="search__main">
@@ -2000,10 +2193,10 @@
         </div>
     </div>
 
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221208062846"></script>
-    <script src="assets/js/plugins/simplebar.min.js?_v=20221208062846"></script>
-    <script src="assets/js/script.js?_v=20221208062846"></script>
-    <script src="assets/js/app.js?_v=20221208062846"></script>
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221209004044"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221209004044"></script>
+    <script src="assets/js/script.js?_v=20221209004044"></script>
+    <script src="assets/js/app.js?_v=20221209004044"></script>
 </body>
 
 </html>

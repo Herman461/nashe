@@ -1688,6 +1688,20 @@ textarea.input::placeholder {
   font-size: 16px;
   line-height: 150%;
   margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.item-product__price span {
+  font-size: 13px;
+  line-height: 16px;
+  color: #8D8E91;
+  margin-top: 3px;
 }
 
 .item-product__title {
@@ -1695,7 +1709,7 @@ textarea.input::placeholder {
   transition: all 0.3s ease 0s;
   display: inline-block;
   line-height: 142.8571428571%;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .item-product__colors {
@@ -1705,6 +1719,11 @@ textarea.input::placeholder {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.item-product__char {
+  line-height: 20px;
+  color: #8D8E91;
 }
 
 .item-product__color {
@@ -1779,6 +1798,17 @@ textarea.input::placeholder {
 .item-product__select .select__head {
   border: 1px solid #F3F5FA;
   background: #fff;
+}
+
+.item-product__select .select__list {
+  top: calc(100% + 4px);
+  background: #fff;
+  border: 1px solid #F3F5FA;
+}
+
+.item-product__select .select__item {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .item-product__button {
@@ -2353,6 +2383,12 @@ textarea.input::placeholder {
   background: #fff;
   font-size: 12px;
   line-height: 16px;
+}
+
+.single-banner__image img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
 }
 
 .modal {
@@ -3884,6 +3920,10 @@ textarea.input::placeholder {
   }
 
   .item-product__title:hover {
+    color: #416AA7;
+  }
+
+  .item-product__select .select__item:hover {
     color: #416AA7;
   }
 
