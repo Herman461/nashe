@@ -394,6 +394,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })
 
+// Загрузка городов
+document.addEventListener('DOMContentLoaded', getCities)
+window.addEventListener('resize', getCities)
 
 // Модальные окна
 document.addEventListener('DOMContentLoaded', function() {
@@ -433,7 +436,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         }
     }
-
 })
 
 
@@ -506,3 +508,154 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 })
+
+
+async function getCities() {
+    if (!sessionStorage.getItem('cities')) {
+        const response = await fetch('database/cities.json')
+        const result = await response.json()
+        const cities = result.cities
+
+        sessionStorage.setItem('cities', JSON.stringify(cities))
+    }
+    buildCitiesHTML()
+}
+
+const headerLocationInput = document.querySelector('.modal-location__input input')
+
+if (headerLocationInput) {
+    headerLocationInput.addEventListener('input', buildCitiesHTML)
+}
+
+
+function buildCitiesHTML() {
+    const json = sessionStorage.getItem('cities')
+    const value = headerLocationInput.value.trim()
+    if (!json) return
+
+    let cities = JSON.parse(json)
+
+    if (value) {
+
+        cities = cities.filter(function(city) {
+            return city.name.toLowerCase().includes(value.toLowerCase())
+        })
+    }
+
+    const currentColumns = document.querySelectorAll('.modal-location__column')
+
+    const row = document.querySelector('.modal-location__row')
+    row.innerHTML = ''
+
+    let columnsCount;
+
+    if (window.matchMedia('(min-width: 1024.98px)').matches) {
+        columnsCount = 3
+    } else if (window.matchMedia('(min-width: 768.98px) and (max-width: 1024.98px)').matches) {
+        columnsCount = 4
+    } else {
+
+        columnsCount = 2
+    }
+
+    // if (columnsCount === currentColumns.length) return
+
+
+    const count = Math.floor(cities.length / columnsCount)
+
+    let begin = 0
+    let end = count
+    if (cities.length <= columnsCount) {
+        columnsCount = 1
+    }
+    for (let index = 0; index < columnsCount; index++) {
+
+        let arr = cities.slice(begin, end)
+
+        if (index === columnsCount - 1) {
+            arr = cities.slice(begin)
+        }
+
+        begin = end
+        end += count
+
+        const column = document.createElement('div')
+        column.classList.add('modal-location__column')
+
+        arr.forEach(function(city) {
+            const item = document.createElement('label')
+            item.classList.add('modal-location__item')
+
+            let checked = false
+
+            if (city.value === 1) {
+                checked = true
+            }
+
+            item.innerHTML = `
+                  <input ${checked ? 'checked' : ''} value="${city.value}" name="city" type="radio">
+                  <span>${city.name}</span>
+            `
+
+            column.appendChild(item)
+        })
+
+        row.appendChild(column)
+    }
+}
+
+window.addEventListener('click', function(e) {
+    if (e.target.closest('.modal-location__item')) {
+        const location = e.target.closest('.modal-location__item')
+        document.querySelector('.location-header__name').innerHTML = location.querySelector('span').innerHTML
+    }
+})
+
+
+const locationHeaderLink = document.querySelector('.location-header__link')
+const locationButtonYes = document.querySelector('#location-button-yes')
+const locationButtonOther = document.querySelector('#location-button-other')
+
+const locationHeaderWindow = document.querySelector('.location-header__window')
+
+function closeLocationWindow() {
+    if (locationHeaderWindow && locationHeaderWindow.classList.contains('active')) {
+        locationHeaderWindow.classList.remove('active')
+    }
+}
+if (locationHeaderLink) {
+    locationHeaderLink.addEventListener('click', closeLocationWindow)
+}
+
+if (locationButtonYes) {
+    locationButtonYes.addEventListener('click', function(e) {
+        e.preventDefault()
+        closeLocationWindow()
+    })
+}
+
+if (locationButtonOther) {
+    locationButtonOther.addEventListener('click', closeLocationWindow)
+}
+
+function initProductsSliders() {
+    const productsSliders = document.querySelectorAll('.item-product__slider');
+    if (productsSliders.length > 0) {
+        for (let index = 0; index < productsSliders.length; index++) {
+            const productsSlider = productsSliders[index]
+
+            const slider = new Swiper(productsSlider, {
+                speed: 800,
+                loop: true,
+                spaceBetween: 8,
+                slidesPerView: 1,
+                pagination: {
+                    el: productsSlider.nextElementSibling,
+                    clickable: true,
+                },
+            })
+        }
+    }
+}
+
+initProductsSliders()

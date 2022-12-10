@@ -1,3 +1,7 @@
+.page {
+  overflow: visible !important;
+}
+
 .user__subtitle {
   margin-bottom: 24px;
 }
@@ -443,6 +447,10 @@
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding-left: 24px;
+  }
+
+  .user__subtitle {
+    display: none;
   }
 
   .personal-data__input_password input {

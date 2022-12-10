@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221210142716">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221210142716">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221210212330">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221210212330">
 
 
-    <link rel="stylesheet" href="assets/css/pages/shops.css?_v=20221210142716">
+    <link rel="stylesheet" href="assets/css/pages/shops.css?_v=20221210212330">
 
 
 
@@ -23,20 +23,21 @@
             <div class="header__top top-header">
                 <div class="top-header__container container">
                     <div class="top-header__location location-header">
-                        <a data-modal-link="modal-location" href="" class="top-header__link">
-                            <span>Санкт-Петербург</span>
-                            <span class="top-header__arrow">
+                        <a data-da=".menu__content,1024.98,first" data-modal-link="modal-location" href="" class="location-header__link">
+                            <span class="location-header__label">Город</span>
+                            <span class="location-header__name">Санкт-Петербург</span>
+                            <div class="location-header__arrow">
                                 <svg>
                                     <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
                                 </svg>
-                            </span>
+                            </div>
                         </a>
-                        <div class="location-header__window window-location-header">
+                        <div class="location-header__window window-location-header ">
                             <div class="window-location-header__title">Ваш город Санкт-Петербург?</div>
                             <p class="window-location-header__text">От города зависит есть ли товар в наличии и его стоимость</p>
                             <div class="window-location-header__actions">
-                                <a href="" class="window-location-header__button button button_white">Да</a>
-                                <a href="" class="window-location-header__button button button_outline">Выбрать другой</a>
+                                <a id="location-button-yes" href="" class="window-location-header__button button button_white">Да</a>
+                                <a data-modal-link="modal-location" id="location-button-other" href="" class="window-location-header__button button button_outline">Выбрать другой</a>
                             </div>
                         </div>
                     </div>
@@ -2122,58 +2123,16 @@
                         </div>
                     </form>
                     <div class="modal-location__row">
-                        <div class="modal-location__column">
-                            <label class="modal-location__item">
-                                <input checked value="moscow" type="radio">
-                                <span>Москва</span>
-                            </label>
-                            <label class="modal-location__item">
-                                <input type="radio">
-                                <span>Санкт-Петербург</span>
-                            </label>
-                            <label class="modal-location__item">
-                                <input type="radio">
-                                <span>Архангельск</span>
-                            </label>
-                        </div>
-                        <div class="modal-location__column">
-                            <label class="modal-location__item">
-                                <input value="moscow" type="radio">
-                                <span>Москва</span>
-                            </label>
-                            <label class="modal-location__item">
-                                <input type="radio">
-                                <span>Санкт-Петербург</span>
-                            </label>
-                            <label class="modal-location__item">
-                                <input type="radio">
-                                <span>Архангельск</span>
-                            </label>
-                        </div>
-                        <div class="modal-location__column">
-                            <label class="modal-location__item">
-                                <input value="moscow" type="radio">
-                                <span>Москва</span>
-                            </label>
-                            <label class="modal-location__item">
-                                <input type="radio">
-                                <span>Санкт-Петербург</span>
-                            </label>
-                            <label class="modal-location__item">
-                                <input type="radio">
-                                <span>Архангельск</span>
-                            </label>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221210142716"></script>
-    <script src="assets/js/plugins/simplebar.min.js?_v=20221210142716"></script>
-    <script src="assets/js/script.js?_v=20221210142716"></script>
-    <script src="assets/js/app.js?_v=20221210142716"></script>
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221210212330"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221210212330"></script>
+    <script src="assets/js/script.js?_v=20221210212330"></script>
+    <script src="assets/js/app.js?_v=20221210212330"></script>
 </body>
 
 </html>

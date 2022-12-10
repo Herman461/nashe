@@ -81,7 +81,7 @@ if (sideSwitchers.length > 0) {
 // Ajax
 
 async function getProducts() {
-    const response = await fetch('/products.json');
+    const response = await fetch('database/products.json');
 
     if (response.status >= 200 && response.status <= 299 ) {
         const data = await response.json()
@@ -149,35 +149,18 @@ function buildItemProductHTML(data) {
     `
 }
 
-function initProductsSliders() {
-    const productsSliders = document.querySelectorAll('.item-product__slider');
-    if (productsSliders.length > 0) {
-        for (let index = 0; index < productsSliders.length; index++) {
-            const productsSlider = productsSliders[index]
-
-            const slider = new Swiper(productsSlider, {
-                speed: 800,
-                loop: true,
-                spaceBetween: 8,
-                slidesPerView: 1,
-                pagination: {
-                    el: productsSlider.nextElementSibling,
-                    clickable: true,
-                },
-            })
-        }
-    }
-}
 
 function buildBlockProductHTML() {
 
 }
 
 
-async function setProducts() {
-    const products = await getProducts();
+// async function setProducts() {
+//     const products = await getProducts();
+//
+//     initProductsSliders()
+// }
+//
+// setProducts()
 
-    initProductsSliders()
-}
 
-setProducts()

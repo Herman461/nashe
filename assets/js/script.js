@@ -453,7 +453,7 @@ for (let index = 0; index < select.length; ++index) {
         }
     })
     selectList.addEventListener('click', function(e) {
-        if (e.target.closest('.select__item')) {
+        if (!document.querySelector('.select__list.slide') &&  e.target.closest('.select__item')) {
             const target = e.target.closest('.select__item')
             const value = target.dataset.value
             let newSelectedEl = item.querySelector(`option[value="${value}"]`)
@@ -554,6 +554,7 @@ if (document.querySelector('.gallery-product__close')) {
     document.querySelector('.gallery-product__close').addEventListener('click', function() {
         document.querySelector('.product__gallery').classList.remove('active')
         document.body.classList.remove('lock')
+
     })
 }
 

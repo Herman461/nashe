@@ -978,7 +978,7 @@
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1440.98px) {
+@media (min-width: 1280.98px) and (max-width: 1440.98px) {
   .gallery-product__close {
     top: 48px;
     right: 48px;
