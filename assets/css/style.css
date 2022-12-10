@@ -75,6 +75,10 @@ body.lock {
   color: #292D42;
 }
 
+.simplebar-content {
+  height: 100%;
+}
+
 .page {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
@@ -1252,6 +1256,9 @@ textarea.input::placeholder {
   display: -ms-inline-flexbox;
   display: inline-flex;
   fill: #828282;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 20px;
+  flex: 0 0 20px;
 }
 
 .select__icon svg {

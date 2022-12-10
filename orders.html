@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221209005117">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221209005117">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221210142716">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221210142716">
 
 
-    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221209005117">
+    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221210142716">
 
 
 
@@ -1218,10 +1218,33 @@
                 <div class="user">
                     <h1 class="user__title main-title">Личный кабинет</h1>
                     <div class="user__content">
-                        <div class="user__buttons">
-                            <a href="/orders.html" class="user__button active">Мои заказы</a>
-                            <a href="/personal-data.html" class="user__button">Личные данные</a>
-                            <a href="" class="user__button user__button_red">Выйти</a>
+                        <div data-simplebar="" class="user__side side-user">
+                            <div class="side-user__header">
+                                <button type="button" onclick="history.back()" class="side-user__prev">
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                    </svg>
+                                </button>
+                                <div class="side-user__title">Личный кабинет</div>
+                                <button type="button" class="side-user__close">
+                                    <svg>
+                                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="side-user__body">
+                                <div class="side-user__data">
+                                    <div class="side-user__email">Example@gmail.com</div>
+                                    <button type="button" class="side-user__action button button_white">Сменить пароль</button>
+                                </div>
+
+                                <div class="side-user__buttons">
+                                    <a href="/orders.html" class="side-user__button active">Мои заказы</a>
+                                    <a href="/personal-data.html" class="side-user__button">Личные данные</a>
+                                    <a href="" class="side-user__button side-user__button_red">Выйти</a>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="user__body">
                             <h2 class="user__subtitle title">Мои заказы</h2>
@@ -1720,10 +1743,10 @@
         </div>
     </div>
 
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221209005117"></script>
-    <script src="assets/js/plugins/simplebar.min.js?_v=20221209005117"></script>
-    <script src="assets/js/script.js?_v=20221209005117"></script>
-    <script src="assets/js/app.js?_v=20221209005117"></script>
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221210142716"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221210142716"></script>
+    <script src="assets/js/script.js?_v=20221210142716"></script>
+    <script src="assets/js/app.js?_v=20221210142716"></script>
 </body>
 
 </html>
