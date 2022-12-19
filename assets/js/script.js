@@ -550,6 +550,31 @@ const imagesProductSlider = new Swiper('.images-product__slider', {
     },
 
 })
+
+
+const moreCheckoutSlider = new Swiper('.more-checkout__slider', {
+    speed: 1000,
+
+    slidesPerView: 1.8,
+    spaceBetween: 24,
+    navigation: {
+        nextEl: '.more-checkout__body .slider-buttons__item_next',
+        prevEl: '.more-checkout__body .slider-buttons__item_prev',
+    },
+    breakpoints: {
+        1024.98: {
+            slidesPerView: 4
+        },
+        768.98: {
+            slidesPerView: 4.25
+        },
+        575.98: {
+            slidesPerView: 3.25
+        },
+    },
+
+
+})
 if (document.querySelector('.gallery-product__close')) {
     document.querySelector('.gallery-product__close').addEventListener('click', function() {
         document.querySelector('.product__gallery').classList.remove('active')

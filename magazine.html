@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="assets/css/style.css?_v=20221219063354">
 
 
-    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221219063354">
+    <link rel="stylesheet" href="assets/css/pages/catalog.css?_v=20221219063354">
 
 
 
-    <title>Личные данные</title>
+    <title>Журнал</title>
 </head>
 
 <body data-simplebar="">
@@ -1197,263 +1197,298 @@
         </header>
 
         <main class="page">
-            <div class="page__container container">
-                <div class="breadcrumbs">
-                    <ul class="breadcrumbs__list">
-                        <li>
-                            <a href="" class="breadcrumbs__link">Главная</a>
-                        </li>
-                        <li>
-                            <span class="breadcrumbs__item">Личный кабинет</span>
-                        </li>
-                    </ul>
-                    <a href="" class="breadcrumbs__prev">
-                        <div class="breadcrumbs__icon">
-                            <svg>
-                                <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
-                            </svg>
-                        </div>
-                        <span>Главная</span>
-                    </a>
-                </div>
-                <div class="user">
-                    <h1 class="user__title main-title">Личный кабинет</h1>
-                    <div class="user__content">
-                        <div id="side-user" data-simplebar="" class="user__side side-user">
-                            <div class="side-user__header">
-                                <button type="button" onclick="history.back()" class="side-user__prev">
+            <div class="catalog">
+                <div class="catalog__container container">
+                    <div class="breadcrumbs">
+                        <ul class="breadcrumbs__list">
+                            <li>
+                                <a href="" class="breadcrumbs__link">Главная</a>
+                            </li>
+                            <li>
+                                <span class="breadcrumbs__item">Журнал</span>
+                            </li>
+                        </ul>
+                        <a href="" class="breadcrumbs__prev">
+                            <div class="breadcrumbs__icon">
+                                <svg>
+                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                </svg>
+                            </div>
+                            <span>Главная</span>
+                        </a>
+                    </div>
+                    <h1 class="catalog__title title">Журнал</h1>
+                    <div class="catalog__body">
+                        <aside class="catalog__side side">
+                            <div data-da=".filter-catalog__body,1024.98,last" class="side__nav nav-side">
+                                <div class="nav-side__title">Категория</div>
+                                <nav class="nav-side__body">
+                                    <ul class="nav-side__list">
+                                        <li class="nav-side__item">
+                                            <a href="" class="nav-side__link">Новости</a>
+                                        </li>
+                                        <li class="nav-side__item">
+                                            <a href="" class="nav-side__link">Коллекция</a>
+                                        </li>
+                                        <li class="nav-side__item">
+                                            <a href="" class="nav-side__link">Образы</a>
+                                        </li>
+                                        <li class="nav-side__item">
+                                            <a href="" class="nav-side__link">Мода</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </aside>
+                        <div class="catalog__content">
+                            <div class="catalog__actions">
+                                <div class="catalog__filter filter-catalog">
+                                    <a href="" class="filter-catalog__button filter-catalog__button_text">
+                                        <div class="filter-catalog__icon">
+                                            <svg>
+                                                <use xlink:href="assets/images/icons/icons.svg#filter"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Категории</span>
+                                    </a>
+                                    <div class="filter-catalog__content">
+                                        <div class="filter-catalog__container container">
+                                            <div class="filter-catalog__header header-filter-catalog">
+                                                <div class="header-filter-catalog__container container">
+                                                    <div class="header-filter-catalog__body">
+                                                        <div class="header-filter-catalog__back">
+                                                            <svg>
+                                                                <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="header-filter-catalog__title">
+                                                            <span>Категории</span>
+                                                        </div>
+                                                        <div class="header-filter-catalog__close">
+                                                            <svg>
+                                                                <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                                                            </svg>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter-catalog__body"></div>
+                                            <div class="filter-catalog__footer footer-filter-catalog">
+                                                <div class="footer-filter-catalog__container container">
+                                                    <button class="footer-filter-catalog__button button">Смотреть товары</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog__magazine magazine">
+                                <div class="magazine__item magazine__item_big item-magazine">
+
+                                    <a href="" class="item-magazine__image ibg">
+                                        <img src="assets/images/magazine/main-image.jpg" alt="">
+                                    </a>
+                                    <div class="item-magazine__labels">
+                                        <div class="item-magazine__label">Коллекция</div>
+                                    </div>
+                                    <div class="item-magazine__content">
+                                        <div class="item-magazine__date">18.12.2022</div>
+                                        <a href="" class="item-magazine__title main-title">Вещи, из которых рождаются тренды</a>
+                                    </div>
+
+                                </div>
+
+                                <div class="magazine__row">
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/01.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Образ недели: Black Wednesday</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/02.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Как носить костюм в новом сезоне</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/03.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Образ недели: Летняя зима</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/04.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Новая весна: свобода творчества</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/05.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Новое поступление обуви</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/06.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Коллекция об удовольствии</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/07.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Яркий поворот в сторону солнца</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="magazine__column">
+                                        <div class="magazine__item item-magazine">
+                                            <a href="" class="item-magazine__image ibg">
+                                                <img src="assets/images/magazine/08.jpg" alt="">
+                                            </a>
+                                            <div class="item-magazine__labels">
+                                                <div class="item-magazine__label">Образ</div>
+                                            </div>
+                                            <div class="item-magazine__content">
+                                                <div class="item-magazine__date">18.12.2022</div>
+                                                <a href="" class="item-magazine__title">Мода на красном</a>
+                                                <div class="item-magazine__more">
+                                                    <a href="" class="button">Подробнее</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog__more">
+                                <button type="button" class="button button_white">
                                     <svg>
-                                        <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
+                                        <use xlink:href="assets/images/icons/icons.svg#reload"></use>
                                     </svg>
-                                </button>
-                                <div class="side-user__title">Личный кабинет</div>
-                                <button type="button" class="side-user__close">
-                                    <svg>
-                                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
-                                    </svg>
+                                    <span>Показать ещё</span>
                                 </button>
                             </div>
-                            <div class="side-user__body">
 
-                                <div class="side-user__buttons">
-                                    <a href="/orders.html" class="side-user__button">Мои заказы</a>
-                                    <a href="/personal-data.html" class="side-user__button active">Личные данные</a>
-                                    <a href="" class="side-user__button side-user__button_red">Выйти</a>
-                                </div>
+                            <div class="catalog__paging paging">
+                                <ul class="paging__list">
+                                    <li>
+                                        <a href="" class="paging__item active">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="paging__item">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="paging__item">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="paging__item">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="paging__item">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="paging__item paging__item_more">...</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="paging__item">24</a>
+                                    </li>
+                                </ul>
+                                <a href="" class="paging__button">Дальше</a>
                             </div>
-
-                        </div>
-
-                        <div class="user__body">
-                            <h2 data-modal-link="side-user" class="user__subtitle title">Личные данные</h2>
-                            <form action="#" class="user__personal-data personal-data">
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Контактное лицо</div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="second-name">Фамилия</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="Лермонтов" class="input" id="second-name" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="first-name">Имя</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="Михаил" class="input" id="first-name" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="middle-name">Отчество</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="Юрьевич" class="input" id="middle-name" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Расчётный счёт</div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="bank">Банк</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="АО “Тинькофф Банк”" class="input" id="bank" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="bank-number">Номер счёта</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="40817810099910004312" class="input" id="bank-number" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="bik">БИК</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="044123943" class="input" id="bik" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="сorrespondent-account">Корреспондентский счёт</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="30101910555290000000123" class="input" id="сorrespondent-account" type="text">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Фактический адрес</div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="actual-address-index">Индекс</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="823123" class="input" id="actual-address-index" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label>Город/Улица/Дом</label>
-                                        </div>
-                                        <div class="personal-data__select select">
-                                            <div class="select__icon">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
-                                                </svg>
-                                            </div>
-                                            <select>
-                                                <option value="1" selected>г. Смоленск., ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</option>
-                                                <option value="2">Локация №2</option>
-                                                <option value="3">Локация №3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="actual-address-place">Квартира/Офис</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="532" class="input" id="actual-address-place" type="text">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Почтовый адрес</div>
-                                    <label class="personal-data__checkbox checkbox">
-                                        <input class="checkbox__input" type="checkbox">
-                                        <span class="checkbox__text">
-                                            <span>Совпадает с фактическим</span>
-                                        </span>
-                                    </label>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="mailing-address-index">Индекс</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="823123" class="input" id="mailing-address-index" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label>Город/Улица/Дом</label>
-                                        </div>
-                                        <div class="personal-data__select select">
-                                            <div class="select__icon">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
-                                                </svg>
-                                            </div>
-                                            <select>
-                                                <option value="1" selected>г. Смоленск., ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</option>
-                                                <option value="2">Локация №2</option>
-                                                <option value="3">Локация №3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="mailing-address-place">Квартира/Офис</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="532" class="input" id="mailing-address-place" type="text">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Об аккаунте</div>
-                                    <div class="personal-data__label">
-                                        Электронная почта
-                                    </div>
-                                    <div class="personal-data__email">Example@gmail.com</div>
-                                    <div class="personal-data__actions">
-                                        <button data-modal-link="change-password" type="button" class="personal-data__action button button_white">Сменить пароль</button>
-                                        <div class="personal-data__submit">
-                                            <button data-save-text="Сохранено" class="button submit-button">Сохранить</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </form>
-
 
                         </div>
                     </div>
-                    <form action="#" id="change-password" class="modal">
-                        <div class="modal__content">
-                            <div class="modal__header">
-                                <div class="modal__title">Изменение пароля</div>
-                                <div class="modal__close">
-                                    <svg>
-                                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="modal__body">
-                                <div class="change-password">
-                                    <div class="change-password__item">
-                                        <label for="current-password" class="change-password__label">Текущий пароль</label>
-                                        <div class="change-password__input">
-                                            <input id="current-password" class="input" type="password">
-                                            <button type="button" class="change-password__eye">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#eye"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="change-password__item">
-                                        <label for="new-password" class="change-password__label">Новый пароль</label>
-                                        <div class="change-password__input">
-                                            <input id="new-password" class="input" type="password">
-                                            <button type="button" class="change-password__eye">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#eye"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="modal__footer">
-                                <a href="" class="modal__button button">Изменить</a>
-                            </div>
-                        </div>
-                    </form>
                 </div>
-            </div>
 
+
+            </div>
         </main>
         <div class="footer">
             <div class="footer__container container">
@@ -1587,8 +1622,35 @@
         </div>
 
     </div>
-    <script src="assets/js/pages/user.js?_v=20221219063354"></script>
-    <script src="assets/js/phone-mask.js?_v=20221219063354"></script>
+    <div id="sort-modal" class="modal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__title">Сортировка</div>
+                <div class="modal__close">
+                    <svg>
+                        <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__body">
+                <form action="#" class="sort">
+                    <label class="sort__radio">
+                        <input checked value="1" name="location" type="radio">
+                        <span>Сначала недорогие</span>
+                    </label>
+                    <label class="sort__radio">
+                        <input value="2" name="location" type="radio">
+                        <span>Сначала дорогие</span>
+                    </label>
+                    <label class="sort__radio">
+                        <input value="3" name="location" type="radio">
+                        <span>По сумме скидки</span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/pages/catalog.js?_v=20221219063354"></script>
     <div id="modal-search" class="modal">
         <div class="search">
             <form action="#" class="search__main">

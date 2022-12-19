@@ -201,7 +201,7 @@
 .personal-data__block {
   background: #F2F5FA;
   border-radius: 12px;
-  padding: 24px 24px 42px;
+  padding: 24px 24px 32px;
   margin-bottom: 16px;
 }
 
@@ -237,10 +237,23 @@
 
 .personal-data__label {
   margin-bottom: 8px;
+  line-height: 20px;
 }
 
-.personal-data__label label {
-  line-height: 20px;
+.personal-data__email {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.personal-data__action {
+  margin-right: 15px;
+  min-height: 40px !important;
+}
+
+.personal-data__submit .button {
+  width: 100%;
+  min-height: 40px;
 }
 
 .personal-data__checkbox {
@@ -336,15 +349,6 @@
 .side-user {
   background: #F2F5FA;
   border-radius: 12px;
-}
-
-.side-user__email {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.side-user__data {
-  margin-bottom: 24px;
 }
 
 .side-user__buttons {
@@ -453,10 +457,23 @@
     display: none;
   }
 
+  .personal-data__submit .button {
+    min-width: 224px;
+  }
+
   .personal-data__input_password input {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 239px;
     flex: 0 0 239px;
+  }
+
+  .personal-data__actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 
   .user__side {
@@ -475,9 +492,7 @@
   }
 
   .side-user__buttons {
-    border-top: 1px solid rgba(74, 106, 163, 0.12);
     margin: 0 -24px;
-    padding-top: 12px;
   }
 
   .side-user__button {
@@ -486,7 +501,7 @@
 
   .side-user__button.active {
     color: #416AA7;
-    border-left-color: #416AA7;
+    border-left-color: #CF643F;
   }
 
   .side-user__header {
@@ -552,15 +567,20 @@
     font-weight: 700;
   }
 
-  .side-user {
-    padding: 0 24px;
+  .personal-data__submit {
+    padding: 16px 24px;
+    background: #fff;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-box-shadow: inset 0px 1px 0px #ECE8E5;
+    box-shadow: inset 0px 1px 0px #ECE8E5;
   }
 
-  .side-user__data {
-    padding: 24px 16px;
-    background: #F3F5FA;
-    border-radius: 12px;
-    margin-bottom: 16px;
+  .side-user {
+    padding: 0 24px;
   }
 
   .side-user__button {
@@ -630,6 +650,10 @@
 
   .personal-data__title {
     font-size: 18px;
+  }
+
+  .personal-data__submit {
+    padding: 16px;
   }
 
   .side-user {

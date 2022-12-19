@@ -659,3 +659,113 @@ function initProductsSliders() {
 }
 
 initProductsSliders()
+
+
+
+const submitButtons = document.querySelectorAll('.submit-button')
+
+if (submitButtons.length > 0) {
+    for (let index = 0; index < submitButtons.length; index++) {
+        const submitButton = submitButtons[index]
+
+        submitButton.addEventListener('click', function(e) {
+            const button = e.currentTarget
+            button.classList.add('loading')
+
+            // Запрос на сервер
+            new Promise(function(resolve, reject) {
+                setTimeout(function() {
+                    resolve(1)
+                }, 1000)
+            }).finally(function() {
+                button.classList.remove('loading')
+                button.classList.add('save')
+                button.textContent = button.dataset.saveText || "Сохранено";
+                button.setAttribute('disabled', '')
+            })
+
+
+            e.preventDefault()
+        })
+    }
+}
+
+document.addEventListener('DOMContentLoaded', calculateSlidersBg)
+window.addEventListener('resize', calculateSlidersBg)
+
+function calculateSlidersBg() {
+    // if (window.matchMedia('(max-width: 1400.98px)').matches) return
+
+    const productsSliders = document.querySelectorAll('[data-product-slider]')
+
+    for (let index = 0; index < productsSliders.length; index++) {
+        const sliderWrapper = productsSliders[index]
+
+        const sliderWidth = sliderWrapper.offsetWidth
+        const sliderCoords = sliderWrapper.getBoundingClientRect()
+
+        const sliderLeftOffset = sliderCoords.left
+        const sliderRightOffset = window.innerWidth - sliderLeftOffset - sliderWidth
+
+
+        const leftBg = document.createElement('span')
+        leftBg.classList.add('left-bg')
+        leftBg.style.width = sliderLeftOffset + 'px'
+        leftBg.style.left = '-' + sliderLeftOffset + 'px'
+
+        const rightBg = document.createElement('span')
+
+        rightBg.classList.add('right-bg')
+        rightBg.style.width = sliderRightOffset + 'px'
+        rightBg.style.left = (sliderWidth) + 'px'
+
+
+        const prevLeftBg = sliderWrapper.querySelector('.left-bg')
+        const prevRightBg = sliderWrapper.querySelector('.right-bg')
+
+        if (prevLeftBg) {
+            prevLeftBg.remove()
+        }
+        if (prevRightBg) {
+            prevRightBg.remove()
+        }
+        sliderWrapper.appendChild(leftBg)
+        sliderWrapper.appendChild(rightBg)
+    }
+}
+
+const productsSlidersEls = document.querySelectorAll('.product-slider')
+
+
+if (productsSlidersEls.length > 0) {
+    for (let index = 0; index < productsSlidersEls.length; index++) {
+        const el = productsSlidersEls[index]
+
+        const slider = new Swiper(el.querySelector('.product-slider__body'), {
+            speed: 1000,
+            spaceBetween: 16,
+            slidesPerView: 1.05,
+            loop: true,
+            breakpoints: {
+                1280.98: {
+                    slidesPerView: 4,
+                    spaceBetween: 24,
+                },
+                1024.98: {
+                    slidesPerView: 3,
+                },
+                767.98: {
+                    slidesPerView: 2.05,
+                }
+            },
+            navigation: {
+                nextEl: el.querySelector('.slider-buttons__item_next'),
+                prevEl: el.querySelector('.slider-buttons__item_prev')
+            },
+        })
+
+
+    }
+}
+
+

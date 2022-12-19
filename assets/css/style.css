@@ -1808,8 +1808,8 @@ textarea.input::placeholder {
 
 .item-product__actions {
   margin-top: 20px;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: height, opacity 0.3s ease 0s;
+  transition: height, opacity 0.3s ease 0s;
   opacity: 0;
   visibility: hidden;
   display: -webkit-box;
@@ -2408,6 +2408,30 @@ textarea.input::placeholder {
   height: auto;
 }
 
+[data-product-slider] .swiper {
+  overflow: visible !important;
+}
+
+.product-slider {
+  position: relative;
+}
+
+.product-slider__body {
+  overflow: visible !important;
+}
+
+.product-slider__buttons .slider-buttons__item {
+  z-index: 10;
+}
+
+.product-slider .item-product__actions {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important;
+  height: auto !important;
+}
+
 .modal {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -2565,6 +2589,59 @@ textarea.input::placeholder {
 .empty__text {
   font-size: 16px;
   line-height: 24px;
+}
+
+.submit-button {
+  position: relative;
+}
+
+.submit-button.loading {
+  font-size: 0;
+  background: #416AA7 !important;
+  border: #416AA7 !important;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  z-index: 3;
+  height: 16px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: url("../images/preloader-white.gif") center center no-repeat;
+  background-size: 16px 16px;
+}
+
+.submit-button::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  background: url("../images/icons/tick.svg") 0 0/20px 20px no-repeat;
+  display: none;
+}
+
+.submit-button.loading::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.submit-button.save {
+  cursor: auto;
+  background: #8297BB !important;
+  border-color: #8297BB !important;
+  color: #fff !important;
+}
+
+.submit-button.save::after {
+  display: block;
 }
 
 @media (min-width: 575.98px) {
@@ -3060,6 +3137,58 @@ textarea.input::placeholder {
 
   .search__cancel {
     display: none;
+  }
+
+  [data-product-slider] {
+    position: relative;
+  }
+
+  [data-product-slider] .left-bg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #fff;
+  }
+
+  [data-product-slider] .right-bg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #fff;
+  }
+
+  [data-product-slider] .slider-buttons__item {
+    top: 85px;
+    z-index: 10;
+  }
+
+  [data-product-slider] .slider-buttons__item.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  [data-product-slider] .slider-buttons__item_prev {
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+
+  [data-product-slider] .slider-buttons__item_next {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+
+  .product-slider__buttons .slider-buttons__item {
+    top: 129px;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  .product-slider__buttons .slider-buttons__item_prev {
+    left: -20px;
+  }
+
+  .product-slider__buttons .slider-buttons__item_next {
+    right: -20px;
   }
 
   .modal {
@@ -3660,6 +3789,15 @@ textarea.input::placeholder {
     margin-bottom: 6px;
   }
 
+  [data-product-slider] .left-bg,
+  [data-product-slider] .right-bg {
+    display: none;
+  }
+
+  .product-slider__buttons {
+    display: none;
+  }
+
   .modal {
     padding: 30px 0 0 0;
   }
@@ -3855,6 +3993,10 @@ textarea.input::placeholder {
     -webkit-box-flex: 0 !important;
     -ms-flex: 0 1 33.333% !important;
     flex: 0 1 33.333% !important;
+  }
+
+  [data-product-slider] .slider-buttons__item {
+    top: 65px;
   }
 }
 
