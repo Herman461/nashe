@@ -176,9 +176,9 @@ function removeCartPopup() {
 
 if (cartPopup) {
     window.addEventListener('click', function(e) {
-        e.preventDefault()
-        if (e.target.closest('.item-product__button')) {
 
+        if (e.target.closest('.item-product__button')) {
+            e.preventDefault()
             if (cartPopup.classList.contains('visible')) return
 
             cartPopup.classList.add('visible')
