@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221219064122">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221219064122">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221220234421">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221220234421">
 
 
-    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221219064122">
+    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221220234421">
 
 
 
@@ -32,7 +32,7 @@
                                 </svg>
                             </div>
                         </a>
-                        <div class="location-header__window window-location-header ">
+                        <div class="location-header__window window-location-header active">
                             <div class="window-location-header__title">Ваш город Санкт-Петербург?</div>
                             <p class="window-location-header__text">От города зависит есть ли товар в наличии и его стоимость</p>
                             <div class="window-location-header__actions">
@@ -1101,6 +1101,9 @@
                             </svg>
                         </a>
                         <a href="" class="actions-main-header__item actions-main-header__item_cart">
+                            <span>
+                                <span>20</span>
+                            </span>
                             <svg>
                                 <use xlink:href="assets/images/icons/icons.svg#cart"></use>
                             </svg>
@@ -1221,7 +1224,7 @@
                     <div class="user__content">
                         <div data-simplebar="" class="user__side side-user">
                             <div class="side-user__header">
-                                <button type="button" onclick="history.back()" class="side-user__prev">
+                                <button type="button" class="side-user__prev">
                                     <svg>
                                         <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
                                     </svg>
@@ -1234,11 +1237,6 @@
                                 </button>
                             </div>
                             <div class="side-user__body">
-                                <div class="side-user__data">
-                                    <div class="side-user__email">Example@gmail.com</div>
-                                    <button type="button" class="side-user__action button button_white">Сменить пароль</button>
-                                </div>
-
                                 <div class="side-user__buttons">
                                     <a href="/orders.html" class="side-user__button active">Мои заказы</a>
                                     <a href="/personal-data.html" class="side-user__button">Личные данные</a>
@@ -1286,9 +1284,9 @@
                                                         <p>Оплата онлайн</p>
                                                     </div>
                                                 </div>
-                                                <div class="info-item-orders__actions">
-                                                    <a href="" class="info-item-orders__link button">Перейти к оплате</a>
-                                                    <a href="" data-modal-link="cancel-order-modal" class="info-item-orders__cancel">Отменить</a>
+                                                <div class="info-item-orders__actions actions-order">
+                                                    <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                    <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
                                                 </div>
                                             </div>
                                             <div class="item-orders__images">
@@ -1308,6 +1306,202 @@
                                                     И ещё
                                                     <br>24 товара
                                                 </a>
+                                            </div>
+                                            <div class="item-orders__actions actions-order">
+                                                <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="orders__item item-orders">
+                                        <div class="item-orders__header">
+                                            <div class="item-orders__title">Заказ 23123</div>
+                                            <div class="item-orders__data">от 01.01.2022</div>
+                                            <div class="item-orders__line">
+                                                <div class="item-orders__labels">
+                                                    <div class="item-orders__label">Размещён</div>
+                                                </div>
+                                                <div class="item-orders__price">7 650 руб.</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="item-orders__body">
+                                            <div class="item-orders__info info-item-orders">
+                                                <div class="info-item-orders__block">
+                                                    <div class="info-item-orders__icon">
+                                                        <svg>
+                                                            <use xlink:href="assets/images/icons/icons.svg#location"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="info-item-orders__content">
+                                                        <p>Самовывоз из магазина</p>
+                                                        <p>Смоленск, ул. Соболева, д. 25</p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item-orders__block">
+                                                    <div class="info-item-orders__icon">
+                                                        <svg>
+                                                            <use xlink:href="assets/images/icons/icons.svg#wallet"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="info-item-orders__content">
+                                                        <p>Оплата онлайн</p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item-orders__actions actions-order">
+                                                    <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                    <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
+                                                </div>
+                                            </div>
+                                            <div class="item-orders__images">
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <a href="" class="item-orders__more">
+                                                    И ещё
+                                                    <br>24 товара
+                                                </a>
+                                            </div>
+                                            <div class="item-orders__actions actions-order">
+                                                <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="orders__item item-orders">
+                                        <div class="item-orders__header">
+                                            <div class="item-orders__title">Заказ 23123</div>
+                                            <div class="item-orders__data">от 01.01.2022</div>
+                                            <div class="item-orders__line">
+                                                <div class="item-orders__labels">
+                                                    <div class="item-orders__label">Размещён</div>
+                                                </div>
+                                                <div class="item-orders__price">7 650 руб.</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="item-orders__body">
+                                            <div class="item-orders__info info-item-orders">
+                                                <div class="info-item-orders__block">
+                                                    <div class="info-item-orders__icon">
+                                                        <svg>
+                                                            <use xlink:href="assets/images/icons/icons.svg#location"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="info-item-orders__content">
+                                                        <p>Самовывоз из магазина</p>
+                                                        <p>Смоленск, ул. Соболева, д. 25</p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item-orders__block">
+                                                    <div class="info-item-orders__icon">
+                                                        <svg>
+                                                            <use xlink:href="assets/images/icons/icons.svg#wallet"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="info-item-orders__content">
+                                                        <p>Оплата онлайн</p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item-orders__actions actions-order">
+                                                    <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                    <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
+                                                </div>
+                                            </div>
+                                            <div class="item-orders__images">
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <a href="" class="item-orders__more">
+                                                    И ещё
+                                                    <br>24 товара
+                                                </a>
+                                            </div>
+                                            <div class="item-orders__actions actions-order">
+                                                <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="orders__item item-orders">
+                                        <div class="item-orders__header">
+                                            <div class="item-orders__title">Заказ 23123</div>
+                                            <div class="item-orders__data">от 01.01.2022</div>
+                                            <div class="item-orders__line">
+                                                <div class="item-orders__labels">
+                                                    <div class="item-orders__label">Размещён</div>
+                                                </div>
+                                                <div class="item-orders__price">7 650 руб.</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="item-orders__body">
+                                            <div class="item-orders__info info-item-orders">
+                                                <div class="info-item-orders__block">
+                                                    <div class="info-item-orders__icon">
+                                                        <svg>
+                                                            <use xlink:href="assets/images/icons/icons.svg#location"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="info-item-orders__content">
+                                                        <p>Самовывоз из магазина</p>
+                                                        <p>Смоленск, ул. Соболева, д. 25</p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item-orders__block">
+                                                    <div class="info-item-orders__icon">
+                                                        <svg>
+                                                            <use xlink:href="assets/images/icons/icons.svg#wallet"></use>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="info-item-orders__content">
+                                                        <p>Оплата онлайн</p>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item-orders__actions actions-order">
+                                                    <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                    <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
+                                                </div>
+                                            </div>
+                                            <div class="item-orders__images">
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <div class="item-orders__image ibg">
+                                                    <img src="assets/images/products/product.png" alt="">
+                                                </div>
+                                                <a href="" class="item-orders__more">
+                                                    И ещё
+                                                    <br>24 товара
+                                                </a>
+                                            </div>
+                                            <div class="item-orders__actions actions-order">
+                                                <a href="" data-modal-link="payment-order-modal" class="actions-order__link button">Перейти к оплате</a>
+                                                <a href="" data-modal-link="cancel-order-modal" class="actions-order__cancel">Отменить</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1343,7 +1537,50 @@
                     </div>
                 </div>
             </div>
+            <div id="cancel-order-modal" class="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <div class="modal__title">Отменить заказ?</div>
+                        <div class="modal__close">
+                            <svg>
+                                <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="modal__text">После отмены с вами свяжется менеджер</p>
+                    <div class="modal__footer">
+                        <div class="modal__actions">
+                            <a href="" class="modal__cancel button button_white">Нет</a>
+                            <button data-save-text="Отменён" class="modal__agree button submit-button">Да, отменить</button>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <div id="payment-order-modal" class="modal">
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <div class="modal__title">Оплата заказа 123255</div>
+                        <div class="modal__close">
+                            <svg>
+                                <use xlink:href="assets/images/icons/icons.svg#close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="modal__body">
+                        <div class="modal__payment payment-block">
+                            <div class="payment-block__window">
+                                <div class="payment-block__total">Сумма к оплате по счету: <span>5 236.20 ₽</span>
+                                </div>
+                                <a href="" class="payment-block__button">Оплатить</a>
+                                <div class="payment-block__label">Вы будете перенаправлены на страницу оплаты</div>
+                            </div>
+                            <div class="payment-block__attention">Обратите внимание: если вы откажетесь от покупки, для возврата денег вам придётся обратиться в магазин</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </main>
         <div class="footer">
             <div class="footer__container container">
@@ -1477,6 +1714,21 @@
         </div>
 
     </div>
+    <div class="cart-window">
+        <div class="cart-window__body">
+            <div class="cart-window__image ibg">
+                <img src="assets/images/products/product.png" alt="">
+            </div>
+            <div class="cart-window__content">
+                <div class="cart-window__label">Товар добавлен в корзину</div>
+                <div class="cart-window__title">Джемпер для мальчика</div>
+                <div class="cart-window__char">
+                    <p>Размер: XS</p>
+                </div>
+            </div>
+            <a href="checkout.html" class="cart-window__button button button_white">Перейти в корзину</a>
+        </div>
+    </div>
     <div id="modal-search" class="modal">
         <div class="search">
             <form action="#" class="search__main">
@@ -1534,10 +1786,11 @@
         </div>
     </div>
 
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221219064122"></script>
-    <script src="assets/js/plugins/simplebar.min.js?_v=20221219064122"></script>
-    <script src="assets/js/script.js?_v=20221219064122"></script>
-    <script src="assets/js/app.js?_v=20221219064122"></script>
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221220234421"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221220234421"></script>
+    <script src="assets/js/script.js?_v=20221220234421"></script>
+    <script src="assets/js/app.js?_v=20221220234421"></script>
+    <script src="assets/js/ajax.js?_v=20221220234421"></script>
 </body>
 
 </html>

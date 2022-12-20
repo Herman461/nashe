@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (iconMenu) {
         const menuContent = document.querySelector(".menu");
         iconMenu.addEventListener('click', function () {
-            document.body.classList.add("lock");
+
             header.classList.add('active');
             menuContent.classList.add("active");
         })
 
         const closeButton = document.querySelector('.header-menu__close');
         closeButton.addEventListener('click', function() {
-            document.body.classList.remove("lock");
+
             header.classList.remove('active');
             menuContent.classList.remove("active");
         })
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault()
             if (searchCancel.closest('.modal').classList.contains('active')) {
                 searchCancel.closest('.modal').classList.remove('active')
-                document.body.classList.remove('lock')
+
             }
         })
     }
@@ -211,24 +211,29 @@ document.addEventListener('DOMContentLoaded', function() {
     searchModal.addEventListener('click', function(e) {
         if (searchModal.classList.contains('active') && !e.target.closest('.search')) {
             searchModal.classList.remove('active')
-            document.body.classList.remove('lock')
+
         }
     })
 
     const searchButton = document.querySelector('.actions-main-header__item_search')
     const searchInput = document.querySelector('.search__input input')
 
-    searchButton.addEventListener('click', async function(e) {
+    if (searchButton) {
+        searchButton.addEventListener('click', async function(e) {
 
-        setTimeout(() => {
-            searchInput.focus()
-        }, timeout)
-        await search(e)
-    })
+            setTimeout(() => {
+                searchInput.focus()
+            }, timeout)
+            await search(e)
+        })
+
+    }
 
 
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(search, 100))
+    }
 
-    searchInput.addEventListener('input', debounce(search, 100))
 
     async function search(e) {
         let value = e.target.value
@@ -394,9 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })
 
-// Загрузка городов
-document.addEventListener('DOMContentLoaded', getCities)
-window.addEventListener('resize', getCities)
+
 
 // Модальные окна
 document.addEventListener('DOMContentLoaded', function() {
@@ -413,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 document.querySelector(modalTitle).classList.add('active')
 
-                document.body.classList.add('lock')
+
 
                 document.body.style.paddingRight = scrollWidth + 'px'
 
@@ -430,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.target.closest('.modal').classList.remove('active')
 
                 setTimeout(() => {
-                    document.body.classList.remove('lock')
+
                     document.body.style.paddingRight = 0
                 }, timeout)
             })
@@ -510,133 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
-async function getCities() {
-    if (!sessionStorage.getItem('cities')) {
-        const response = await fetch('database/cities.json')
-        const result = await response.json()
-        const cities = result.cities
 
-        sessionStorage.setItem('cities', JSON.stringify(cities))
-    }
-    buildCitiesHTML()
-}
-
-const headerLocationInput = document.querySelector('.modal-location__input input')
-
-if (headerLocationInput) {
-    headerLocationInput.addEventListener('input', buildCitiesHTML)
-}
-
-
-function buildCitiesHTML() {
-    const json = sessionStorage.getItem('cities')
-    const value = headerLocationInput.value.trim()
-    if (!json) return
-
-    let cities = JSON.parse(json)
-
-    if (value) {
-
-        cities = cities.filter(function(city) {
-            return city.name.toLowerCase().includes(value.toLowerCase())
-        })
-    }
-
-    const currentColumns = document.querySelectorAll('.modal-location__column')
-
-    const row = document.querySelector('.modal-location__row')
-    row.innerHTML = ''
-
-    let columnsCount;
-
-    if (window.matchMedia('(min-width: 1024.98px)').matches) {
-        columnsCount = 3
-    } else if (window.matchMedia('(min-width: 768.98px) and (max-width: 1024.98px)').matches) {
-        columnsCount = 4
-    } else {
-
-        columnsCount = 2
-    }
-
-    // if (columnsCount === currentColumns.length) return
-
-
-    const count = Math.floor(cities.length / columnsCount)
-
-    let begin = 0
-    let end = count
-    if (cities.length <= columnsCount) {
-        columnsCount = 1
-    }
-    for (let index = 0; index < columnsCount; index++) {
-
-        let arr = cities.slice(begin, end)
-
-        if (index === columnsCount - 1) {
-            arr = cities.slice(begin)
-        }
-
-        begin = end
-        end += count
-
-        const column = document.createElement('div')
-        column.classList.add('modal-location__column')
-
-        arr.forEach(function(city) {
-            const item = document.createElement('label')
-            item.classList.add('modal-location__item')
-
-            let checked = false
-
-            if (city.value === 1) {
-                checked = true
-            }
-
-            item.innerHTML = `
-                  <input ${checked ? 'checked' : ''} value="${city.value}" name="city" type="radio">
-                  <span>${city.name}</span>
-            `
-
-            column.appendChild(item)
-        })
-
-        row.appendChild(column)
-    }
-}
-
-window.addEventListener('click', function(e) {
-    if (e.target.closest('.modal-location__item')) {
-        const location = e.target.closest('.modal-location__item')
-        document.querySelector('.location-header__name').innerHTML = location.querySelector('span').innerHTML
-    }
-})
-
-
-const locationHeaderLink = document.querySelector('.location-header__link')
-const locationButtonYes = document.querySelector('#location-button-yes')
-const locationButtonOther = document.querySelector('#location-button-other')
-
-const locationHeaderWindow = document.querySelector('.location-header__window')
-
-function closeLocationWindow() {
-    if (locationHeaderWindow && locationHeaderWindow.classList.contains('active')) {
-        locationHeaderWindow.classList.remove('active')
-    }
-}
-if (locationHeaderLink) {
-    locationHeaderLink.addEventListener('click', closeLocationWindow)
-}
-
-if (locationButtonYes) {
-    locationButtonYes.addEventListener('click', function(e) {
-        e.preventDefault()
-        closeLocationWindow()
-    })
-}
-
-if (locationButtonOther) {
-    locationButtonOther.addEventListener('click', closeLocationWindow)
-}
 
 function initProductsSliders() {
     const productsSliders = document.querySelectorAll('.item-product__slider');
@@ -662,40 +539,13 @@ initProductsSliders()
 
 
 
-const submitButtons = document.querySelectorAll('.submit-button')
-
-if (submitButtons.length > 0) {
-    for (let index = 0; index < submitButtons.length; index++) {
-        const submitButton = submitButtons[index]
-
-        submitButton.addEventListener('click', function(e) {
-            const button = e.currentTarget
-            button.classList.add('loading')
-
-            // Запрос на сервер
-            new Promise(function(resolve, reject) {
-                setTimeout(function() {
-                    resolve(1)
-                }, 1000)
-            }).finally(function() {
-                button.classList.remove('loading')
-                button.classList.add('save')
-                button.textContent = button.dataset.saveText || "Сохранено";
-                button.setAttribute('disabled', '')
-            })
 
 
-            e.preventDefault()
-        })
-    }
-}
 
 document.addEventListener('DOMContentLoaded', calculateSlidersBg)
 window.addEventListener('resize', calculateSlidersBg)
 
 function calculateSlidersBg() {
-    // if (window.matchMedia('(max-width: 1400.98px)').matches) return
-
     const productsSliders = document.querySelectorAll('[data-product-slider]')
 
     for (let index = 0; index < productsSliders.length; index++) {
@@ -767,5 +617,21 @@ if (productsSlidersEls.length > 0) {
 
     }
 }
+
+document.addEventListener('mousemove', function(e) {
+
+    if (e.target.closest('.item-product') && !e.target.closest('.item-product').classList.contains('active')) {
+        const itemProduct = e.target.closest('.item-product')
+        console.log('??')
+        const itemProductActions = itemProduct.querySelector('.item-product__actions')
+        itemProduct.classList.add('active')
+
+        if (itemProduct.closest('.items-products__column')) {
+            itemProduct.closest('.items-products__column').style.height = (itemProduct.offsetHeight - itemProductActions.offsetHeight) + 'px';
+        }
+
+    }
+})
+
 
 

@@ -75,7 +75,7 @@
 }
 
 .page__new-products {
-  margin-bottom: 96px;
+  margin-bottom: 98px;
 }
 
 .page__banners {
@@ -169,6 +169,10 @@
 }
 
 @media (min-width: 1024.98px) {
+  .page {
+    padding-bottom: 20px !important;
+  }
+
   .item-main-slider__image img {
     position: absolute;
     top: 0;
@@ -179,6 +183,10 @@
     object-position: center center;
     -o-object-fit: cover;
     object-fit: cover;
+  }
+
+  .page__new-products {
+    margin-bottom: 26px;
   }
 
   .categories-page__body .swiper-wrapper {

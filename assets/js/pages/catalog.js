@@ -49,15 +49,6 @@ if (document.querySelector('.catalog__select_visible')) {
 }
 
 
-document.addEventListener('mousemove', function(e) {
-
-    if (e.target.closest('.item-product') && !e.target.closest('.item-product').classList.contains('active')) {
-        const itemProduct = e.target.closest('.item-product')
-        const itemProductActions = itemProduct.querySelector('.item-product__actions')
-        itemProduct.classList.add('active')
-        itemProduct.closest('.items-products__column').style.height = (itemProduct.offsetHeight - itemProductActions.offsetHeight) + 'px';
-    }
-})
 
 const sideSwitchers = document.querySelectorAll('.side__switch');
 

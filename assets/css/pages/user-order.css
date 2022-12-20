@@ -1,3 +1,23 @@
+.user-order__actions {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.user-order__actions .actions-order__link {
+  min-height: 32px !important;
+}
+
+.user-order__actions .actions-order__cancel {
+  min-height: 32px !important;
+}
+
 .user-order__top {
   display: -webkit-box;
   display: -ms-flexbox;
