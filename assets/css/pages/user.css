@@ -489,6 +489,12 @@
     display: none;
   }
 
+  .personal-data__submit {
+    position: fixed;
+    bottom: 15px;
+    right: 48px;
+  }
+
   .personal-data__submit .button {
     min-width: 224px;
   }

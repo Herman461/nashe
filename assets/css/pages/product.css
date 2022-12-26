@@ -89,6 +89,19 @@
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 32px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.product__prices span {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%;
+  color: #8D8E91;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 3px;
+  font-weight: 300;
 }
 
 .product__price {
@@ -119,6 +132,14 @@
 .product__colors {
   padding-bottom: 0 !important;
   margin: 0 -4px 24px -4px !important;
+}
+
+.product__colors .colors-product__item {
+  width: 40px;
+  height: 40px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 40px;
+  flex: 0 0 40px;
 }
 
 .product__link {
@@ -338,17 +359,19 @@
   margin: 0 -4px;
 }
 
+.colors-product .colors-product__item {
+  position: relative;
+}
+
 .colors-product__circle {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   display: block;
-  position: relative;
   z-index: 6;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #E5E8EC;
 }
 
 .colors-product__circle::before {
@@ -359,8 +382,24 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 41px;
+  height: 41px;
+  border: 4px solid #fff;
+  z-index: 2;
+}
+
+.colors-product__circle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #E6E8EC;
+  z-index: 3;
 }
 
 .colors-product__item {
@@ -372,19 +411,7 @@
   display: none;
 }
 
-.colors-product__item_black .colors-product__circle::before {
-  background: #000;
-}
-
-.colors-product__item_white .colors-product__circle::before {
-  background: #fff;
-}
-
-.colors-product__item_green .colors-product__circle::before {
-  background: #79B77E;
-}
-
-.colors-product__item input:checked + .colors-product__circle {
+.colors-product__item input:checked + .colors-product__circle::after {
   border-color: #416AA7;
 }
 
