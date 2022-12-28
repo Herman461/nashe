@@ -524,6 +524,7 @@ function initProductsSliders() {
             const slider = new Swiper(productsSlider, {
                 speed: 800,
                 loop: true,
+                allowTouchMove: false,
                 spaceBetween: 8,
                 slidesPerView: 1,
                 pagination: {
@@ -596,6 +597,7 @@ if (productsSlidersEls.length > 0) {
             spaceBetween: 16,
             slidesPerView: 1.05,
             loop: true,
+            allowTouchMove: false,
             breakpoints: {
                 1280.98: {
                     slidesPerView: 4,
@@ -621,8 +623,11 @@ if (productsSlidersEls.length > 0) {
 document.addEventListener('mousemove', function(e) {
 
     if (e.target.closest('.item-product') && !e.target.closest('.item-product').classList.contains('active')) {
+        if (document.querySelector('.item-product.hover')) {
+            document.querySelector('.item-product.hover').classList.remove('hover')
+        }
         const itemProduct = e.target.closest('.item-product')
-        console.log('??')
+
         const itemProductActions = itemProduct.querySelector('.item-product__actions')
         itemProduct.classList.add('active')
 
@@ -633,5 +638,16 @@ document.addEventListener('mousemove', function(e) {
     }
 })
 
+
+$('select').on('select2:opening', function (e) {
+    $(e.target).closest(".item-product").addClass('hover')
+});
+
+$('select').on('change', function (e) {
+    if ($('.catalog').length > 0) {
+        $(e.target).closest(".item-product").removeClass('hover')
+    }
+
+});
 
 

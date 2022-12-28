@@ -388,118 +388,12 @@ if (spoilersArray.length > 0) {
 }
 
 
-
-let activeSelect
 let timeout = 300
 
 
-const select = document.querySelectorAll('.select')
-
-for (let index = 0; index < select.length; ++index) {
-    const item = select[index]
-    const selectOption = item.querySelectorAll('option')
-    const selectOptionLength = selectOption.length
-    const selectedOption = item.querySelector('option[selected]')
-    const disabledOption = item.querySelector('option[disabled]')
-    const duration = 300
-
-    item.querySelector('select').hidden = true
-
-    const head = document.createElement('div')
-    const text = document.createElement('span')
-
-    head.classList.add('select__head')
-
-    text.textContent = disabledOption ? disabledOption.textContent : selectedOption.textContent
-    head.append(text)
-    item.append(head)
-
-    const icon = item.querySelector('.select__icon')
-
-    if (icon) {
-        head.append(icon)
-    }
-
-    const selectList = document.createElement('ul')
-    selectList.classList.add('select__list')
-    item.append(selectList)
-
-    if (!disabledOption) {
-        const newOption = document.createElement('li')
-        newOption.textContent = selectedOption ? selectedOption.textContent : selectOption[0].textContent
-        newOption.classList.add('select__item')
-        newOption.classList.add('active')
-        newOption.dataset.value = selectedOption ? selectedOption.value : selectOption[0].textContent
-        selectList.append(newOption)
-    }
-    for (let index = 1; index < selectOptionLength; index++) {
-        const newOption = document.createElement('li')
-        newOption.textContent = selectOption[index].textContent
-        newOption.classList.add('select__item')
-        newOption.dataset.value = selectOption[index].value
-        selectList.append(newOption)
-    }
-
-    selectList.hidden = true
-    head.addEventListener('click', function(e) {
-        if (!document.querySelector('.select__list.slide') && e.target.closest('.select__head')) {
-            if (activeSelect && !e.target.closest('.select__head').nextElementSibling.isEqualNode(activeSelect)) {
-                slideUp(activeSelect)
-                activeSelect.closest('.select').querySelector('.select__head').classList.remove('active')
-            }
-            activeSelect = e.target.closest('.select__head').nextElementSibling
-            e.currentTarget.classList.toggle('active')
-            slideToggle(selectList)
-        }
-    })
-    selectList.addEventListener('click', function(e) {
-        if (!document.querySelector('.select__list.slide') &&  e.target.closest('.select__item')) {
-            const target = e.target.closest('.select__item')
-            const value = target.dataset.value
-            let newSelectedEl = item.querySelector(`option[value="${value}"]`)
-            const oldSelectedEl = item.querySelector('option[selected]')
-            if (!newSelectedEl) {
-                for (let index = 1; index < selectOptionLength; index++) {
-                    const option = selectOption[index]
-                    if (option.textContent == value) {
-                        newSelectedEl = option
-                    }
-                }
-            }
-
-            if (oldSelectedEl) {
-                oldSelectedEl.removeAttribute('selected')
-            }
-            if (newSelectedEl) {
-                newSelectedEl.setAttribute('selected', 'selected')
-                text.textContent = newSelectedEl.textContent
-            }
-            head.classList.remove('active')
-            activeSelect = null
-            document.querySelector('.select__item.active').classList.remove('active')
-            target.classList.add('active')
-            e.target.closest('.select').querySelector('select').dispatchEvent(new Event('change'))
-            slideUp(selectList)
-        }
-    })
-}
-
-window.addEventListener('click', function(e) {
-
-    if (
-        document.querySelector('.select__head.active')
-        && !e.target.closest('.select')
-        && !document.querySelector('.select__list.slide')
-    ) {
-        activeSelect.closest('.select').querySelector('.select__head').classList.remove('active')
-        slideUp(activeSelect)
-        activeSelect = null
-    }
-})
-
-
-
-
+$(document).ready(function() {
+    $('select').select2();
+});
 
 
 const imagesProductSlider = new Swiper('.images-product__slider', {
@@ -552,9 +446,12 @@ const imagesProductSlider = new Swiper('.images-product__slider', {
 })
 
 
+
+
 const moreCheckoutSlider = new Swiper('.more-checkout__slider', {
     speed: 1000,
 
+    allowTouchMove: false,
     slidesPerView: 1.8,
     spaceBetween: 24,
     navigation: {

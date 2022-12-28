@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221226174816">
-    <link rel="stylesheet" href="assets/css/style.css?_v=20221226174816">
+    <link rel="stylesheet" href="assets/css/plugins/simplebar.css?_v=20221229011013">
+    <link rel="stylesheet" href="assets/css/plugins/select2.min.css?_v=20221229011013">
+    <link rel="stylesheet" href="assets/css/style.css?_v=20221229011013">
 
 
-    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221226174816">
+    <link rel="stylesheet" href="assets/css/pages/user.css?_v=20221229011013">
 
 
 
@@ -1250,162 +1251,157 @@
                         <div class="user__body">
                             <h2 data-modal-link="side-user" class="user__subtitle title">Личные данные</h2>
                             <form action="#" class="user__personal-data personal-data">
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Контактное лицо</div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="second-name">Фамилия</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="Лермонтов" class="input" id="second-name" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="first-name">Имя</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="Михаил" class="input" id="first-name" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="middle-name">Отчество</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="Юрьевич" class="input" id="middle-name" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Расчётный счёт</div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="bank">Банк</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="АО “Тинькофф Банк”" class="input" id="bank" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="bank-number">Номер счёта</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="40817810099910004312" class="input" id="bank-number" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="bik">БИК</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="044123943" class="input" id="bik" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="сorrespondent-account">Корреспондентский счёт</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="30101910555290000000123" class="input" id="сorrespondent-account" type="text">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Фактический адрес</div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="actual-address-index">Индекс</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="823123" class="input" id="actual-address-index" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label>Город/Улица/Дом</label>
-                                        </div>
-                                        <div class="personal-data__select select">
-                                            <div class="select__icon">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
-                                                </svg>
+                                <div class="personal-data__blocks">
+                                    <div class="personal-data__block">
+                                        <div class="personal-data__title">Контактное лицо</div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="second-name">Фамилия</label>
                                             </div>
-                                            <select>
-                                                <option value="1" selected>г. Смоленск., ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</option>
-                                                <option value="2">Локация №2</option>
-                                                <option value="3">Локация №3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="actual-address-place">Квартира/Офис</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="532" class="input" id="actual-address-place" type="text">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Почтовый адрес</div>
-                                    <label class="personal-data__checkbox checkbox">
-                                        <input class="checkbox__input" type="checkbox">
-                                        <span class="checkbox__text">
-                                            <span>Совпадает с фактическим</span>
-                                        </span>
-                                    </label>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label for="mailing-address-index">Индекс</label>
-                                        </div>
-                                        <div class="personal-data__input">
-                                            <input value="823123" class="input" id="mailing-address-index" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="personal-data__line">
-                                        <div class="personal-data__label">
-                                            <label>Город/Улица/Дом</label>
-                                        </div>
-                                        <div class="personal-data__select select">
-                                            <div class="select__icon">
-                                                <svg>
-                                                    <use xlink:href="assets/images/icons/icons.svg#angle-right"></use>
-                                                </svg>
+                                            <div class="personal-data__input">
+                                                <input value="Лермонтов" class="input" id="second-name" type="text">
                                             </div>
-                                            <select>
-                                                <option value="1" selected>г. Смоленск., ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</option>
-                                                <option value="2">Локация №2</option>
-                                                <option value="3">Локация №3</option>
-                                            </select>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="first-name">Имя</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="Михаил" class="input" id="first-name" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="middle-name">Отчество</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="Юрьевич" class="input" id="middle-name" type="text">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="personal-data__line">
+                                    <div class="personal-data__block">
+                                        <div class="personal-data__title">Расчётный счёт</div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="bank">Банк</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="АО “Тинькофф Банк”" class="input" id="bank" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="bank-number">Номер счёта</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="40817810099910004312" class="input" id="bank-number" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="bik">БИК</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="044123943" class="input" id="bik" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="сorrespondent-account">Корреспондентский счёт</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="30101910555290000000123" class="input" id="сorrespondent-account" type="text">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="personal-data__block">
+                                        <div class="personal-data__title">Фактический адрес</div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="actual-address-index">Индекс</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="823123" class="input" id="actual-address-index" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label>Город/Улица/Дом</label>
+                                            </div>
+                                            <div class="personal-data__select select">
+
+                                                <select>
+                                                    <option value="1" selected>г. Смоленск., ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</option>
+                                                    <option value="2">Локация №2</option>
+                                                    <option value="3">Локация №3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="actual-address-place">Квартира/Офис</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="532" class="input" id="actual-address-place" type="text">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="personal-data__block">
+                                        <div class="personal-data__title">Почтовый адрес</div>
+                                        <label class="personal-data__checkbox checkbox">
+                                            <input class="checkbox__input" type="checkbox">
+                                            <span class="checkbox__text">
+                                                <span>Совпадает с фактическим</span>
+                                            </span>
+                                        </label>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="mailing-address-index">Индекс</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="823123" class="input" id="mailing-address-index" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label>Город/Улица/Дом</label>
+                                            </div>
+                                            <div class="personal-data__select select">
+
+                                                <select>
+                                                    <option value="1" selected>г. Смоленск., ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</option>
+                                                    <option value="2">Локация №2</option>
+                                                    <option value="3">Локация №3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="personal-data__line">
+                                            <div class="personal-data__label">
+                                                <label for="mailing-address-place">Квартира/Офис</label>
+                                            </div>
+                                            <div class="personal-data__input">
+                                                <input value="532" class="input" id="mailing-address-place" type="text">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="personal-data__block">
+                                        <div class="personal-data__title">Об аккаунте</div>
                                         <div class="personal-data__label">
-                                            <label for="mailing-address-place">Квартира/Офис</label>
+                                            Электронная почта
                                         </div>
-                                        <div class="personal-data__input">
-                                            <input value="532" class="input" id="mailing-address-place" type="text">
+                                        <div class="personal-data__email">Example@gmail.com</div>
+                                        <div class="personal-data__actions">
+                                            <button data-modal-link="change-password" type="button" class="personal-data__action button button_white">Сменить пароль</button>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
-                                <div class="personal-data__block">
-                                    <div class="personal-data__title">Об аккаунте</div>
-                                    <div class="personal-data__label">
-                                        Электронная почта
-                                    </div>
-                                    <div class="personal-data__email">Example@gmail.com</div>
-                                    <div class="personal-data__actions">
-                                        <button data-modal-link="change-password" type="button" class="personal-data__action button button_white">Сменить пароль</button>
-                                        <div class="personal-data__submit">
-                                            <button data-save-text="Сохранено" class="button submit-button">Сохранить</button>
-                                        </div>
-                                    </div>
 
+                                <div class="personal-data__submit">
+                                    <button data-save-text="Сохранено" class="button submit-button">Сохранить</button>
                                 </div>
                             </form>
 
@@ -1590,8 +1586,8 @@
         </div>
 
     </div>
-    <script src="assets/js/pages/user.js?_v=20221226174816"></script>
-    <script src="assets/js/phone-mask.js?_v=20221226174816"></script>
+    <script src="assets/js/pages/user.js?_v=20221229011013"></script>
+    <script src="assets/js/pages/personal-data.js?_v=20221229011013"></script>
     <div class="cart-window">
         <div class="cart-window__body">
             <div class="cart-window__image ibg">
@@ -1667,11 +1663,14 @@
         </div>
     </div>
 
-    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221226174816"></script>
-    <script src="assets/js/plugins/simplebar.min.js?_v=20221226174816"></script>
-    <script src="assets/js/script.js?_v=20221226174816"></script>
-    <script src="assets/js/app.js?_v=20221226174816"></script>
-    <script src="assets/js/ajax.js?_v=20221226174816"></script>
+    <script src="assets/js/plugins/swiper-bundle.min.js?_v=20221229011013"></script>
+
+    <script src="assets/js/plugins/jquery-3.6.3.min.js?_v=20221229011013"></script>
+    <script src="assets/js/plugins/select2.min.js?_v=20221229011013"></script>
+    <script src="assets/js/plugins/simplebar.min.js?_v=20221229011013"></script>
+    <script src="assets/js/script.js?_v=20221229011013"></script>
+    <script src="assets/js/app.js?_v=20221229011013"></script>
+    <script src="assets/js/ajax.js?_v=20221229011013"></script>
 </body>
 
 </html>

@@ -490,9 +490,14 @@
   }
 
   .personal-data__submit {
-    position: fixed;
-    bottom: 15px;
+    position: sticky;
+    bottom: -30px;
     right: 48px;
+    width: auto;
+    max-width: 224px;
+    -webkit-transform: translate(0, -72px);
+    transform: translate(0, -72px);
+    margin: 0 24px 0 auto;
   }
 
   .personal-data__submit .button {

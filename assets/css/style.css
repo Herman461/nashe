@@ -1875,6 +1875,11 @@ textarea.input::placeholder {
   flex: 1 1 auto;
 }
 
+.item-product__actions {
+  padding-top: 10px;
+  width: 100% !important;
+}
+
 .colors-product {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2654,6 +2659,70 @@ textarea.input::placeholder {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+}
+
+.select2-search {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single {
+  background: #F3F5FA;
+  min-width: 72px;
+  width: auto;
+  min-height: 40px;
+  height: auto;
+  border: 1px solid #F3F5FA;
+  border-radius: 8px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding: 0 43px 0 20px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: url("../images/icons/angle-right.svg") center center/contain no-repeat;
+  -webkit-transform: translate(0, -50%) rotate(90deg);
+  transform: translate(0, -50%) rotate(90deg);
+  width: 20px;
+  height: 20px;
+  right: 12px;
+  top: 50%;
+}
+
+.select2-container--default .select2-results__option--selected {
+  background: #F3F5FA;
+}
+
+.select2-dropdown {
+  border-color: #F3F5FA;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+  -webkit-transform: translate(0, -50%) rotate(-90deg);
+  transform: translate(0, -50%) rotate(-90deg);
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background: #416AA7;
+}
+
+.select2 {
+  width: auto !important;
 }
 
 .modal {
@@ -3552,6 +3621,14 @@ textarea.input::placeholder {
 
   .checkout-success {
     padding: 32px 0 56px;
+  }
+
+  .item-product.hover .item-product__actions {
+    visibility: visible !important;
+    opacity: 1 !important;
+    -webkit-transform: translate(0, 100%) scale(1) !important;
+    transform: translate(0, 100%) scale(1) !important;
+    height: auto !important;
   }
 }
 

@@ -68,13 +68,16 @@ document.addEventListener('DOMContentLoaded', function() {
         spaceBetween: 16,
         slidesPerView: 1.05,
         loop: true,
+        allowTouchMove: true,
         breakpoints: {
             1280.98: {
                 slidesPerView: 4,
                 spaceBetween: 24,
+                allowTouchMove: false,
             },
             1024.98: {
                 slidesPerView: 3,
+                allowTouchMove: false,
             },
             767.98: {
                 slidesPerView: 2.05,
@@ -90,13 +93,16 @@ document.addEventListener('DOMContentLoaded', function() {
         spaceBetween: 16,
         slidesPerView: 1.05,
         loop: true,
+        allowTouchMove: true,
         breakpoints: {
             1280.98: {
                 slidesPerView: 4,
                 spaceBetween: 24,
+                allowTouchMove: false,
             },
             1024.98: {
                 slidesPerView: 3,
+                allowTouchMove: false,
             },
             767.98: {
                 slidesPerView: 2.05,

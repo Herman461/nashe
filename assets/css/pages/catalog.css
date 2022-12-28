@@ -1239,6 +1239,25 @@
     line-height: 20px;
     margin-bottom: 28px;
   }
+
+  .catalog__grid .item-product.hover .item-product__actions {
+    -webkit-transition: opacity 0.3s ease 0s;
+    transition: opacity 0.3s ease 0s;
+    width: auto;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1) !important;
+    transform: translate(0, 0) scale(1) !important;
+    height: auto;
+  }
+
+  .catalog__grid .item-product.hover {
+    top: 0;
+    left: 12px;
+    z-index: 10;
+    position: absolute;
+    width: calc(100% - 24px);
+  }
 }
 
 @media (any-hover: hover) and (min-width: 1024.98px) {
