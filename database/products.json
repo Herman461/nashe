@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "url": "/product.html",
+      "mainImage": "../assets/images/products/product.png",
+      "id": 1,
+      "images": ["../assets/images/products/product.png", "../assets/images/products/product.png", "../assets/images/products/product.png", "../assets/images/products/product.png"],
+      "bigSet": "999 ₽ / 10 шт",
+      "smallSet": "99 ₽ / 1 шт",
+      "title": "Джемпер однотонный с круглой горловиной",
+      "sizes": [42, 46, 50, 52],
+      "labels": [
+        {
+          "type": "novelty",
+          "value": "Новинка"
+        },
+        {
+          "type": "discount",
+          "value": "−30%"
+        }
+      ]
+    },
+    {
+      "url": "/product.html",
+      "mainImage": "../assets/images/products/product.png",
+      "id": 2,
+      "images": ["../assets/images/products/product.png", "../assets/images/products/product.png", "../assets/images/products/product.png", "../assets/images/products/product.png"],
+      "bigSet": "999 ₽ / 10 шт",
+      "smallSet": "99 ₽ / 1 шт",
+      "title": "Джемпер однотонный с круглой горловиной",
+      "sizes": [42, 46, 50, 52],
+      "labels": [
+        {
+          "type": "novelty",
+          "value": "Новинка"
+        },
+        {
+          "type": "discount",
+          "value": "−30%"
+        }
+      ]
+    },
+    {
+      "url": "/product.html",
+      "mainImage": "../assets/images/products/product.png",
+      "id": 3,
+      "images": ["../assets/images/products/product.png", "../assets/images/products/product.png", "../assets/images/products/product.png", "../assets/images/products/product.png"],
+      "bigSet": "999 ₽ / 10 шт",
+      "smallSet": "99 ₽ / 1 шт",
+      "title": "Джемпер однотонный с круглой горловиной",
+      "sizes": [42, 46, 50, 52],
+      "labels": [
+        {
+          "type": "novelty",
+          "value": "Новинка"
+        },
+        {
+          "type": "discount",
+          "value": "−30%"
+        }
+      ]
+    }
+  ]
+}

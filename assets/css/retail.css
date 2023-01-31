@@ -1,0 +1,69 @@
+:root {
+    --dark-main-color: #CF643F;
+    --dark-secondary-color: #CF643F;
+    --extra-light-color: #FAF6F2;
+    --main-light-color: #ECE8E5;
+    --secondary-light-color: #FAF6F2;
+    --transparent-light-color: rgba(207, 100, 63, 0.12);
+    --text-main-color: #662E2C;
+
+}
+
+.item-product__char {
+    color: var(--text-main-color);
+}
+
+.item-product__price span {
+    color: var(--text-main-color);
+}
+
+.subscription-footer__policy a {
+    color: var(--dark-secondary-color);
+}
+
+.side__title {
+    color: var(--text-main-color);
+}
+
+.checkbox__text {
+    color: var(--text-main-color);
+}
+
+
+
+
+.item-product__dots .swiper-pagination-bullet-active {
+    background: var(--dark-secondary-color);
+}
+
+.block-product__label,
+.menu-top-header__link_highlighed,
+.user-order__label,
+.item-orders__label {
+
+    color: var(--dark-main-color);
+}
+
+.item-product__label {
+    background: var(--transparent-light-color);
+}
+.button[disabled] {
+    background: rgba(207, 100, 63, 0.5) !important;
+    border: none !important;
+}
+
+.item-checkout__label {
+    background: var(--dark-secondary-color);
+}
+
+.search__input {
+    border-color: color(--dark-secondary-color);
+}
+
+.actions-main-header__item svg {
+    fill: var(--text-main-color);
+}
+
+.main-header__icon span {
+    background: var(--text-main-color);
+}

@@ -1,0 +1,194 @@
+.shops__title {
+  margin-bottom: 24px;
+}
+
+.shops__actions {
+  margin-bottom: 48px;
+}
+
+.shops__how {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 4px;
+  border: 1px solid var(--main-light-color);
+  border-radius: 999px;
+}
+
+.shops__how .shops__button span {
+  min-height: 32px;
+  padding: 1px 11px;
+  border-color: transparent;
+}
+
+.shops__how .shops__button.active span {
+  border-color: var(--dark-main-color);
+}
+
+.shops__button {
+  margin-right: 8px;
+}
+
+.shops__button:last-child {
+  margin: 0;
+}
+
+.shops__item {
+  border-bottom: 1px solid var(--main-light-color);
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+.shops__item:last-child {
+  margin: 0;
+}
+
+.shops__map {
+  height: 660px;
+}
+
+.shops__map iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.item-shops p {
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+
+.item-shops p:last-child {
+  margin: 0;
+}
+
+.item-shops p b {
+  color: #8C8E91;
+  font-weight: 400;
+}
+
+.item-shops__name {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media (min-width: 768.98px) {
+  .item-shops {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .item-shops__location {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    margin-right: 32px;
+  }
+
+  .item-shops__schedule {
+    margin-right: 32px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .item-shops__phone {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+  }
+}
+
+@media (min-width: 1024.98px) {
+  .shops__actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1280.98px) {
+  .shops__map {
+    height: 592px;
+  }
+}
+
+@media (max-width: 1024.98px) {
+  .shops__cities {
+    overflow: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 -24px 24px;
+    padding: 0 0 0 24px;
+  }
+
+  .shops__cities .shops__button {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+  }
+
+  .shops__button {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+  }
+
+  .shops__button span {
+    width: 100%;
+  }
+
+  .shops__map {
+    height: 472px;
+  }
+}
+
+@media (max-width: 768.98px) {
+  .shops__cities {
+    margin: 0 -16px 24px;
+    padding: 0 0 0 16px;
+  }
+
+  .shops__item {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+
+  .shops__map {
+    height: 520px;
+  }
+
+  .item-shops__location {
+    margin-bottom: 16px;
+  }
+
+  .item-shops__schedule {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .shops__actions {
+    margin-bottom: 32px;
+  }
+
+  .shops__map {
+    height: 288px;
+  }
+
+  .item-shops__name {
+    font-size: 16px;
+  }
+}

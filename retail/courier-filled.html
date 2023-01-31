@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/plugins/simplebar.css?_v=20230131203516">
+    <link rel="stylesheet" href="../assets/css/plugins/select2.min.css?_v=20230131203516">
+    <link rel="stylesheet" href="../assets/css/style.css?_v=20230131203516">
+
+
+    <link rel="stylesheet" href="../assets/css/pages/checkout.css?_v=20230131203516">
+
+
+
+    <title>Страница продукта</title>
+</head>
+
+<body data-simplebar="">
+
+    <div class="wrapper">
+        <header class="header header_small">
+            <div class="header__main main-header">
+
+                <div class="main-header__container container">
+                    <button class="main-header__icon icon-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a href="" class="main-header__logo logo">
+                        <img src="../assets/images/logo.svg" alt="">
+                    </a>
+                    <div class="main-header__menu menu">
+                        <div class="menu__content">
+                            <div class="menu__header header-menu">
+                                <a href="" class="header-menu__logo">
+                                    <img src="../assets/images/logo.svg" alt="">
+                                </a>
+                                <button type="button" class="header-menu__close">
+                                    <svg>
+                                        <use xlink:href="../assets/images/icons/icons.svg#close"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <nav class="menu__body menu__body_offset">
+                                <ul class="menu__list">
+                                    <li class="menu__item">
+                                        <a href="" class="menu__link">Доставка и оплата</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="" class="menu__link">Обмен и возврат</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <a href="" class="menu__login button button_white">Войти или зарегистрироваться</a>
+                            <div class="menu__info info-menu">
+                                <div class="info-menu__line">
+                                    <a href="" class="info-menu__phone">+7 800 500–61–13</a>
+                                    <div class="info-menu__schedule">9:00–20:00 МСК</div>
+                                </div>
+                                <div class=" info-menu__socials socials-menu">
+                                    <a href="" class="socials-menu__item">
+                                        <svg>
+                                            <use xlink:href="../assets/images/icons/icons.svg#vk"></use>
+                                        </svg>
+                                    </a>
+                                    <a href="" class="socials-menu__item">
+                                        <svg>
+                                            <use xlink:href="../assets/images/icons/icons.svg#ok"></use>
+                                        </svg>
+                                    </a>
+                                    <a href="" class="socials-menu__item">
+                                        <svg>
+                                            <use xlink:href="../assets/images/icons/icons.svg#facebook"></use>
+                                        </svg>
+                                    </a>
+                                    <a href="" class="socials-menu__item">
+                                        <svg>
+                                            <use xlink:href="../assets/images/icons/icons.svg#instagram"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <a href="" class="menu__button">Перейти на розничный сайт</a>
+                        </div>
+                    </div>
+                    <div class="main-header__info">
+                        <a href="tel:78005006113" class="main-header__phone-button">
+                            <svg>
+                                <use xlink:href="../assets/images/icons/icons.svg#phone"></use>
+                            </svg>
+                        </a>
+                        <a href="" class="main-header__phone">+7 800 500–61–13</a>
+                        <div class="main-header__schedule">9:00–20:00 МСК</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="page page_light">
+            <div class="page__container container">
+                <div class="breadcrumbs">
+                    <a href="" class="breadcrumbs__prev breadcrumbs__prev_visible">
+                        <div class="breadcrumbs__icon">
+                            <svg>
+                                <use xlink:href="../assets/images/icons/icons.svg#angle-right"></use>
+                            </svg>
+                        </div>
+                        <span>Вернуться в корзину</span>
+                    </a>
+                </div>
+                <form action="#" class="checkout">
+                    <h1 class="checkout__title title">Оформление заказа</h1>
+                    <div class="checkout__content">
+                        <div class="checkout__body">
+                            <div class="checkout__contacts contacts-checkout">
+                                <div class="contacts-checkout__title small-title">Контактные данные</div>
+                                <div class="contacts-checkout__item">
+                                    <label for="fio" class="contacts-checkout__label">ФИО</label>
+                                    <div class="contacts-checkout__input">
+                                        <input id="fio" value="Иванов Иван" class="input" type="text">
+                                    </div>
+                                </div>
+                                <div class="contacts-checkout__item">
+                                    <label for="phone" class="contacts-checkout__label">Телефон</label>
+                                    <div class="contacts-checkout__input">
+                                        <input id="phone" value="+7 (900) 999-99-99" class="input phone" type="text">
+                                    </div>
+                                </div>
+                                <div class="contacts-checkout__item">
+                                    <label for="email" class="contacts-checkout__label">Электронная почта</label>
+                                    <div class="contacts-checkout__input">
+                                        <input id="email" disabled value="example@gmail.ru" class="input" type="text">
+                                    </div>
+                                </div>
+                                <div class="contacts-checkout__item">
+                                    <label for="company" class="contacts-checkout__label">Наименование организации</label>
+                                    <div class="contacts-checkout__input">
+                                        <input value="ООО «Наше-Ритейл»" disabled id="company" class="input" type="text">
+                                    </div>
+                                </div>
+                                <div class="contacts-checkout__item">
+                                    <label for="inn" class="contacts-checkout__label">ИНН</label>
+                                    <div class="contacts-checkout__input">
+                                        <input value="6731042127" id="inn" disabled class="input" type="text">
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                            <div class="checkout__way way-checkout">
+                                <div class="way-checkout__title small-title">Способ получения</div>
+                                <div class="way-checkout__buttons">
+                                    <a href="./pickup.html" class="way-checkout__button stroke-button">
+                                        <span>Самовывоз из магазина</span>
+                                    </a>
+                                    <a href="./courier.html" class="way-checkout__button active stroke-button">
+                                        <span>СДЭК</span>
+                                    </a>
+                                </div>
+                                <div class="way-checkout__message message-way-checkout active">
+                                    <div class="message-way-checkout__top">
+                                        <div class="message-way-checkout__title">
+                                            Доставка СДЭК
+                                        </div>
+                                        <a data-modal-link="shop-modal" href="" class="message-way-checkout__action button button_white">Изменить адрес доставки</a>
+                                    </div>
+                                    <div class="message-way-checkout__body">
+                                        <div class="message-way-checkout__item">
+                                            <div class="message-way-checkout__icon stroke">
+                                                <svg>
+                                                    <use xlink:href="../assets/images/icons/icons.svg#location"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="message-way-checkout__info">
+                                                <p>
+                                                    Россия, 214000, обл. Смоленская, г. Смоленск, ул. Пржевальского, д. 6/25
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="message-way-checkout__item">
+                                            <div class="message-way-checkout__icon stroke">
+                                                <svg>
+                                                    <use xlink:href="../assets/images/icons/icons.svg#wallet"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="message-way-checkout__info">
+                                                <p>Доставка 300 руб.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__payment payment-checkout">
+                                <div class="payment-checkout__title small-title">Оплата</div>
+                                <div class="payment-checkout__buttons">
+                                    <label class="payment-checkout__button stroke-button">
+                                        <input name="payment" type="radio">
+                                        <span>Картой онлайн</span>
+                                    </label>
+                                    <label class="payment-checkout__button stroke-button">
+                                        <input name="payment" type="radio">
+                                        <span>Оплата по счёту</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__info">
+                            <div class="result-checkout result-checkout_white">
+                                <div class="result-checkout__items">
+                                    <div class="result-checkout__item">
+                                        <div class="result-checkout__line">
+                                            <div class="result-checkout__label">Товары (20)</div>
+                                            <div class="result-checkout__value">9 000 руб.</div>
+                                        </div>
+                                        <div class="result-checkout__line">
+                                            <div class="result-checkout__label">Скидка на товары</div>
+                                            <div class="result-checkout__value result-checkout__value_red">—1 350 руб.</div>
+                                        </div>
+                                    </div>
+                                    <div class="result-checkout__item">
+                                        <div class="result-checkout__line">
+                                            <div class="result-checkout__label">Скидка от суммы (15%)</div>
+                                            <div class="result-checkout__value result-checkout__value_red">—1 350 руб.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="result-checkout__total total-checkout">
+                                    <div class="total-checkout__label">Итого</div>
+                                    <div class="total-checkout__value">7 650 руб.</div>
+                                </div>
+                                <div class="result-checkout__button">
+                                    <a href="" class="button">Оформить заказ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <div class="footer footer_white">
+            <div class="footer__container container">
+                <div class="footer__bottom bottom-footer">
+                    <div class="bottom-footer__block">
+                        <div class="bottom-footer__year">© 2018–2022. Интернет-магазин одежды «Наше»</div>
+                        <div class="bottom-footer__links">
+                            <div class="bottom-footer__delimiter bottom-footer__delimiter_first"></div>
+                            <a href="" class="bottom-footer__link">Пользовательское соглашение</a>
+                            <div class="bottom-footer__delimiter"></div>
+                            <a href="" class="bottom-footer__link">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="#" id="shop-modal" class="shop-modal modal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__title">Выбор магазина</div>
+                <div class="modal__close">
+                    <svg>
+                        <use xlink:href="../assets/images/icons/icons.svg#close"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__body">
+                <div class="shop-location">
+                    <div class="shop-location__buttons">
+                        <label class="shop-location__button stroke-button">
+                            <input name="location-mobile" checked type="radio">
+                            <span>Смоленск</span>
+                        </label>
+                        <label class="shop-location__button stroke-button">
+                            <input name="location-mobile" type="radio">
+                            <span>Брянск</span>
+                        </label>
+                        <label class="shop-location__button stroke-button">
+                            <input name="location-mobile" type="radio">
+                            <span>Тула</span>
+                        </label>
+                        <label class="shop-location__button stroke-button">
+                            <input name="location-mobile" type="radio">
+                            <span>Калуга</span>
+                        </label>
+                        <label class="shop-location__button stroke-button">
+                            <input name="location-mobile" type="radio">
+                            <span>Вязьма</span>
+                        </label>
+                        <label class="shop-location__button stroke-button">
+                            <input name="location-mobile" type="radio">
+                            <span>Москва</span>
+                        </label>
+                    </div>
+                    <div class="shop-location__select select">
+
+                        <select>
+                            <option value="1" selected>Смоленск</option>
+                            <option value="2">Москва</option>
+                            <option value="3">Ростов-на-Дону</option>
+                        </select>
+                    </div>
+                    <div class="shop-location__block">
+                        <label class="shop-location__radio">
+                            <input name="location" type="radio">
+                            <span>Магазин на улице Братьев Луканиных</span>
+                        </label>
+                        <div class="shop-location__item">
+                            <div class="shop-location__icon stroke">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#location"></use>
+                                </svg>
+                            </div>
+                            <div class="shop-location__text">
+                                <p>
+                                    Смоленск, ул. Соболева, д. 25
+                                    <br>
+                                    <b>(Здание Смоленской чулочно-трикотажной фабрики НАШЕ)</b>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="shop-location__item">
+                            <div class="shop-location__icon stroke">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#clock"></use>
+                                </svg>
+                            </div>
+                            <div class="shop-location__text">
+                                <p>Пн-пт: 10:00–20:00</p>
+                                <p>Сб-вс: 10:00–19:00</p>
+                            </div>
+                        </div>
+                        <div class="shop-location__item">
+                            <div class="shop-location__icon">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#phone"></use>
+                                </svg>
+                            </div>
+                            <div class="shop-location__text">
+                                <p>+7 499 703-35-92, доб. 1324</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-location__block">
+                        <label class="shop-location__radio">
+                            <input name="location" type="radio">
+                            <span>Магазин на улице Братьев Луканиных</span>
+                        </label>
+                        <div class="shop-location__item">
+                            <div class="shop-location__icon stroke">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#location"></use>
+                                </svg>
+                            </div>
+                            <div class="shop-location__text">
+                                <p>
+                                    Смоленск, ул. Соболева, д. 25
+                                    <br>
+                                    <b>(Здание Смоленской чулочно-трикотажной фабрики НАШЕ)</b>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="shop-location__item">
+                            <div class="shop-location__icon stroke">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#clock"></use>
+                                </svg>
+                            </div>
+                            <div class="shop-location__text">
+                                <p>Пн-пт: 10:00–20:00</p>
+                                <p>Сб-вс: 10:00–19:00</p>
+                            </div>
+                        </div>
+                        <div class="shop-location__item">
+                            <div class="shop-location__icon">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#phone"></use>
+                                </svg>
+                            </div>
+                            <div class="shop-location__text">
+                                <p>+7 499 703-35-92, доб. 1324</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop-location__block">
+                        <label class="shop-location__radio">
+                            <input name="location" type="radio">
+                            <span>Магазин на улице Братьев Луканиных</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__footer">
+                <button disabled class="modal__button button">Выбрать</button>
+            </div>
+        </div>
+        <div class="modal__map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        </div>
+    </form>
+    <script src="../assets/js/phone-mask.js?_v=20230131203516"></script>
+    <div class="cart-window">
+        <div class="cart-window__body">
+            <div class="cart-window__image ibg">
+                <img src="../assets/images/products/product.png" alt="">
+            </div>
+            <div class="cart-window__content">
+                <div class="cart-window__info">
+                    <div class="cart-window__label">Товар добавлен в корзину</div>
+                    <div class="cart-window__title">Джемпер для мальчика</div>
+                    <div class="cart-window__char">
+                        <p>Размер: XS</p>
+                    </div>
+                </div>
+                <a href="checkout.html" class="cart-window__button button button_white">Перейти в корзину</a>
+            </div>
+
+        </div>
+    </div>
+    <div id="modal-search" class="modal">
+        <div class="search">
+            <form action="#" class="search__main">
+                <div class="search__input">
+                    <button class="search__button">
+                        <svg>
+                            <use xlink:href="../assets/images/icons/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                    <input placeholder="Поиск" class="input" type="text">
+                    <div class="search__loader">
+                        <img src="../assets/images/retail-preloader.gif" alt="">
+                    </div>
+                </div>
+                <a href="" class="search__cancel">Отменить</a>
+            </form>
+            <div class="search__results">
+                <div class="search__label"></div>
+                <div class="search__products"></div>
+                <div class="search__categories"></div>
+                <div class="search__empty hidden">
+                    По вашему запросу ничего не найдено.
+                    <br>
+                    Попробуйте изменить запрос или воспользуйтесь каталогом товаров
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal-location" class="modal modal_top">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__title">Выберите город</div>
+                <div class="modal__close">
+                    <svg>
+                        <use xlink:href="../assets/images/icons/icons.svg#close"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal__body">
+                <div class="modal-location">
+                    <form action="#" class="modal-location__search">
+                        <div class="modal-location__input">
+                            <button class="modal-location__button">
+                                <svg>
+                                    <use xlink:href="../assets/images/icons/icons.svg#search"></use>
+                                </svg>
+                            </button>
+                            <input placeholder="Найти по названию" class="input" type="text">
+                        </div>
+                    </form>
+                    <div class="modal-location__row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/plugins/swiper-bundle.min.js?_v=20230131203516"></script>
+
+    <script src="../assets/js/plugins/jquery-3.6.3.min.js?_v=20230131203516"></script>
+    <script src="../assets/js/plugins/select2.min.js?_v=20230131203516"></script>
+    <script src="../assets/js/plugins/simplebar.min.js?_v=20230131203516"></script>
+    <script src="../assets/js/script.js?_v=20230131203516"></script>
+    <script src="../assets/js/app.js?_v=20230131203516"></script>
+    <script src="../assets/js/ajax.js?_v=20230131203516"></script>
+</body>
+
+</html>
