@@ -397,6 +397,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     }
+
+
+
+    window.addEventListener('click', function(e) {
+        if (e.target.closest('.base-sizes__button_plus')) {
+            const input = e.target.closest('.base-sizes__input').querySelector('input')
+            input.value = Number(input.value) + 1
+        }
+        if (e.target.closest('.base-sizes__button_minus')) {
+            const input = e.target.closest('.base-sizes__input').querySelector('input')
+
+            if (Number(input.value) > 0) {
+                input.value = Number(input.value) - 1
+            }
+        }
+    })
+
+    const baseSizeInputs = document.querySelectorAll('.base-sizes__input input')
+
+    if (baseSizeInputs.length > 0) {
+        for (let index = 0; index < baseSizeInputs.length; index++) {
+            const input = baseSizeInputs[index]
+            input.addEventListener('focus', function(e) {
+                if (document.querySelector('.base-sizes__input.focus')) {
+                    document.querySelector('.base-sizes__input.focus').classList.remove('focus')
+                }
+                e.target.closest('.base-sizes__input').classList.add('focus')
+            })
+            input.addEventListener('blur', function(e) {
+                e.target.closest('.base-sizes__input').classList.add('focus')
+            })
+        }
+    }
+
 })
 
 

@@ -67,3 +67,10 @@
 .main-header__icon span {
     background: var(--text-main-color);
 }
+
+@media (min-width: 991.98px) {
+    .item-checkout__info {
+        margin: 0 !important;
+        align-self: flex-end !important;
+    }
+}
