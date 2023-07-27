@@ -544,147 +544,139 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-})
 
 
+    function initProductsSliders() {
+        const productsSliders = document.querySelectorAll('.item-product__slider');
+        if (productsSliders.length > 0) {
+            for (let index = 0; index < productsSliders.length; index++) {
+                const productsSlider = productsSliders[index]
 
-
-function initProductsSliders() {
-    const productsSliders = document.querySelectorAll('.item-product__slider');
-    if (productsSliders.length > 0) {
-        for (let index = 0; index < productsSliders.length; index++) {
-            const productsSlider = productsSliders[index]
-
-            const slider = new Swiper(productsSlider, {
-                speed: 800,
-                loop: true,
-                allowTouchMove: false,
-                spaceBetween: 8,
-                slidesPerView: 1,
-                pagination: {
-                    el: productsSlider.nextElementSibling,
-                    clickable: true,
-                },
-            })
-        }
-    }
-}
-
-initProductsSliders()
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', calculateSlidersBg)
-window.addEventListener('resize', calculateSlidersBg)
-
-function calculateSlidersBg() {
-    const productsSliders = document.querySelectorAll('[data-product-slider]')
-
-    for (let index = 0; index < productsSliders.length; index++) {
-        const sliderWrapper = productsSliders[index]
-
-        const sliderWidth = sliderWrapper.offsetWidth
-        const sliderCoords = sliderWrapper.getBoundingClientRect()
-
-        const sliderLeftOffset = sliderCoords.left
-        const sliderRightOffset = window.innerWidth - sliderLeftOffset - sliderWidth
-
-
-        const leftBg = document.createElement('span')
-        leftBg.classList.add('left-bg')
-        leftBg.style.width = sliderLeftOffset + 'px'
-        leftBg.style.left = '-' + sliderLeftOffset + 'px'
-
-        const rightBg = document.createElement('span')
-
-        rightBg.classList.add('right-bg')
-        rightBg.style.width = sliderRightOffset + 'px'
-        rightBg.style.left = (sliderWidth) + 'px'
-
-
-        const prevLeftBg = sliderWrapper.querySelector('.left-bg')
-        const prevRightBg = sliderWrapper.querySelector('.right-bg')
-
-        if (prevLeftBg) {
-            prevLeftBg.remove()
-        }
-        if (prevRightBg) {
-            prevRightBg.remove()
-        }
-        sliderWrapper.appendChild(leftBg)
-        sliderWrapper.appendChild(rightBg)
-    }
-}
-
-const productsSlidersEls = document.querySelectorAll('.product-slider')
-
-
-if (productsSlidersEls.length > 0) {
-    for (let index = 0; index < productsSlidersEls.length; index++) {
-        const el = productsSlidersEls[index]
-
-        const slider = new Swiper(el.querySelector('.product-slider__body'), {
-            speed: 1000,
-            spaceBetween: 16,
-            slidesPerView: 1.05,
-            loop: true,
-            allowTouchMove: false,
-            breakpoints: {
-                1280.98: {
-                    slidesPerView: 4,
-                    spaceBetween: 24,
-                },
-                1024.98: {
-                    slidesPerView: 3,
-                },
-                767.98: {
-                    slidesPerView: 2.05,
-                }
-            },
-            navigation: {
-                nextEl: el.querySelector('.slider-buttons__item_next'),
-                prevEl: el.querySelector('.slider-buttons__item_prev')
-            },
-        })
-
-
-    }
-}
-
-document.addEventListener('mousemove', function(e) {
-
-    if (e.target.closest('.item-product') && !e.target.closest('.item-product').classList.contains('active')) {
-        if (document.querySelector('.item-product.hover')) {
-            document.querySelector('.item-product.hover').classList.remove('hover')
-        }
-        const itemProduct = e.target.closest('.item-product')
-
-        if (itemProduct) {
-            const itemProductActions = itemProduct.querySelector('.item-product__actions')
-            itemProduct.classList.add('active')
-
-            if (itemProduct.closest('.items-products__column')) {
-                itemProduct.closest('.items-products__column').style.height = (itemProduct.offsetHeight - itemProductActions.offsetHeight) + 'px';
+                const slider = new Swiper(productsSlider, {
+                    speed: 800,
+                    loop: true,
+                    allowTouchMove: false,
+                    spaceBetween: 8,
+                    slidesPerView: 1,
+                    pagination: {
+                        el: productsSlider.nextElementSibling,
+                        clickable: true,
+                    },
+                })
             }
         }
+    }
+
+    initProductsSliders()
 
 
+    const productsSlidersEls = document.querySelectorAll('.product-slider')
+
+
+    if (productsSlidersEls.length > 0) {
+        for (let index = 0; index < productsSlidersEls.length; index++) {
+            const el = productsSlidersEls[index]
+
+            const slider = new Swiper(el.querySelector('.product-slider__body'), {
+                speed: 1000,
+                spaceBetween: 16,
+                slidesPerView: 1.05,
+                loop: true,
+                allowTouchMove: false,
+                breakpoints: {
+                    1280.98: {
+                        slidesPerView: 4,
+                        spaceBetween: 24,
+                    },
+                    1024.98: {
+                        slidesPerView: 3,
+                    },
+                    767.98: {
+                        slidesPerView: 2.05,
+                    }
+                },
+                navigation: {
+                    nextEl: el.querySelector('.slider-buttons__item_next'),
+                    prevEl: el.querySelector('.slider-buttons__item_prev')
+                },
+            })
+
+
+        }
+    }
+
+    document.addEventListener('mousemove', function(e) {
+
+        if (e.target.closest('.item-product') && !e.target.closest('.item-product').classList.contains('active')) {
+            if (document.querySelector('.item-product.hover')) {
+                document.querySelector('.item-product.hover').classList.remove('hover')
+            }
+            const itemProduct = e.target.closest('.item-product')
+
+            if (itemProduct) {
+                const itemProductActions = itemProduct.querySelector('.item-product__actions')
+                itemProduct.classList.add('active')
+
+                if (itemProduct.closest('.items-products__column')) {
+                    itemProduct.closest('.items-products__column').style.height = (itemProduct.offsetHeight - itemProductActions.offsetHeight) + 'px';
+                }
+            }
+
+
+        }
+    })
+
+
+    $('select').on('select2:opening', function (e) {
+        $(e.target).closest(".item-product").addClass('hover')
+    });
+
+    $('select').on('change', function (e) {
+        if ($('.catalog').length > 0) {
+            $(e.target).closest(".item-product").removeClass('hover')
+        }
+
+    });
+
+    calculateSlidersBg()
+    window.addEventListener('resize', calculateSlidersBg)
+
+    function calculateSlidersBg() {
+        const productsSliders = document.querySelectorAll('[data-product-slider]')
+
+        for (let index = 0; index < productsSliders.length; index++) {
+            const sliderWrapper = productsSliders[index]
+
+            const sliderWidth = sliderWrapper.offsetWidth
+            const sliderCoords = sliderWrapper.getBoundingClientRect()
+
+            const sliderLeftOffset = sliderCoords.left
+            const sliderRightOffset = window.innerWidth - sliderLeftOffset - sliderWidth
+
+
+            const leftBg = document.createElement('span')
+            leftBg.classList.add('left-bg')
+            leftBg.style.width = sliderLeftOffset + 'px'
+            leftBg.style.left = '-' + sliderLeftOffset + 'px'
+
+            const rightBg = document.createElement('span')
+
+            rightBg.classList.add('right-bg')
+            rightBg.style.width = sliderRightOffset + 'px'
+            rightBg.style.left = (sliderWidth) + 'px'
+
+
+            const prevLeftBg = sliderWrapper.querySelector('.left-bg')
+            const prevRightBg = sliderWrapper.querySelector('.right-bg')
+
+            if (prevLeftBg) {
+                prevLeftBg.remove()
+            }
+            if (prevRightBg) {
+                prevRightBg.remove()
+            }
+            sliderWrapper.appendChild(leftBg)
+            sliderWrapper.appendChild(rightBg)
+        }
     }
 })
-
-
-$('select').on('select2:opening', function (e) {
-    $(e.target).closest(".item-product").addClass('hover')
-});
-
-$('select').on('change', function (e) {
-    if ($('.catalog').length > 0) {
-        $(e.target).closest(".item-product").removeClass('hover')
-    }
-
-});
-
-
