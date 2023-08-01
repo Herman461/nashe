@@ -377,7 +377,7 @@ a {
 }
 
 .menu__link_red::before {
-  display: none;
+  background: #D60700 !important;
 }
 
 .menu__item.active .menu__link {
@@ -4597,7 +4597,7 @@ textarea.input::placeholder {
 
   .menu__item:hover .menu__link_red {
     color: #D60700;
-    text-decoration: underline;
+
   }
 
   .actions-main-header__item:hover svg {
