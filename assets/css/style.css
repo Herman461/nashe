@@ -4970,3 +4970,49 @@ textarea.input::placeholder {
     align-self: flex-start;
   }
 }
+.stroke-button.active label {
+  background: var(--extra-light-color);
+  border: 1px solid var(--dark-main-color);
+  border-radius: 999px;
+}
+
+@media (any-hover: hover) {
+  .stroke-button:hover label {
+    background: var(--extra-light-color);
+    border: 1px solid var(--dark-main-color);
+    border-radius: 999px;
+  }
+}
+.shops__cities {
+  display: flex;
+}
+.shops__button {
+  cursor: pointer;
+}
+.shops__button label {
+  cursor: pointer;
+}
+.shops__button label {
+  border: 1px solid var(--main-light-color);
+  border-radius: 999px;
+  min-width: 96px;
+  padding: 2px 16px;
+  min-height: 40px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+@media (min-width: 767.98px) {
+  .item-shops__location {
+    max-width: 405px;
+  }
+}

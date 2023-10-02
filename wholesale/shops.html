@@ -1228,24 +1228,30 @@
                                 <button type="button" data-tab-category="city" data-tab-title="all" class="shops__button stroke-button active">
                                     <span>Все</span>
                                 </button>
-                                <button type="button" data-tab-category="city" data-tab-title="smolensk" class="shops__button stroke-button">
-                                    <span>Смоленск</span>
-                                </button>
+                                <div data-tab-category="city" data-tab-title="smolensk" class="shops__button stroke-button">
+                                    <input class="input-radio-select__item-input js_input_select js-select-map" id="tab157" value="СМОЛЕНСК" name="region-shops" type="radio" data-region-lat="54.7818000" data-region-lng="32.0401000">
+                                    <label for="tab157">Смоленск</label>
+                                </div>
                                 <button type="button" data-tab-category="city" data-tab-title="bryansk" class="shops__button stroke-button">
-                                    <span>Брянск</span>
+                                    <input class="input-radio-select__item-input js_input_select js-select-map" id="tab3" value="БРЯНСК" name="region-shops" type="radio" data-region-lat="53.2520900" data-region-lng="34.3716700">
+                                    <label for="tab3">Брянск</label>
                                 </button>
                                 <button type="button" data-tab-category="city" data-tab-title="tula" class="shops__button stroke-button">
-                                    <span>Тула</span>
+                                    <input class="input-radio-select__item-input js_input_select js-select-map" id="tab390" value="ТУЛА" name="region-shops" type="radio" data-region-lat="54.193122" data-region-lng="37.617348">
+                                    <label for="tab390">Тула</label>
                                 </button>
                                 <button type="button" data-tab-category="city" data-tab-title="kaluga" class="shops__button stroke-button">
-                                    <span>Калуга</span>
+                                    <input class="input-radio-select__item-input js_input_select js-select-map" id="tab2" value="КАЛУГА" name="region-shops" type="radio" data-region-lat="54.5293000" data-region-lng="36.2754200">
+                                    <label for="tab2">Калуга</label>
                                 </button>
                                 <button type="button" data-tab-category="city" data-tab-title="vyazma" class="shops__button stroke-button">
-                                    <span>Вязьма</span>
+                                    <input class="input-radio-select__item-input js_input_select js-select-map" id="tab317" value="ВЯЗЬМА" name="region-shops" type="radio" data-region-lat="55.2127148" data-region-lng="34.2990761">
+                                    <label for="tab317">Вязьма</label>
                                 </button>
-                                <button type="button" data-tab-category="city" data-tab-title="moscow" class="shops__button stroke-button">
-                                    <span>Москва</span>
-                                </button>
+                                <div data-tab-category="city" data-tab-title="moscow" class="shops__button stroke-button">
+                                    <input id="tab4" class="input-radio-select__item-input js_input_select js-select-map" value="МОСКВА" name="region-shops" type="radio" data-region-lat="55.70417127381326" data-region-lng="37.60388702636718">
+                                    <label for="tab4">Москва</label>
+                                </div>
                             </div>
                             <div class="shops__how">
                                 <button type="button" data-tab-category="view" data-tab-title="list" class="shops__button active stroke-button">
@@ -1916,27 +1922,9 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div data-tab-category="view" data-tab-content="map" class="shops__maps">
-                            <div data-tab-category="city" data-tab-content="all" class="shops__map active">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-                            </div>
-                            <div data-tab-category="city" data-tab-content="smolensk" class="shops__map">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-                            </div>
-                            <div data-tab-category="city" data-tab-content="bryansk" class="shops__map">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-                            </div>
-                            <div data-tab-category="city" data-tab-content="tula" class="shops__map">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-                            </div>
-                            <div data-tab-category="city" data-tab-content="kaluga" class="shops__map">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-                            </div>
-                            <div data-tab-category="city" data-tab-content="vyazma" class="shops__map">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
-                            </div>
-                            <div data-tab-category="city" data-tab-content="moscow" class="shops__map">
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ad1258571aff665953176dc62abf2b36f7141d632ce8661de220dca7060ad478a&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+                            <div id="map" class="shops__map">
                             </div>
                         </div>
                     </div>
@@ -2150,7 +2138,471 @@
             </div>
         </div>
     </div>
+    <div style="display: none;" class="js-map">
+        <div class="shops-list js-shops-list">
+            <div data-id="tab4" data-name="sub-nav" class="tab active">
+                <input class="js-select-shop" type="radio" id="shop-40" name="tab4" data-map-lat="55.655828"
+                       data-map-lng="37.541767" data-name="ТЦ «Калужский», магазин «НАШЕ»"
+                       data-address="г. Москва, ул. Профсоюзная, д. 61 А, 1 этаж"
+                       data-worktime="Пн-вс: 10:00-22:00" data-phone="8(800)500-61-13 доб. 2,307">
 
+                <ul class="shops-block">
+
+                    <li id="bx_3218110189_19">
+                        <label for="shop-40">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">ТЦ «Калужский», магазин «НАШЕ»</span><br>
+                                <span>г. Москва, ул. Профсоюзная, д. 61 А, 1 этаж</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                Пн-вс: 10:00-22:00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,307">8(800)500-61-13 <span class="nobr">доб. 2,307<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: Пн-вс: 10:00-22:00<br>
+                                тел. 8(800)500-61-13 доб. 307
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div data-id="tab157" data-name="sub-nav" class="tab ">
+                <input class="js-select-shop" type="radio" id="shop-1570" name="tab157"
+                       data-map-lat="54.771595" data-map-lng="32.026119"
+                       data-name="Магазин «НАШЕ» на Николаева"
+                       data-address="г. Смоленск, ул. Николаева, д. 34"
+                       data-worktime="пн.-вс.: с 10-00 до 19-00&lt;br&gt;
+" data-phone="8(800)500-61-13 доб. 2,324">
+                <input class="js-select-shop" type="radio" id="shop-1571" name="tab157"
+                       data-map-lat="54.771209" data-map-lng="32.043944"
+                       data-name="Магазин «НАШЕ» на Неверовского"
+                       data-address="г. Смоленск, ул. Неверовского, д. 1"
+                       data-worktime="пн.-вс.: с 10-00 до 19-00&lt;br&gt;"
+                       data-phone="8(800)500-61-13 доб. 2,323">
+                <input class="js-select-shop" type="radio" id="shop-1572" name="tab157"
+                       data-map-lat="54.791710" data-map-lng="32.066262"
+                       data-name="Магазин «НАШЕ» на Соболева"
+                       data-address="г. Смоленск, ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ"
+                       data-worktime="пн.-вс.: с 10-00 до 19-00" data-phone="+7 (4812) 299-622">
+                <input class="js-select-shop" type="radio" id="shop-1573" name="tab157"
+                       data-map-lat="54.760546" data-map-lng="32.103406"
+                       data-name="Магазин «НАШЕ» на Петра Алексеева"
+                       data-address="г. Смоленск, ул. Петра Алексеева, д. 2/37"
+                       data-worktime="пн.-вс.: с 10-00 до 19-00" data-phone="8(800)500-61-13 доб. 2,327">
+                <input class="js-select-shop" type="radio" id="shop-1574" name="tab157"
+                       data-map-lat="54.767061" data-map-lng="32.060264"
+                       data-name="Магазин «НАШЕ» на Крупской"
+                       data-address="г. Смоленск, ул. Крупской, д. 30"
+                       data-worktime="пн.-вс.: с 10-00 до 19-00" data-phone="8(800)500-61-13 доб. 2,326  ">
+                <input class="js-select-shop" type="radio" id="shop-1575" name="tab157"
+                       data-map-lat="54.811508" data-map-lng="32.026260"
+                       data-name="Магазин «НАШЕ» на Гризодубовой"
+                       data-address="г. Смоленск, ул. Валентины Гризодубовой, д. 1"
+                       data-worktime="пн.-сб.: с 10-00 до 20-00&lt;br&gt;
+вс.: с 10-00 до 19-00" data-phone="8(800)500-61-13 доб. 2,402">
+                <input class="js-select-shop" type="radio" id="shop-1576" name="tab157"
+                       data-map-lat="54.791710" data-map-lng="32.066262" data-name="Магазин Распродаж"
+                       data-address="г. Смоленск, ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ"
+                       data-worktime="пн.-вс.: с 10-00 до 19-00" data-phone="+7(4812)299-600 доб. 1277">
+                <input class="js-select-shop" type="radio" id="shop-1577" name="tab157"
+                       data-map-lat="54.793452" data-map-lng="32.049835"
+                       data-name="Магазин «НАШЕ» на Беляева"
+                       data-address="г. Смоленск, ул. Беляева, д. 6, магазин «НАШЕ»"
+                       data-worktime="пн.-вс.: с 9-00 до 18-00" data-phone="8(800)500-61-13 доб. 2,325">
+
+                <ul class="shops-block">
+
+                    <li id="bx_651765591_17">
+                        <label for="shop-1570">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Николаева</span><br>
+                                <span>г. Смоленск, ул. Николаева, д. 34</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 10-00 до 19-00<br>
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,324">8(800)500-61-13 <span class="nobr">доб. 2,324<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 10-00 до 19-00<br>
+                                тел.:8(800)500-61-13 доб. 324
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_16">
+                        <label for="shop-1571">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Неверовского</span><br>
+                                <span>г. Смоленск, ул. Неверовского, д. 1</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 10-00 до 19-00<br></div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,323">8(800)500-61-13 <span class="nobr">доб. 2,323<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 10-00 до 19-00<br>
+                                тел.: 8(800)500-61-13 доб. 323
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_23">
+                        <label for="shop-1572">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Соболева</span><br>
+                                <span>г. Смоленск, ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 10-00 до 19-00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:+74812299622"><span class="nobr">+7 (4812) 299-622</span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 10-00 до 20-00<br>
+                                тел.: +7 (4812) 299-622
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_25">
+                        <label for="shop-1573">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Петра Алексеева</span><br>
+                                <span>г. Смоленск, ул. Петра Алексеева, д. 2/37</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 10-00 до 19-00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,327">8(800)500-61-13 <span class="nobr">доб. 2,327<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 10-00 до 19-00<br>
+                                тел.: 8(800)500-61-13 доб. 327
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_26">
+                        <label for="shop-1574">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Крупской</span><br>
+                                <span>г. Смоленск, ул. Крупской, д. 30</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 10-00 до 19-00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,326">8(800)500-61-13 <span class="nobr">доб. 2,326  <span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 10-00 до 19-00<br>
+                                тел.: 8(800)500-61-13 доб. 326&nbsp;&nbsp;
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_65898">
+                        <label for="shop-1575">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Гризодубовой</span><br>
+                                <span>г. Смоленск, ул. Валентины Гризодубовой, д. 1</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-сб.: с 10-00 до 20-00<br>
+                                вс.: с 10-00 до 19-00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,402">8(800)500-61-13 <span class="nobr">доб. 2,402<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_24">
+                        <label for="shop-1576">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин Распродаж</span><br>
+                                <span>г. Смоленск, ул. Соболева, д. 25, здание Смоленской чулочно-трикотажной фабрики НАШЕ</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 10-00 до 19-00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:+74812299600,1277">+7(4812)299-600 <span class="nobr">доб. 1277<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 10-00 до 19-00<br>
+                                тел.: +7(4812)299-600 доб. 1277
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_651765591_27">
+                        <label for="shop-1577">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Беляева</span><br>
+                                <span>г. Смоленск, ул. Беляева, д. 6, магазин «НАШЕ»</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: с 9-00 до 18-00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,325">8(800)500-61-13 <span class="nobr">доб. 2,325<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: с 9-00 до 18-00<br>
+                                тел.: 8(800)500-61-13 доб. 325
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div data-id="tab317" data-name="sub-nav" class="tab ">
+                <input class="js-select-shop" type="radio" id="shop-3170" name="tab317"
+                       data-map-lat="55.2127148" data-map-lng="34.2990761"
+                       data-name="Магазин «НАШЕ» на Ленина" data-address="г. Вязьма, ул. Ленина, д. 41"
+                       data-worktime="пн-вс: 10:00-19:00" data-phone="8(800)500-61-13 доб. 2,330">
+
+                <ul class="shops-block">
+
+                    <li id="bx_1373509569_43205">
+                        <label for="shop-3170">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Ленина</span><br>
+                                <span>г. Вязьма, ул. Ленина, д. 41</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн-вс: 10:00-19:00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,330">8(800)500-61-13 <span class="nobr">доб. 2,330<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн-вс: 10:00-19:00<br>
+                                тел.: 8(800)500-61-13 доб. 330
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div data-id="tab2" data-name="sub-nav" class="tab ">
+                <input class="js-select-shop" type="radio" id="shop-20" name="tab2" data-map-lat="54.518408"
+                       data-map-lng="36.290365" data-name="Магазин «НАШЕ» на Маршала Жукова 39"
+                       data-address="г. Калуга, ул. Маршала Жукова, д. 39"
+                       data-worktime="пн.-пт.: 10:00-20:00&lt;br&gt;
+сб.-вс.: 10:00-19:00" data-phone="8(800)500-61-13 доб. 2,308">
+
+                <ul class="shops-block">
+
+                    <li id="bx_3485106786_16846">
+                        <label for="shop-20">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Маршала Жукова 39</span><br>
+                                <span>г. Калуга, ул. Маршала Жукова, д. 39</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-пт.: 10:00-20:00<br>
+                                сб.-вс.: 10:00-19:00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,308">8(800)500-61-13 <span class="nobr">доб. 2,308<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-пт.: 10:00-20:00 / сб.-вс.: 10:00-19:00 <br>
+                                тел.: 8(800)500-61-13 доб. 308
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div data-id="tab390" data-name="sub-nav" class="tab ">
+                <input class="js-select-shop" type="radio" id="shop-3900" name="tab390"
+                       data-map-lat="54.195475" data-map-lng="37.602131"
+                       data-name="Магазин «НАШЕ» на Лейтейзена" data-address="г. Тула, ул. Лейтейзена, д. 3"
+                       data-worktime="пн.-пт.: 10:00-20:00&lt;br&gt;
+сб.-вс.: 10:00-19:00" data-phone="8(800)500-61-13 доб. 2,309">
+                <input class="js-select-shop" type="radio" id="shop-3901" name="tab390"
+                       data-map-lat="54.165652" data-map-lng="37.581442" data-name="Магазин «НАШЕ» на 9 мая"
+                       data-address="г. Тула, ул. 9 мая, д. 9" data-worktime="пн.-пт.: 10:00-20:00&lt;br&gt;
+сб.-вс.: 10:00-19:00" data-phone="8(800)500-61-13 доб. 2,302">
+
+                <ul class="shops-block">
+
+                    <li id="bx_3099439860_74692">
+                        <label for="shop-3900">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на Лейтейзена</span><br>
+                                <span>г. Тула, ул. Лейтейзена, д. 3</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-пт.: 10:00-20:00<br>
+                                сб.-вс.: 10:00-19:00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,309">8(800)500-61-13 <span class="nobr">доб. 2,309<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+
+                    <li id="bx_3099439860_68365">
+                        <label for="shop-3901">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» на 9 мая</span><br>
+                                <span>г. Тула, ул. 9 мая, д. 9</span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-пт.: 10:00-20:00<br>
+                                сб.-вс.: 10:00-19:00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,302">8(800)500-61-13 <span class="nobr">доб. 2,302<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-пт.: 10:00-20:00 / сб.-вс.: 10:00-19:00 <br>
+                                тел.: 8(800)500-61-13 доб. 302
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div data-id="tab3" data-name="sub-nav" class="tab ">
+                <input class="js-select-shop" type="radio" id="shop-30" name="tab3" data-map-lat="53.275477"
+                       data-map-lng="34.315877" data-name="Магазин «НАШЕ» ТЦ Аэропарк на Объездной"
+                       data-address="г. Брянск, ул. Объездная, д. 30 " data-worktime="пн.-вс.: 10:00-22:00"
+                       data-phone="8(800)500-61-13 доб. 2,332">
+
+                <ul class="shops-block">
+
+                    <li id="bx_565502798_44934">
+                        <label for="shop-30">
+                            <div class="address">
+                                <span class="gray-title">Адрес</span><br>
+                                <span class="js-shop-name">Магазин «НАШЕ» ТЦ Аэропарк на Объездной</span><br>
+                                <span>г. Брянск, ул. Объездная, д. 30 </span>
+                            </div>
+                            <div class="worktime">
+                                <span class="gray-title">Время работы</span><br>
+                                пн.-вс.: 10:00-22:00
+                            </div>
+                            <div class="phone" title="Позовонить в магазин">
+                                <span class="gray-title">Телефон</span><br>
+                                <a href="tel:88005006113,2,332">8(800)500-61-13 <span class="nobr">доб. 2,332<span></span></span></a>
+                            </div>
+                            <div style="display:none" class="js-shop-info">
+                                Время работы: пн.-вс.: 10:00-19:00<br>
+                                тел.: 8(800)500-61-13 доб. 329
+                            </div>
+                            <div class="button">
+                                <div>Смотреть на карте</div>
+                            </div>
+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script src="../assets/js/plugins/swiper-bundle.min.js?_v=20230131203516"></script>
 
     <script src="../assets/js/plugins/jquery-3.6.3.min.js?_v=20230131203516"></script>
@@ -2159,6 +2611,179 @@
     <script src="../assets/js/script.js?_v=20230131203516"></script>
     <script src="../assets/js/app.js?_v=20230131203516"></script>
     <script src="../assets/js/ajax.js?_v=20230131203516"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=dbb39bc7-d746-4d70-a815-50c77c268a71&lang=ru_RU"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            ymaps.ready(init);
+
+            function init () {
+                var myMap;
+                var activCityMap;
+
+                let allShopList = document.querySelectorAll('.shops__cities input');
+
+
+                let obgCollectionMap = {
+                    "type": "FeatureCollection",
+                    "features": []
+                }
+
+                allShopList.forEach((input, i) => {
+                    let part = {
+                        "type": "Feature",
+                        "id": i,
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [input.getAttribute('data-map-lat'), input.getAttribute('data-map-lng')]
+                        },
+                        "properties": {
+                            "balloonContentHeader": "<font size=3><b>"+input.getAttribute('data-name')+"</b></font>",
+                            "balloonContentBody": "<p><strong>Адрес: </strong>"+input.getAttribute('data-address')+"</p> <strong>Телефон:</strong> "+input.getAttribute('data-phone'),
+                            "balloonContentFooter": "<font size=1> <strong>Время работы: </strong>"+input.getAttribute('data-worktime')+"</font>",
+                            "clusterCaption": "<strong>"+input.getAttribute('data-name')+"</strong>",
+                        }
+                    }
+                    obgCollectionMap.features.push(part);
+                });
+
+
+                myMap = new ymaps.Map('map', {
+                    center: [54.159556008798354, 35.44102249571266],
+                    zoom: 6
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
+
+                objectManager = new ymaps.ObjectManager({
+                    clusterize: true,
+                    gridSize: 32,
+                    clusterDisableClickZoom: true
+                });
+
+                myMap.geoObjects.add(objectManager);
+                objectManager.add(obgCollectionMap);
+                myMap.container.fitToViewport();
+
+                $('.shops__cities .shops__button').bind({
+                    click: function () {
+
+                        if(activCityMap == $(this).find('input').attr("id"))
+                            return;
+
+                        if (myMap) {
+                            myMap.destroy();
+                            myMap = null;
+                        }
+                        if (objectManager) {
+                            objectManager = null;
+                        }
+
+                        let idCity = $(this).find('input').attr("id"),
+                            lat = $(this).find('input').attr("data-region-lat"),
+                            lng = $(this).find('input').attr("data-region-lng");
+                        activCityMap = idCity;
+
+                        listNodeStore = document.querySelectorAll('.shops-list div[data-id='+idCity+'] > input');
+
+                        let obgCollectionMap = {
+                            "type": "FeatureCollection",
+                            "features": []
+                        }
+
+                        listNodeStore.forEach((input, i) => {
+                            let part = {
+                                "type": "Feature",
+                                "id": i,
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [input.getAttribute('data-map-lat'), input.getAttribute('data-map-lng')]
+                                },
+                                "properties": {
+                                    "balloonContentHeader": "<font size=3><b>"+input.getAttribute('data-name')+"</b></font>",
+                                    "balloonContentBody": "<p><strong>Адрес: </strong>"+input.getAttribute('data-address')+"</p> <strong>Телефон:</strong> "+input.getAttribute('data-phone'),
+                                    "balloonContentFooter": "<font size=1> <strong>Время работы: </strong>"+input.getAttribute('data-worktime')+"</font>",
+                                    "clusterCaption": "<strong>"+input.getAttribute('data-name')+"</strong>",
+                                }
+                            }
+                            obgCollectionMap.features.push(part)
+                        });
+
+                        myMap = new ymaps.Map('map', {
+                            center: [lat, lng], // Новосибирск
+                            zoom: 11
+                        }, {
+                            searchControlProvider: 'yandex#search'
+                        });
+                        objectManager = new ymaps.ObjectManager({
+                            clusterize: true,
+                            gridSize: 32,
+                            clusterDisableClickZoom: true
+                        });
+                        myMap.container.fitToViewport();
+                        myMap.geoObjects.add(objectManager);
+                        objectManager.add(obgCollectionMap);
+                    }
+                });
+
+                $('.shops-block .button').bind({
+                    click: function () {
+
+                        if($(this.closest('li')).hasClass('active'))
+                            return
+
+                        let listLiactive = document.querySelectorAll('.js-shops-list ul li.active');
+                        listLiactive.forEach(input => {
+                            $(input).removeClass('active');
+                        });
+                        // debugger;
+                        $(this.closest('li')).addClass('active')
+
+                        $('html, body').animate({scrollTop: $('#map').offset().top - $('.bx-header').outerHeight()}, 800);
+
+                        let id = this.closest('label').getAttribute('for');
+
+                        let Listinput = this.closest('div[data-name=sub-nav]').querySelectorAll('input'),
+                            activePoin,
+                            lat,
+                            lng;
+
+                        Listinput.forEach((input, i) => {
+                            if(id == input.getAttribute('id')){
+                                activePoin = i;
+                                lat = input.getAttribute("data-map-lat");
+                                lng = input.getAttribute("data-map-lng");
+                            }
+                        });
+
+                        myMap.setCenter([lat, lng], 16);
+                        var objectState = objectManager.getObjectState(activePoin);
+
+                        if (objectState.isClustered) {
+                            // if(!objectManager.clusters.balloon.events.types.CustomRemoveClass){
+                            // 	objectManager.clusters.balloon.events.add(["close",'CustomRemoveClass'], function (event) {
+                            // 		debugger;
+                            // 		$(document.querySelectorAll('.js-map .shops-block li.active')).removeClass('active')
+                            // 	});
+                            // }
+
+                            objectManager.clusters.state.set('activeObject', objectManager.objects.getById(activePoin));
+                            objectManager.clusters.balloon.open(objectState.cluster.id);
+                        } else {
+                            objectManager.objects.balloon.open(activePoin);
+                        }
+                    }
+                });
+
+                $('.shops__cities .shops__button').first().trigger('click')
+
+                // $(document).on('click', '.ymaps-2-1-77-balloon__close-button', () =>{
+                //     $(document.querySelectorAll('.js-map .shops-block li.active')).removeClass('active')
+                // })
+
+            }
+        })
+
+    </script>
 </body>
 
 </html>

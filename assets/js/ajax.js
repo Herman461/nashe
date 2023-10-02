@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const headerLocationInput = document.querySelector('.modal-location__input input')
     getCities()
     window.addEventListener('resize', getCities)
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         buildCitiesHTML()
     }
 
-    const headerLocationInput = document.querySelector('.modal-location__input input')
+
 
     if (headerLocationInput) {
         headerLocationInput.addEventListener('input', buildCitiesHTML)
